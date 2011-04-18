@@ -105,15 +105,15 @@ Cufon.replace('h2');
     width: 243px; 
     float: left; 
     position: relative;
-    background: url(/_assets/images/ui-panel-1-left.png) top left no-repeat; }
+    background: url(/_assets/images/ui-panel-1-right.png) top right no-repeat; }
 #offers .last-child { margin-right: 0 !important; }
 #offers ul .offer-inner { 
-    background: url(/_assets/images/ui-panel-1-right.png) top right no-repeat;
+    background: url(/_assets/images/ui-panel-1-left.png) top left no-repeat;
     min-height: 146px;
     height: auto !important;
     height: 146px; }
 #offers .offer-img { width: 115px; float: left; }
-#offers img { position: relative; top: -3px; left: 2px; }
+#offers img { position: relative; top: -5px; left: 2px; }
 #offers .offer-copy { width: 110px; float: left; }
 #offers .offer-link { position: absolute; bottom: 10px; color: #fff; }
 #offers a { cursor: pointer; text-decoration: none; display: block; }
@@ -124,20 +124,21 @@ Cufon.replace('h2');
  */
  
 #promos { }
-#promos a { text-decoration: none; display: block; }
+#promos a { opacity: .8; text-decoration: none; display: block; }
+#promos a:hover { opacity: 1; }
 #promos h2 { margin: 7px 0 5px; color: #00693c; }
 #promos ul { }
 #promos ul li.promo { 
     float: left;
     padding: 0;
     width: 372px;
-    background: url(/_assets/images/ui-panel-2-left.png) top left no-repeat;
+    background: url(/_assets/images/ui-panel-2-right.png) top right no-repeat;
     margin: 0 15px 0 0; padding: 0;  } 
 #promos .promo-inner { 
     min-height: 119px;
     height: auto !important;
     height: 119px;
-    background: url(/_assets/images/ui-panel-2-right.png) top right no-repeat; }
+    background: url(/_assets/images/ui-panel-2-left.png) top left no-repeat; }
 #promos .last-child { margin-right: 0 !important; }
 #promos .promo-img { float: left; margin: 0 0 0 0; padding: 10px; }
 #promos .promo-copy { float: left; width: 240px; }
@@ -298,7 +299,7 @@ ctas
 <div class="offer-inner clearfix">
 <a href="" title="Learn more about Diversity at WM">
 <div class="offer-img">
-<img src="http://dummyimage.com/100x147/000/fff" alt="Smiling woman" />
+<img src="/_assets/images/test-subject-1.png" alt="Smiling woman" />
 </div>
 <div class="offer-copy">
 <h2>Diversity</h2>
@@ -315,7 +316,7 @@ Learn more &raquo;
 <div class="offer-inner clearfix">
 <a href="http://google.com" title="Learn more about Diversity at WM">
 <div class="offer-img">
-<img src="http://dummyimage.com/100x147/000/fff" alt="Smiling woman" />
+<img src="/_assets/images/test-subject-1.png" alt="Smiling woman" />
 </div>
 <div class="offer-copy">
 <h2>Diversity</h2>
@@ -332,7 +333,7 @@ Learn more &raquo;
 <div class="offer-inner clearfix">
 <a href="" title="Learn more about Diversity at WM">
 <div class="offer-img">
-<img src="http://dummyimage.com/100x147/000/fff" alt="Smiling woman" />
+<img src="/_assets/images/test-subject-1.png" alt="Smiling woman" />
 </div>
 <div class="offer-copy">
 <h2>Diversity</h2>
@@ -397,7 +398,7 @@ Learn more &raquo;
 <script type="text/javascript" src="/_assets/_js-lib/jcarousel/lib/jquery.jcarousel.min.js"></script>
 <script type="text/javascript">
 
-function mycarousel_initCallback(carousel) {
+function carousel_initCallback(carousel) {
     jQuery('#carousel-map a').bind('click', function() {
         carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
         return false;
@@ -435,7 +436,7 @@ jQuery(document).ready(function() {
         scroll: 1,
         auto: 3,
         wrap: 'last',
-        initCallback: mycarousel_initCallback,
+        initCallback: carousel_initCallback,
         buttonNextHTML: null,
         buttonPrevHTML: null
     });
