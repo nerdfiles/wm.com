@@ -340,15 +340,17 @@ object { }
     font-weight: bold; }
 .section-link a:visited { }
 .section-link a:hover { 
-    margin-left: 2px;
-    background-position: 0 -44px !important;
+    /*margin-left: 2px;
+    background-position: 0 -44px !important;*/
     text-decoration: none; }
 .section-link a:active { }
     
 .latest-event { 
+    text-align: left;
+    line-height: 2;
     position: relative;
     top: -0.05em;
-    width: 585px;
+    width: 595px;
     vertical-align: middle;
     display: inline-block;
     *zoom: 1;
