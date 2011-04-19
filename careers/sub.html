@@ -88,17 +88,23 @@ Cufon.replace('h2');
 <form id="employee-login-form" name="" action="" method="">
 <h3>Current Employee Validation</h3>
 <fieldset>
-<legend>Login credentials</legend>
 <dl>
-<dt>Employee ID</dt>
-<dd><input type="text" name="el_empid" id="el_empid"></dd>
-<dt><label for="">Lastname</label></dt> 
-<dd><input type="text" name="el_lname" id="el_lname"></dd>
+<dt class="grid_2 alpha">
+    <label for="employee-id">Employee ID</label>
+</dt>
+<dd class="grid 7 omega clearfix">
+    <input type="text" class="text grid_3 alpha" name="" id="employee-id" />
+</dd>
+<dt class="grid_2 alpha">
+    <label for="employee-lastname">Lastname</label>
+</dt> 
+<dd class="grid 7 omega clearfix">
+    <input type="text" class="text grid_3 alpha" name="" id="employee-lastname" />
+</dd>
 </dl>
 </fieldset>
 <fieldset>
-<legend>Submit form</legend>
-<input type="submit" class="submit" value="Login" />
+<div class="btn dark-right white"><input type="submit" class="submit" value="Login" /></div>
 </fieldset>
 <p>Having trouble? Contact us at <a href="#">careersysadmin@wm.com</a> for help.</p>
 
