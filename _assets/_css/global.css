@@ -152,7 +152,7 @@
     min-height: 119px;
     height: auto !important;
     height: 119px; }
-#promos img { padding: 0; display: block; margin: 0; }
+#promos img { padding: 0; display: block; margin: 0; width: 100px; height: 75px; }
 #promos .promo-img { float: left; margin: 0 0 0 0; padding: 20px 15px 0px 20px; }
-#promos .promo-copy { float: none; width: 370px; padding: 10px 0; /*outline: 1px red solid;*/ }
-#promos .promo-copy { float: left; width: 220px; padding: 10px 0; }
+#promos .promo-copy { float: none; width: 370px; padding: 10px 0; }
+#promos .promo-copy { float: left; width: 230px; padding: 10px 0; }
