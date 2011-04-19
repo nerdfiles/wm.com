@@ -353,6 +353,7 @@ object { }
     top: -0.05em;
     width: 595px;
     vertical-align: middle;
+    *vertical-align: super;
     display: inline-block;
     *zoom: 1;
     *display: inline; }
