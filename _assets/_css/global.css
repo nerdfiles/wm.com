@@ -1,0 +1,158 @@
+/**
+ * Carousel
+ */
+ 
+/**
+ * Careers Upcoming Events
+ */
+ 
+#upcoming-events { 
+    background: url(/_assets/images/upcoming-events-bg.png) top left no-repeat;
+    height: 44px;
+    color: #fff; }
+    
+.section-link {
+    width: 145px;
+    height: 44px;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline; }
+.section-link a {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    padding: 13px 10px 10px 9px; 
+    color: #fff; 
+    text-decoration: none;
+    font-size: 13px;
+    text-shadow: 0 0 0.2em #024f2d;
+    font-weight: bold; }
+.section-link a:visited { }
+.section-link a:hover { text-decoration: none; }
+.section-link a:active { }
+    
+.latest-event { 
+    width: 600px;
+    vertical-align: middle;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline; }
+.latest-event a { 
+    padding: 0 0 0 1em;
+    font-weight: bold; }
+.latest-event a:visited { }
+.latest-event a:hover { color: #fff; }
+.latest-event a:active { }
+ 
+/**
+ * Careers Sections
+ */
+ 
+#sections .btn_cta_lg { 
+    text-shadow: 1px 1px 1px #f3f2ec;
+    display: inline-block; 
+    *zoom: 1; 
+    *display: inline; 
+    padding-right: 2.5em; }
+#sections h2 { margin: 0; border-bottom: 3px #7ab700 solid; padding: 5px; }
+#sections ul { }
+#sections ul li { 
+    padding: 0; 
+    margin: 0 15px 0 0; 
+    background: none; 
+    width: 243px;
+    float: left; }
+#sections .section-inner { }
+#sections .last-child { margin-right: 0; }
+
+/**
+ * Careers Offers
+ */
+ 
+#offers { 
+    padding: 0 0 2em 0;
+    margin: 0 0 1em 0;
+    text-shadow: 1px 1px 1px #f3f2ec; 
+    background: url(http://www.wm.com/_assets/images/backgrounds/bkg_homehero_shadow.gif) bottom center no-repeat; }
+#offers h2 { margin: 7px 0 0px; color: #00693c; }
+#offers p { margin: .5em 0; }
+#offers ul li.offer {
+    padding: 0;
+    margin: 0 15px 0 0; 
+    width: 243px; 
+    float: left; 
+    position: relative;
+    background: url(/_assets/images/ui-panel-1-right.png) top right no-repeat; }
+#offers .last-child { margin-right: 0 !important; }
+#offers ul .offer-inner { 
+    background: url(/_assets/images/ui-panel-1-left.png) top left no-repeat;
+    min-height: 146px;
+    height: auto !important;
+    height: 146px; }
+    
+/* Guts */
+#offers .offer-img { width: 125px; float: left; }
+#offers img { position: relative; top: -5px; left: 2px; }
+#offers .offer-copy { width: 108px; float: left; }
+#offers .offer-link { text-shadow: none; position: absolute; bottom: 1em; color: #fff; font-weight: bold; }
+#offers a { 
+    min-height: 150px;
+    height: auto !important;
+    height: 150px;
+    cursor: pointer; text-decoration: none; display: block; }
+#offers a:hover .offer-link { text-decoration: underline; }
+ 
+/**
+ * Careers Promos
+ *
+ * @note            Commented section highlights a decision to do The Right Thing,
+ *                  after a nearly subversive social investigation.
+ */
+ 
+#promos { }
+#promos a { opacity: .8; text-decoration: none; display: block; }
+#promos a:hover { opacity: 1; }
+#promos h2 { margin: 7px 0 5px; color: #00693c; }
+#promos ul { }
+/*
+#promos ul li.promo { 
+    float: left;
+    width: 372px;
+    background: url(/_assets/images/ui-panel-2-right.png) top right no-repeat;
+    margin: 0 15px 0 0; 
+    padding: 0;  } 
+#promos .promo-inner { 
+    min-height: 119px;
+    height: auto !important;
+    height: 119px;
+    background: url(/_assets/images/ui-panel-2-left.png) top left no-repeat; }
+#promos .last-child { margin-right: 0 !important; }
+#promos .promo-img { float: left; margin: 0 0 0 0; padding: 20px 15px 20px 20px; }
+#promos .promo-copy { float: left; width: 220px; padding: 10px 0; }
+*/
+#promos ul li.promo { 
+    float: left;
+    width: 372px;
+    background: #e6e5d9;
+    margin: 0 15px 0 0;
+    padding: 0;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    border-radius: 0.4em;
+}
+#promos .promo-inner {
+    min-height: 119px;
+    height: auto !important;
+    height: 119px;
+}
+#promos .last-child { margin-right: 0 !important; }
+#promos { text-shadow: 1px 1px 0.1em #c9c5af; }
+#promos a { 
+    display: block;
+    min-height: 119px;
+    height: auto !important;
+    height: 119px; }
+#promos img { padding: 0; display: block; margin: 0; }
+#promos .promo-img { float: left; margin: 0 0 0 0; padding: 20px 15px 0px 20px; }
+#promos .promo-copy { float: none; width: 370px; padding: 10px 0; /*outline: 1px red solid;*/ }
+#promos .promo-copy { float: left; width: 220px; padding: 10px 0; }
