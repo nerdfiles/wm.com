@@ -303,7 +303,7 @@ object { }
 .social-networking-services-icons .tw { background-image: url(http://dummyimage.com/32x32/000/fff); }
 .social-networking-services-icons .lin { background-image: url(http://dummyimage.com/32x32/c30/fff); }
 .social-networking-services-icons { text-align: center; padding-top: 0 !important; }
-.social-networking-services-icons li { float: none !important; display: inline-block !important; width: auto !important; }
+.social-networking-services-icons li { float: none !important; display: inline-block !important; *zoom: 1; *display: inline !important; width: auto !important; }
 .social-networking-services-icons a { 
     padding: 0; 
     height: 32px;
