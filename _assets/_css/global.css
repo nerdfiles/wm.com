@@ -10,6 +10,276 @@
  
  
 /**
+ * @todo            Move up to Sections: Utilities and HTML elements
+ */
+ 
+.align-left { float: left; margin: 0 1em 1em 0; }
+.align-right { float: right; margin: 0 0 1em 1em; }
+
+sup { vertical-align: super; font-size: .9em; }
+sub { vertical-align: sub; font-size: .9em; }
+abbr { border-bottom: 1px #222 dotted; }
+
+
+/**
+ * Breadcrumb
+ *
+ * Breadcrumb
+ *
+ * @author              aalexan1
+ * @project             wm-redesign
+ * @package             wm-redesign-r2
+ * @subpackage          site-consolidation
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
+ * @valid               true
+ */
+
+#breadcrumb { margin: 15px 0 5px; }
+#breadcrumb li { display: inline; }
+#breadcrumb a { text-decoration: none; }
+#breadcrumb a:visited { }
+#breadcrumb a:hover { }
+#breadcrumb a:active { }
+
+
+/**
+ * Years List
+ *
+ * A presentation of years
+ *
+ * @author              aalexan1
+ * @project             wm-redesign
+ * @package             wm-redesign-r2
+ * @subpackage          site-consolidation
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
+ * @valid               true
+ */
+
+ul.years { margin: 10px 0 15px !important; padding: 0 !important; font-size: 1.5em !important; }
+ul.years a { text-decoration: none; }
+ul.years li { background: none !important; margin: 0 !important; padding: 0 !important; display: inline; }
+ul.years span.sep { color: #ccc; }
+
+
+/**
+ * Module window overrides
+ *
+ * Module window overrides
+ *
+ * @author              aalexan1
+ * @project             wm-redesign
+ * @package             wm-redesign-r2
+ * @subpackage          site-consolidation
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
+ * @valid               true
+ */
+
+.modal-window-container h2 { font-size: 33px; color: #555; margin: 0 10px 10px 10px; }
+.modal-window-container .modal-window-container-inner { margin: 10px; height: 75%; overflow-y: auto; }
+
+
+/**
+ * Module Link List
+ *
+ * Desc
+ *
+ * @author              bgarcia8
+ * @project             wm-redesign
+ * @package             wm-redesign-r2
+ * @subpackage          site-consolidation
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
+ * @valid               true
+ */
+
+.module-link-list dt a { color: #000; text-decoration: none; }
+.module-link-list dt a:hover { color: #00693c; text-decoration: none; }
+.module-link-list dd { padding-left: 0 !important; }
+.module-link-list dd p { margin-top: .25em !important; }
+.module-link-list a.more_links { font-weight: bold; }
+ 
+ 
+/**
+ * Module Figure Caption
+ *
+ * Desc
+ *
+ * @author              bgarcia8
+ * @project             wm-redesign
+ * @package             wm-redesign-r2
+ * @subpackage          site-consolidation
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
+ * @valid               true
+ */
+ 
+.module-figure-caption { margin-bottom: 2em; }
+.module-figure-caption p:first-of-type { margin-top: 0 !important; }
+.module-figure-caption .grid_2 img { width: 100px; }
+.module-figure-caption .grid_3 img { width: 160px; }
+.module-figure-caption .grid_4 img { width: 220px; }
+ 
+.figcaption { 
+    display: block; 
+    margin-top: .5em; 
+    line-height: 1.25em; 
+    font-size: .9em;
+    color: #777; 
+    width: 100%; 
+    text-align: left; }
+ 
+ 
+/**
+ * Sub-level headers
+ *
+ * Sub-level headers
+ *
+ * @author              bgarcia8
+ * @project             wm-redesign
+ * @package             wm-redesign-r2
+ * @subpackage          site-consolidation
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
+ * @valid               true
+ */
+ 
+.sub-level h1 { float: left; width: 75% !important; }
+.sub-level a { display: inline-block; float: right; width: 25%; margin: 1.25em 0 0 0; }
+
+
+/**
+ * Cross-browser, print sensitive FAQ
+ *
+ * A model for FAQs.
+ *
+ * @author              aalexan1
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
+ * @valid               true
+ */
+
+.faq-toggle-list { margin: 10px 0 15px !important; }
+
+.faq-toggle-list dt,
+.faq-toggle-list dd { clear: left; }
+
+.faq-toggle-list dd p { margin: 10px 0 15px !important; }
+
+.faq-toggle-list dt { 
+    font-weight: bold; 
+    cursor: pointer; 
+    color:#006A3C; 
+    text-decoration:underline; } /*kf*/
+.faq-toggle-list dd { 
+    padding: 0 !important;
+    display: none; }
+.faq-toggle-list dd div { }
+.toggle-next {
+        background: url(http://www.wm.com/_assets/images/icons/icon_faqs_plusminus.gif) 0 3px no-repeat;
+        padding: 0 0 0 14px; }
+div.faq-header .toggle-all {
+        cursor: pointer; 
+        color:#006A3C; 
+        text-decoration:underline;
+        background: url(http://www.wm.com/_assets/images/icons/icon_faqs_plusminus.gif) 0 1px no-repeat;
+        padding: 0 0 0 14px; }
+div.faq-header .toggle-all-active { background-position: 0 -90px; }
+.toggle-next-active { background-position: 0 -88px; }
+.faq-toggle-list .faq-answer-container { }
+
+div.faq-container { }
+div.faq-header { border-bottom: 1px #ccc solid; margin: 0; padding: 2px 0; text-align: right; }
+ul.faq-header-inner { margin: 0 !important; padding: 0 !important; }
+div.faq-header li { padding: 0 !important; margin: 0 !important; background: none !important; }
+#content div.faq-header h3 { float: left; margin: 0; padding: 0; }
+
+
+/**
+ * Print media
+ *
+ * For print media
+ *
+ * @author              aalexan1
+ * @project             wm-redesign
+ * @package             wm-redesign-r2
+ * @subpackage          site-consolidation
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
+ * @valid               true
+ */
+
+@media print {
+
+    .faq-header { display: none !important; }
+    .toggle-next { background: none !important; padding: 0 !important; }
+    .faq-toggle-list dd { 
+        display: block !important;
+    }
+    
+}
+
+
+/**
+ * Next section
+ *
+ * Description
+ *
+ * @author              dev
+ * @project             wm-redesign
+ * @package             wm-redesign-r2
+ * @subpackage          site-consolidation
+ * @version             0.0.1
+ * @lastmodified        03-18-2011 1:40PM
+ *
+ * @css-for             all
+ * @tested              all
+ * @valid               true
+ * NOTE: this can be removed after R1 and R2 are merged
+ */
+
+ul.delim-list-alternate li.first-child,
+    ul.delim-list-alternate li.first {
+        padding-left: 0px; 
+		background-image:none !important;
+		}
+
+
+/**
+ * Site Consolidation CSS above
+ */
+ 
+a.btn_cta_lg { display: inline-block; *zoom: 1; *display: inline; }
+a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
+object { }
+
+/**
  * Carousel
  *
  * @see             jCarousel "WM" Skin
@@ -21,7 +291,7 @@
  */
  
 #upcoming-events { 
-    background: url(/_assets/images/upcoming-events-bg.png) top left no-repeat;
+    background: url(/_assets/images/upcoming-events-sprite.png) top left no-repeat;
     height: 44px;
     color: #fff; }
     
@@ -32,6 +302,8 @@
     *zoom: 1;
     *display: inline; }
 .section-link a {
+    width: 145px;
+    background: url(/_assets/images/upcoming-events-sprite.png) 0 -44px no-repeat;
     display: inline-block;
     *zoom: 1;
     *display: inline;
@@ -42,11 +314,14 @@
     text-shadow: 0 0 0.2em #024f2d;
     font-weight: bold; }
 .section-link a:visited { }
-.section-link a:hover { text-decoration: none; }
+.section-link a:hover { 
+    margin-left: 2px;
+    background-position: 0 -44px !important;
+    text-decoration: none; }
 .section-link a:active { }
     
 .latest-event { 
-    width: 600px;
+    width: 585px;
     vertical-align: middle;
     display: inline-block;
     *zoom: 1;
@@ -64,10 +339,7 @@
  */
  
 #sections .btn_cta_lg { 
-    text-shadow: 1px 1px 1px #f3f2ec;
-    display: inline-block; 
-    *zoom: 1; 
-    *display: inline; 
+    text-shadow: 1px 1px 1px #f3f2ec; 
     padding-right: 2.5em; }
 #sections h2 { margin: 0; border-bottom: 3px #7ab700 solid; padding: 5px; }
 #sections ul { }
@@ -192,3 +464,11 @@
 #right_content .module-social-networking .tw { background-image: url(http://dummyimage.com/20x20/000/fff); }
 #right_content .module-social-networking .lin { background-image: url(http://dummyimage.com/20x20/c30/fff); }
 
+/**
+ * Module Careers Items
+ */
+ 
+.module-careers-item .figcaption { font-size: 1em; }
+.module-careers-item a { font-size: 1em; font-weight: bold; margin: 0 0 .5em 0; display: block; text-decoration: none; }
+.module-careers-item a.more { font-size: 1em; font-weight: normal; }
+#content .module-careers-item p { margin: 15px 0 5px 0; }
