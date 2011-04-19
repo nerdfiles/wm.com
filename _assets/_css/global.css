@@ -1,6 +1,20 @@
 /**
- * Carousel
+ * Careers Section CSS
+ *
+ * @note            To be merged with global.css from WM R1 Redesign project.
+ * 
+ * @author          aalexan1
+ * @project         wm-redesign
+ * @package         wm-redesign-careers
  */
+ 
+ 
+/**
+ * Carousel
+ *
+ * @see             jCarousel "WM" Skin
+ */
+ 
  
 /**
  * Careers Upcoming Events
@@ -44,6 +58,7 @@
 .latest-event a:hover { color: #fff; }
 .latest-event a:active { }
  
+ 
 /**
  * Careers Sections
  */
@@ -64,6 +79,7 @@
     float: left; }
 #sections .section-inner { }
 #sections .last-child { margin-right: 0; }
+
 
 /**
  * Careers Offers
@@ -91,6 +107,7 @@
     height: 146px; }
     
 /* Guts */
+
 #offers .offer-img { width: 125px; float: left; }
 #offers img { position: relative; top: -5px; left: 2px; }
 #offers .offer-copy { width: 108px; float: left; }
@@ -101,6 +118,7 @@
     height: 150px;
     cursor: pointer; text-decoration: none; display: block; }
 #offers a:hover .offer-link { text-decoration: underline; }
+ 
  
 /**
  * Careers Promos
@@ -156,3 +174,21 @@
 #promos .promo-img { float: left; margin: 0 0 0 0; padding: 20px 15px 0px 20px; }
 #promos .promo-copy { float: none; width: 370px; padding: 10px 0; }
 #promos .promo-copy { float: left; width: 230px; padding: 10px 0; }
+
+
+/**
+ * Social Networking Module
+ */
+ 
+#right_content .module-social-networking { background: #fff; padding: 10px 20px 20px; }
+#right_content .module-social-networking ul { }
+#right_content .module-social-networking ul li { margin: 0; padding: 0; padding: 0; background: none; }
+#right_content .module-social-networking .eoel a { font-weight: bold; }
+#right_content .module-social-networking .services a { 
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    padding: 5px 5px 5px 25px; display: block; }
+#right_content .module-social-networking .fb { background-image: url(http://dummyimage.com/20x20/ccc/fff); }
+#right_content .module-social-networking .tw { background-image: url(http://dummyimage.com/20x20/000/fff); }
+#right_content .module-social-networking .lin { background-image: url(http://dummyimage.com/20x20/c30/fff); }
+
