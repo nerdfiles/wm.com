@@ -40,14 +40,19 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
-    $(state).parent().find('li').animate({
-        opacity: 0
-    }, 300);
     
     /* fade in item */
     $(state).animate({
         opacity: 1
-    }, 300);
+    }, 300, function() {
+    
+    });
+    
+    if ( carousel.options.fade === true ) {
+        $(state).next().animate({
+            opacity: 0
+        }, 300);
+    }
     
     /* for custom timing in seconds */
     var secs = ($(state).find('div[class*="carousel-item-duration-"]').length) ? $(state).find('div[class*="carousel-item-duration-"]').attr("class") : false;
@@ -70,10 +75,16 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
-    /* fade out item */
-    $(state).animate({
-        opacity: 0
-    }, 300);
+    if ( carousel.options.animation !== 0 ) {
+        // if animation; for fade and slide
+        // need to check for fade; comment opacity for slide only
+        if ( carousel.options.fade === true ) {
+            $(state).animate({
+                opacity: 0
+            }, 300);        
+        } else {
+        }
+    }
     
     /* unset control from active */
     $("#carousel-map a").eq($(state).index()).removeClass('active');
@@ -83,7 +94,7 @@ jQuery(document).ready(function() {
     jQuery("#carousel-list").jcarousel({
         scroll: 1,
         auto: 3,
-        /*animation: 0,*/
+        //animation: 0,
         wrap: 'last',
         initCallback: initCarousel,
         buttonNextHTML: null,
@@ -93,6 +104,7 @@ jQuery(document).ready(function() {
         },
         itemFirstOutCallback: {
             onBeforeAnimation: unsetActive,
-        }
+        },
+        fade: false
     });
 });
