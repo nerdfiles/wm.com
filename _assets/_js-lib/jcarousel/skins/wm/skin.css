@@ -105,7 +105,7 @@ ul#carousel-list li { padding-left: 0; background: none; }
 #carousel-controls a.active { background-position: 0 -13px; }
  
 #carousel-prev,
-#carousel-next { width: 43px; background: url(carousel-control-sprite.png) 0 -1px no-repeat; text-indent: -9999px; text-align: left; display: inline-block; *zoom: 1; *display: inline; }
+#carousel-next { width: 43px; height: 14px; background: url(carousel-control-sprite.png) 0 -1px no-repeat; text-indent: -9999px; text-align: left; display: inline-block; *zoom: 1; *display: inline; }
 #carousel-prev { background-position: 0 -16px; }
 #carousel-next { }
 
