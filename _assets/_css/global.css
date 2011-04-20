@@ -278,6 +278,30 @@ ul.delim-list-alternate li.first-child,
 a.btn_cta_lg { display: inline-block; *zoom: 1; *display: inline; }
 a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
 object { }
+label { padding: .6em 0 0 0; display: inline-block; *zoom: 1; *display: inline; }
+input.text { padding: 5px; border: 1px #bbb solid; -moz-box-shadow: 1px 1px 3px #ccc inset; -webkit-box-shadow: 1px 1px 3px #ccc inset; box-shadow: 1px 1px 3px #ccc inset; }
+#content h3 { margin: 1em 0; }
+#content ul { margin: 1em 0; padding: 0; }
+#content h4 { margin: 1em 0; }
+#content dt { margin: 1em 0; }
+#content dd { margin: 1em 0; padding: 0; }
+.btn { 
+    background:url('http://wm.com/_assets/images/buttons/btn_cta_right.gif') right top no-repeat;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline; 
+    padding: 0; }
+input.submit { 
+    background: url('http://wm.com/_assets/images/buttons/btn_cta_left.gif') left top no-repeat; 
+    display: block; 
+    color:#fff !important; 
+    height:34px; 
+    padding: 0 30px 0 15px; 
+    border: none;
+    margin: 0; }
+
+
+
 
 /**
  * Carousel
@@ -299,17 +323,18 @@ object { }
 .social-networking-services .tw { background-image: url(http://dummyimage.com/20x20/000/fff); }
 .social-networking-services .lin { background-image: url(http://dummyimage.com/20x20/c30/fff); }
 
-.social-networking-services-icons .fb { background-image: url(http://dummyimage.com/38x38/ccc/fff); }
-.social-networking-services-icons .tw { background-image: url(http://dummyimage.com/38x38/000/fff); }
-.social-networking-services-icons .lin { background-image: url(http://dummyimage.com/38x38/c30/fff); }
+.social-networking-services-icons .fb { background: url(/_assets/images/careers-social-media-icons-sprite-medium.png) -10px -11px no-repeat; width: 40px; height: 40px; }
+.social-networking-services-icons .tw { background: url(/_assets/images/careers-social-media-icons-sprite-medium.png) -58px -11px no-repeat; width: 40px; height: 40px;  }
+.social-networking-services-icons .lin { background: url(/_assets/images/careers-social-media-icons-sprite-medium.png) -105px -11px no-repeat; width: 40px; height: 40px; }
 .social-networking-services-icons { text-align: center; padding-top: 0 !important; }
 .social-networking-services-icons li { float: none !important; display: inline-block !important; *zoom: 1; *display: inline !important; width: auto !important; }
 .social-networking-services-icons a { 
     padding: 0; 
+    opacity: .8;
     height: 38px;
     width: 38px;
     text-indent: -9999px; }
-.social-networking-services-icons a:hover { }
+.social-networking-services-icons a:hover { opacity: 1; }
 
 
 /**
@@ -491,11 +516,12 @@ object { }
     background-position: 0 0;
     background-repeat: no-repeat;
     padding: 5px 5px 5px 37px; display: block;
-    height: 32px; }
-#right_content .module-social-networking .social-networking-services a:hover { }
-#right_content .module-social-networking .fb { background-image: url(http://dummyimage.com/32x32/ccc/fff); }
-#right_content .module-social-networking .tw { background-image: url(http://dummyimage.com/32x32/000/fff); }
-#right_content .module-social-networking .lin { background-image: url(http://dummyimage.com/32x32/c30/fff); }
+    height: 32px;
+    opacity: .8; }
+#right_content .module-social-networking .social-networking-services a:hover { opacity: 1; }
+#right_content .module-social-networking .fb { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -10px no-repeat !important; height: 26px !important; }
+#right_content .module-social-networking .tw { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -48px no-repeat !important; height: 26px !important; }
+#right_content .module-social-networking .lin { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -85px no-repeat !important; height: 26px !important; }
 
 
 /**
