@@ -40,6 +40,10 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
+    $(state).parent().find('li').animate({
+        opacity: 0
+    }, 300);
+    
     /* fade in item */
     $(state).animate({
         opacity: 1
