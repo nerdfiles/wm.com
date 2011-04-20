@@ -52,7 +52,7 @@ function setActive(carousel, state) {
     if ( secs !== false ) {
         carousel.stopAuto();
         
-        secs = (parseInt(t)*1000);
+        secs = (parseInt(secs)*1000);
         
         window.setTimeout(function() {
             carousel.next();
