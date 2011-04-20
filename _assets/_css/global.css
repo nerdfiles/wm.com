@@ -322,7 +322,7 @@ a.btn_cta_lg span {
     padding-right: 5px;
     padding-left: 25px;
     font-size: 12px;
-    text-shadow: 0 -1px 0.1em #fff; }
+    text-shadow: 0 1px 0 #fff; }
 
 a.btn_cta { 
     line-height: 1.5;
@@ -330,7 +330,7 @@ a.btn_cta {
 a.btn_cta span {
     display: block; 
     cursor: pointer; 
-    text-shadow: 0 -1px 0.1em #044428 !important;
+    text-shadow: 0 -1px 0 #044428 !important;
     font-weight: normal;
     padding-top: 8px;
     padding-right: 35px;
@@ -349,7 +349,7 @@ a.btn_cta span {
     background: url('http://www.wm.com/_assets/images/buttons/btn_cta_left.gif') left top no-repeat; 
     display: block; 
     cursor: pointer; 
-    text-shadow: 0 -1px 0.1em #044428 !important;
+    text-shadow: 0 -1px 0 #044428 !important;
     font-weight: normal;
     color:#fff !important; 
     height:34px; 
