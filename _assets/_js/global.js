@@ -1,4 +1,33 @@
+(function($){
+    $.fn.extend({
+        '_data': $.fn.data,
+        'data' : function( key, value ) {
+            if ( typeof key === "undefined" && this.length ) {
+                return jQuery.data( this[0] );
+            } else if ( typeof key === "object" ) {
+                return this.each(function() {
+                    jQuery.data( this, key );
+                });
+            }
+            var retValue;
+            retValue = $.fn._data(key, value);
+            if ('undefined' == (typeof retValue) || retValue.length == 0) {
+                var nakedElem = this.get(0);
+                if (nakedElem.hasOwnProperty('dataset')) {
+                    if ('undefined' != (typeof nakedElem.dataset[key])) {
+                        retValue = nakedElem.dataset[key];
+                    }
+                } else {
+                    retValue = this.attr('data-'+key);
+                }
+            }
+            return retValue;
+        }
+    });
+})(jQuery);
+
 function initCarousel(carousel) {
+
     jQuery('#carousel-map a').bind('mouseover', function() {
         $(this).addClass('hover');
     });
@@ -23,6 +52,7 @@ function initCarousel(carousel) {
     });
     
     // disable if next or prev
+    
     carousel.buttonNext.bind('click', function() {
         carousel.startAuto(0);
     });
@@ -31,17 +61,20 @@ function initCarousel(carousel) {
         carousel.startAuto(0);
     });
     
-    // pause
+    // pause on hover
+    
     carousel.clip.hover(function() {
         carousel.stopAuto();
     }, function() {
         carousel.startAuto();
     });
+    
 }
 
 function setActive(carousel, state) {
     
     /* fade in item */
+    
     $(state).animate({
         opacity: 1
     }, 300, function() {
@@ -54,11 +87,21 @@ function setActive(carousel, state) {
         }, 300);
     }
     
-    /* for custom timing in seconds */
-    var secs = ($(state).find('div[class*="carousel-item-duration-"]').length) ? $(state).find('div[class*="carousel-item-duration-"]').attr("class") : false;
-    secs = (secs !== false) ? secs.match(/carousel\-item\-duration\-([0-9]+)/)[1] : false;
+    /**
+     * for custom timing in seconds 
+     *
+     * @class is overridden by @data-duration; 
+     * uses carousel object's "auto" if neither one is set
+     */
+     
+    var secs = ($(state).find('> div[class*="carousel-item-duration"]').length) ?
+        parseInt($(state).find('> div').attr('class').match(/carousel\-item\-duration\-([0-9]+)/)[1]) : false;
     
-    if ( secs !== false ) {
+    if ($(state).find("> div").data("duration")) {
+        secs = parseInt($(state).find("> div").data("duration"));
+    }
+    
+    if ( typeof( secs ) === "number" ) {
         carousel.stopAuto();
         
         secs = (parseInt(secs)*1000);
@@ -67,14 +110,16 @@ function setActive(carousel, state) {
             carousel.startAuto();
             carousel.next();
         }, secs );
-    
     }
     
     /* set control to active */
+    
     $("#carousel-map a").eq($(state).index()).addClass('active');
+    
 }
 
 function unsetActive(carousel, state) {
+
     if ( carousel.options.animation !== 0 ) {
         // if animation; for fade and slide
         // need to check for fade; comment opacity for slide only
@@ -87,10 +132,13 @@ function unsetActive(carousel, state) {
     }
     
     /* unset control from active */
+    
     $("#carousel-map a").eq($(state).index()).removeClass('active');
+    
 }
 
 jQuery(document).ready(function() {
+
     jQuery("#carousel-list").jcarousel({
         scroll: 1,
         auto: 3,
@@ -107,4 +155,5 @@ jQuery(document).ready(function() {
         },
         fade: false
     });
+    
 });
