@@ -381,6 +381,7 @@ input.submit {
 .section-link {
     width: 145px;
     height: 44px;
+    line-height: 1.4;
     display: inline-block;
     *zoom: 1;
     *display: inline; }
