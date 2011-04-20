@@ -1,4 +1,12 @@
-function carousel_initCallback(carousel) {
+function initCarousel(carousel) {
+    jQuery('#carousel-map a').bind('mouseover', function() {
+        $(this).addClass('hover');
+    });
+    
+    jQuery('#carousel-map a').bind('mouseout', function() {
+        $(this).removeClass('hover');
+    });
+    
     jQuery('#carousel-map a').bind('click', function() {
         carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
         return false;
@@ -29,15 +37,37 @@ function carousel_initCallback(carousel) {
     }, function() {
         carousel.startAuto();
     });
-};
+}
+
+function setActive(carousel, state) {
+    $(state).animate({
+        opacity: 1
+    }, 300);
+    
+    $("#carousel-map a").eq($(state).index()).addClass('active');
+}
+
+function unsetActive(carousel, state) {
+    $(state).animate({
+        opacity: 0
+    }, 300);
+    
+    $("#carousel-map a").eq($(state).index()).removeClass('active');
+}
 
 jQuery(document).ready(function() {
     jQuery("#carousel-list").jcarousel({
         scroll: 1,
         auto: 3,
         wrap: 'last',
-        initCallback: carousel_initCallback,
+        initCallback: initCarousel,
         buttonNextHTML: null,
-        buttonPrevHTML: null
+        buttonPrevHTML: null,
+        itemFirstInCallback: {
+            onBeforeAnimation: setActive
+        },
+        itemFirstOutCallback: {
+            onBeforeAnimation: unsetActive,
+        }
     });
 });
