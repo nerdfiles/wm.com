@@ -101,21 +101,33 @@ ul#carousel-list li { padding-left: 0; background: none; }
 #carousel-controls {  position: absolute; bottom: 20px; right: 20px; }
 #carousel-controls a { opacity: .6; cursor: pointer; }
 #carousel-controls a:hover { opacity: 1; }
-#carousel-controls a.hover { background-position: 0 -13px; }
-#carousel-controls a.active { background-position: 0 -13px; }
  
 #carousel-prev,
 #carousel-next { width: 43px; height: 14px; background: url(carousel-control-sprite.png) 0 -1px no-repeat; text-indent: -9999px; text-align: left; display: inline-block; *zoom: 1; *display: inline; }
 #carousel-prev { background-position: 0 -16px; }
 #carousel-next { }
 
-#carousel-map { margin: 0 0.3em; display: inline-block; *zoom: 1; *display: inline; }
-#carousel-map a { position: relative; top: 0.1em; background: url(carousel-bullet-sprite.png) 0 0 no-repeat; width: 15px; height: 13px; display: inline-block; *zoom: 1; *display: inline; text-indent: -9999px; text-align: left; }
+#carousel-map { 
+    margin: 0 0.3em; 
+    display: inline-block; 
+    *zoom: 1; 
+    *display: inline; }
+#carousel-map a { 
+    position: relative; 
+    top: 0.1em; 
+    background: url(carousel-bullet-sprite.png) 0 0 no-repeat; 
+    width: 15px; 
+    height: 13px; 
+    display: inline-block;
+    *zoom: 1; 
+    *display: inline; 
+    text-indent: -9999px; 
+    text-align: left; }
 #carousel-map a:visited { }
 #carousel-map a:hover { }
 #carousel-map a:active { }
-#carousel-prev { }
-#carousel-next { }
+#carousel-nap a.hover { background-position: 0 -13px; }
+#carousel-map a.active { background-position: 0 -13px; }
 
 /**
  * Horizontal Buttons
