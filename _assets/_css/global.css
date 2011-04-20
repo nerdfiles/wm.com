@@ -133,7 +133,7 @@ ul.years span.sep { color: #ccc; }
  
 .module-figure-caption { margin: 1em 0; }
 .module-figure-caption p:first-of-type { margin-top: 0 !important; }
-.module-figure-caption img { display: block; margin: 0 auto; }
+.module-figure-caption img { display: block; margin: 0; }
 .module-figure-caption .grid_1 img { width: auto; }
 .module-figure-caption .grid_2 img { width: auto; }
 .module-figure-caption .grid_3 img { width: auto; }
