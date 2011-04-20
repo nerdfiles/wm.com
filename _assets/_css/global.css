@@ -508,7 +508,7 @@ a.btn_cta span {
 
 #offers .offer-img { width: 125px; float: left; }
 #offers img { position: relative; top: -5px; left: 2px; }
-#offers .offer-copy { width: 108px; float: left; font-size: 11px; }
+#offers .offer-copy { width: 108px; float: left; margin-left: -5px; }
 #offers .offer-link { text-shadow: none; position: absolute; bottom: 1em; color: #fff; font-weight: bold; }
 #offers a { 
     min-height: 150px;
