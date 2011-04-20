@@ -54,11 +54,11 @@ function initCarousel(carousel) {
     // disable if next or prev
     
     carousel.buttonNext.bind('click', function() {
-        carousel.startAuto(0);
+        carousel.startAuto();
     });
  
     carousel.buttonPrev.bind('click', function() {
-        carousel.startAuto(0);
+        carousel.startAuto();
     });
     
     // pause on hover
@@ -101,15 +101,21 @@ function setActive(carousel, state) {
         secs = parseInt($(state).find("> div").data("duration"));
     }
     
+    console.log( secs );    
+    
     if ( typeof( secs ) === "number" ) {
-        carousel.stopAuto();
-        
-        secs = (parseInt(secs)*1000);
-        
-        window.setTimeout(function() {
-            carousel.startAuto();
-            carousel.next();
-        }, secs );
+        if (secs === 0) {
+            carousel.stopAuto();
+        } else {
+            carousel.stopAuto();
+            
+            secs = (parseInt(secs)*1000);
+            
+            window.setTimeout(function() {
+                carousel.startAuto();
+                carousel.next();
+            }, secs );
+        }
     }
     
     /* set control to active */
