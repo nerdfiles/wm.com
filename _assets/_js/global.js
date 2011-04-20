@@ -40,29 +40,37 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
+    /* fade in item */
     $(state).animate({
         opacity: 1
     }, 300);
     
-    var s = ($(state).find('div[class*="carousel-item-duration-"]').length) ? $(state).find('div[class*="carousel-item-duration-"]').attr("class") : "";
-    s = (s !== "") ? s.match(/carousel\-item\-duration\-([0-9]+)/)[1] : false;
+    /* for custom timing in seconds */
+    var secs = ($(state).find('div[class*="carousel-item-duration-"]').length) ? $(state).find('div[class*="carousel-item-duration-"]').attr("class") : false;
+    secs = (secs !== false) ? secs.match(/carousel\-item\-duration\-([0-9]+)/)[1] : false;
     
-    if ( s !== false ) {
+    if ( secs !== false ) {
         carousel.stopAuto();
+        
+        secs = (parseInt(t)*1000);
+        
+        window.setTimeout(function() {
+            carousel.next();
+        }, secs );
+    
     }
     
-    window.setTimeout(function() {
-        carousel.startAuto();
-    }, parseInt(s)*1000 );
-    
+    /* set control to active */
     $("#carousel-map a").eq($(state).index()).addClass('active');
 }
 
 function unsetActive(carousel, state) {
+    /* fade out item */
     $(state).animate({
         opacity: 0
     }, 300);
     
+    /* unset control from active */
     $("#carousel-map a").eq($(state).index()).removeClass('active');
 }
 
