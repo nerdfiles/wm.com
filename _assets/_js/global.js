@@ -65,6 +65,7 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
+    
     /* fade out item */
     $(state).animate({
         opacity: 0
@@ -78,6 +79,7 @@ jQuery(document).ready(function() {
     jQuery("#carousel-list").jcarousel({
         scroll: 1,
         auto: 3,
+        /*animation: 0,*/
         wrap: 'last',
         initCallback: initCarousel,
         buttonNextHTML: null,
