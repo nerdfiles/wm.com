@@ -288,8 +288,6 @@ textarea { line-height: 1.25em; }
 .inline { display: inline !important; }
 .inline-block { display: inline-block !important; *zoom: 1 !important; *display: inline !important; }
 
-a.btn_cta_lg { display: inline-block; *zoom: 1; *display: inline; }
-a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
 #carousel a { opacity: .8; }
 #carousel a.btn_cta:hover { opacity: 1; }
 #content label { padding: .6em 0 0 0; display: inline-block; *zoom: 1; *display: inline; }
@@ -299,6 +297,42 @@ a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
 #content h4 { margin: .7em 0; }
 #content dt { margin: .7em 0; }
 #content dd { margin: .7em 0; padding: 0; }
+
+/**
+ * Buttons: The Season Finale
+ */
+ 
+#main_content .btn { }
+#main_content .btn input.submit { }
+#main_content .btn input.button { }
+#main_content .btn_cta_lg { display: inline-block; *zoom: 1; *display: inline; }
+#main_content .btn_cta { }
+#right_rail .btn { }
+#right_rail .btn input.submit { }
+#right_rail .btn input.button { }
+#right_rail .btn_cta_lg { }
+#right_rail .btn_cta { }
+
+/* block? we usually use these in the right rail, but what about elsewhere? */
+a.btn_cta_lg { /*display: inline-block; *zoom: 1; *display: inline;*/ }
+a.btn_cta_lg span {
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-left: 25px;
+    font-size: 12px; }
+
+a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
+a.btn_cta span {
+    display: block; 
+    cursor: pointer; 
+    text-shadow: 1px 1px 2px #044428 !important;
+    font-weight: bold;
+    padding-top: 8px;
+    padding-right: 35px;
+    padding-left: 25px; 
+    color:#fff !important;
+    font-size: 12px; }
+
 .btn { 
     background:url('http://www.wm.com/_assets/images/buttons/btn_cta_right.gif') right top no-repeat;
     display: inline-block;
@@ -316,7 +350,8 @@ a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
     height:34px; 
     padding: 0 35px 0 25px; 
     border: none;
-    margin: 0; }
+    margin: 0; 
+    font-size: 12px; }
     
 #right_content h4 { margin: .5em 0; }
 #right_content ul { margin: .5em 0; }
