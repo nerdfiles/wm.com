@@ -324,7 +324,7 @@ a.btn_cta_lg span {
     font-size: 12px; }
 
 a.btn_cta { 
-    line-height: 1.25em;
+    line-height: 1.5;
     display: inline-block; *zoom: 1; *display: inline; }
 a.btn_cta span {
     display: block; 
