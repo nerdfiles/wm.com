@@ -282,7 +282,7 @@ input,
 textarea { line-height: 1.6; }
 #right_content,
 input,
-textarea { line-height: 1.2; }
+textarea { line-height: 1.25em; }
 
 a.btn_cta_lg { display: inline-block; *zoom: 1; *display: inline; }
 a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
@@ -360,6 +360,24 @@ input.submit {
     height: 44px;
     color: #fff; }
     
+.latest-event { 
+    text-align: left;
+    line-height: 2;
+    position: relative;
+    top: -0.05em;
+    width: 595px;
+    vertical-align: middle;
+    *vertical-align: super;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline; }
+.latest-event a { 
+    padding: 0 0 0 1em;
+    font-weight: bold; }
+.latest-event a:visited { }
+.latest-event a:hover { color: #fff; }
+.latest-event a:active { }
+
 .section-link {
     width: 145px;
     height: 44px;
@@ -384,30 +402,13 @@ input.submit {
     background-position: 0 -44px !important;*/
     text-decoration: none; }
 .section-link a:active { }
-    
-.latest-event { 
-    text-align: left;
-    line-height: 2;
-    position: relative;
-    top: -0.05em;
-    width: 595px;
-    vertical-align: middle;
-    *vertical-align: super;
-    display: inline-block;
-    *zoom: 1;
-    *display: inline; }
-.latest-event a { 
-    padding: 0 0 0 1em;
-    font-weight: bold; }
-.latest-event a:visited { }
-.latest-event a:hover { color: #fff; }
-.latest-event a:active { }
  
  
 /**
  * Careers Sections
  */
- 
+
+#sections { line-height: 1.25em; } 
 #sections .btn_cta_lg { 
     text-shadow: 1px 1px 1px #f3f2ec; 
     padding-right: 2.5em; }
@@ -427,7 +428,8 @@ input.submit {
  * Careers Offers
  */
  
-#offers { 
+#offers {
+    line-height: 1.25em; 
     padding: 0 0 2em 0;
     margin: 0 0 1em 0;
     text-shadow: 1px 1px 1px #f3f2ec; 
@@ -469,7 +471,7 @@ input.submit {
  *                  after a nearly subversive social investigation.
  */
  
-#promos { }
+#promos { line-height: 1.25em; }
 #promos a { opacity: .8; text-decoration: none; display: block; }
 #promos a:hover { opacity: 1; }
 #promos h2 { margin: 7px 0 5px; color: #00693c; }
