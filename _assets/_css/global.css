@@ -389,14 +389,19 @@ a.btn_cta span {
 .social-networking-services-icons .tw { background: url(/_assets/images/careers-social-media-icons-sprite-medium.png) -58px -11px no-repeat; width: 40px; height: 40px;  }
 .social-networking-services-icons .lin { background: url(/_assets/images/careers-social-media-icons-sprite-medium.png) -105px -11px no-repeat; width: 40px; height: 40px; }
 .social-networking-services-icons { text-align: center; padding-top: 0 !important; }
-.social-networking-services-icons li { float: none !important; display: inline-block !important; *zoom: 1; *display: inline !important; width: auto !important; }
+.social-networking-services-icons li { 
+    float: none !important; 
+    display: inline-block !important; 
+    *zoom: 1 !important; 
+    *display: inline !important; 
+    width: auto !important; }
 .social-networking-services-icons a { 
     padding: 0; 
-    opacity: .8;
+    opacity: 1;
     height: 38px;
     width: 38px;
     text-indent: -9999px; }
-.social-networking-services-icons a:hover { opacity: 1; }
+.social-networking-services-icons a:hover { opacity: 0.8; }
 
 
 /**
@@ -593,8 +598,8 @@ a.btn_cta span {
     background-repeat: no-repeat;
     padding: 5px 5px 5px 37px; display: block;
     height: 32px;
-    opacity: .8; }
-#right_content .module-social-networking .social-networking-services a:hover { opacity: 1; }
+    opacity: 1; }
+#right_content .module-social-networking .social-networking-services a:hover { opacity: 0.8; }
 #right_content .module-social-networking .fb { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -10px no-repeat !important; height: 26px !important; }
 #right_content .module-social-networking .tw { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -48px no-repeat !important; height: 26px !important; }
 #right_content .module-social-networking .lin { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -85px no-repeat !important; height: 26px !important; }
