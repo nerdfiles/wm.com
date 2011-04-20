@@ -44,6 +44,17 @@ function setActive(carousel, state) {
         opacity: 1
     }, 300);
     
+    var s = ($(state).find('div[class*="carousel-item-duration-"]').length) ? $(state).find('div[class*="carousel-item-duration-"]').attr("class") : "";
+    s = (s !== "") ? s.match(/carousel\-item\-duration\-([0-9]+)/)[1] : false;
+    
+    if ( s !== false ) {
+        carousel.stopAuto();
+    }
+    
+    window.setTimeout(function() {
+        carousel.startAuto();
+    }, parseInt(s)*1000 );
+    
     $("#carousel-map a").eq($(state).index()).addClass('active');
 }
 
