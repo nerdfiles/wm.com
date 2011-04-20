@@ -284,13 +284,16 @@ textarea { line-height: 1.6; }
 input,
 textarea { line-height: 1.25em; }
 
+.block { display: block !important; }
+.inline { display: inline !important; }
+.inline-block { display: inline-block !important; *zoom: 1 !important; *display: inline !important; }
+
 a.btn_cta_lg { display: inline-block; *zoom: 1; *display: inline; }
 a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
 #carousel a { opacity: .8; }
 #carousel a.btn_cta:hover { opacity: 1; }
-object { }
-label { padding: .6em 0 0 0; display: inline-block; *zoom: 1; *display: inline; }
-input.text { padding: 5px; border: 1px #bbb solid; -moz-box-shadow: 1px 1px 3px #ccc inset; -webkit-box-shadow: 1px 1px 3px #ccc inset; box-shadow: 1px 1px 3px #ccc inset; }
+#content label { padding: .6em 0 0 0; display: inline-block; *zoom: 1; *display: inline; }
+#content input.text { padding: 5px; border: 1px #bbb solid; -moz-box-shadow: 1px 1px 3px #ccc inset; -webkit-box-shadow: 1px 1px 3px #ccc inset; box-shadow: 1px 1px 3px #ccc inset; }
 #content h3 { margin: .7em 0; }
 #content ul { margin: .7em 0; padding: 0; }
 #content h4 { margin: .7em 0; }
@@ -301,13 +304,17 @@ input.text { padding: 5px; border: 1px #bbb solid; -moz-box-shadow: 1px 1px 3px 
     display: inline-block;
     *zoom: 1;
     *display: inline; 
-    padding: 0; }
-input.submit { 
+    padding: 0; 
+    cursor: pointer; }
+.btn input.submit { 
     background: url('http://www.wm.com/_assets/images/buttons/btn_cta_left.gif') left top no-repeat; 
     display: block; 
+    cursor: pointer; 
+    text-shadow: 1px 1px 2px #044428 !important;
+    font-weight: bold;
     color:#fff !important; 
     height:34px; 
-    padding: 0 30px 0 15px; 
+    padding: 0 35px 0 25px; 
     border: none;
     margin: 0; }
     
@@ -381,7 +388,7 @@ input.submit {
 .section-link {
     width: 145px;
     height: 44px;
-    line-height: 1.4;
+    line-height: 1.35;
     display: inline-block;
     *zoom: 1;
     *display: inline; }
