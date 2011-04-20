@@ -91,7 +91,8 @@ ul#carousel-list li { padding-left: 0; background: none; }
 #carousel p { font-size: 20px; color: #7ab700; }
 #carousel .carousel-item { }
 #carousel .carousel-item-img { margin-right: 1em; float: left; }
-#carousel .carousel-item-copy { float: left; width: 300px; }
+#carousel .carousel-item-copy { padding: 0 20px; margin: 0; }
+#carousel h2 { margin-top: 0; }
 
 /**
  * WM Horizontal Buttons

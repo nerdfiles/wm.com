@@ -286,6 +286,8 @@ textarea { line-height: 1.2; }
 
 a.btn_cta_lg { display: inline-block; *zoom: 1; *display: inline; }
 a.btn_cta { display: inline-block; *zoom: 1; *display: inline; }
+#carousel a { opacity: .8; }
+#carousel a.btn_cta:hover { opacity: 1; }
 object { }
 label { padding: .6em 0 0 0; display: inline-block; *zoom: 1; *display: inline; }
 input.text { padding: 5px; border: 1px #bbb solid; -moz-box-shadow: 1px 1px 3px #ccc inset; -webkit-box-shadow: 1px 1px 3px #ccc inset; box-shadow: 1px 1px 3px #ccc inset; }

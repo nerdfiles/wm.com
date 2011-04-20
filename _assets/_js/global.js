@@ -55,6 +55,7 @@ function setActive(carousel, state) {
         secs = (parseInt(secs)*1000);
         
         window.setTimeout(function() {
+            carousel.startAuto();
             carousel.next();
         }, secs );
     
@@ -65,7 +66,6 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
-    
     /* fade out item */
     $(state).animate({
         opacity: 0
