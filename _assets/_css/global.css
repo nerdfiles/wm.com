@@ -315,7 +315,7 @@ textarea { line-height: 1.25em; }
 
 /* block? we usually use these in the right rail, but what about elsewhere? */
 a.btn_cta_lg { 
-    line-height: 1.25em;
+    line-height: 1.25;
     /*display: inline-block; *zoom: 1; *display: inline;*/ }
 a.btn_cta_lg span {
     padding-top: 10px;
@@ -338,7 +338,6 @@ a.btn_cta span {
     font-size: 12px; }
 
 .btn { 
-    line-height: 1.25em;
     background:url('http://www.wm.com/_assets/images/buttons/btn_cta_right.gif') right top no-repeat;
     display: inline-block;
     *zoom: 1;
