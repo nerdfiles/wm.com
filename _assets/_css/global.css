@@ -549,14 +549,14 @@ a.btn_cta span {
 #promos ul li.promo { 
     float: left;
     width: 372px;
-    background: #e6e5d9;
+    background: #e0ded0;
     margin: 0 15px 0 0;
     padding: 0;
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     border-radius: 0.4em;
 }
-#promos ul li.promo:hover { background: #f3f2ec !important; }
+#promos ul li.promo:hover { background: #e6e5d9 !important; }
 #promos .promo-inner {
     min-height: 119px;
     height: auto !important;
