@@ -142,24 +142,24 @@ function unsetActive(carousel, state) {
     $("#carousel-map a").eq($(state).index()).removeClass('active');
     
 }
-
+  
 jQuery(document).ready(function() {
 
-    jQuery("#carousel-list").jcarousel({
-        scroll: 1,
-        auto: 3,
-        //animation: 0,
-        wrap: 'last',
-        initCallback: initCarousel,
-        buttonNextHTML: null,
-        buttonPrevHTML: null,
-        itemFirstInCallback: {
-            onBeforeAnimation: setActive
-        },
-        itemFirstOutCallback: {
-            onBeforeAnimation: unsetActive,
-        },
-        fade: false
-    });
-    
+        jQuery("#carousel-list").jcarousel({
+            scroll: 1,
+            auto: 3,
+            //animation: 0,
+            wrap: 'last',
+            initCallback: initCarousel,
+            buttonNextHTML: null,
+            buttonPrevHTML: null,
+            itemFirstInCallback: {
+                onBeforeAnimation: setActive
+            },
+            itemFirstOutCallback: {
+                onBeforeAnimation: unsetActive,
+            },
+            fade: false
+        });
+  
 });
