@@ -449,12 +449,14 @@ a.btn_cta span {
     text-decoration: none;
     font-size: 13px;
     text-shadow: 0 0 0.2em #024f2d;
-    font-weight: bold; }
+    font-weight: bold;
+    opacity: .9; }
 .section-link a:visited { }
 .section-link a:hover { 
     /*margin-left: 2px;
     background-position: 0 -44px !important;*/
-    text-decoration: none; }
+    text-decoration: none;
+    opacity: 1; }
 .section-link a:active { }
  
  
@@ -616,15 +618,20 @@ a.btn_cta span {
 #content .module-careers-item p { margin: 15px 0 5px 0; }
 
 
+#right_content { }
+#right_content .module { margin: 0 0 15px 0; }
+
 /**
  * Call-to-action Module
  */
  
-.module-cta { padding: 15px 15px 0 15px; border-bottom: 15px #fff solid; }
+.module-cta { background: #E0DED0; border-radius: 5px; padding: 15px 15px 1px; border-bottom: 0px #fff solid; }
 .module-cta .img { float: left; margin: 0 15px 0 0; }
 .module-cta .copy { font-size: 11px; }
 .module-cta a { text-decoration: none; display: block; }
 .module-cta strong { color: #000; font-size: 13px; }
 .module-cta span { display: block; padding: 10px 0 0 0; font-weight: bold; color: #063; }
 
+#right_content { background: #fff; }
 
+.related_links { border-radius: 5px; background: #E0DED0; }
