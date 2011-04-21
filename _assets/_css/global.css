@@ -564,12 +564,13 @@ a.btn_cta span {
     height: 119px;
 }
 #promos .last-child { margin-right: 0 !important; }
-#promos { text-shadow: 0 1px 0 #fff; }
+#promos { /*text-shadow: 0 1px 0 #fff;*/ }
 #promos a { 
     display: block;
     min-height: 119px;
     height: auto !important;
     height: 119px; }
+#promos p { margin: .6em 0 .6em 0; }
 #promos img { padding: 0; display: block; margin: 0; width: 100px; height: 75px; }
 #promos .promo-img { float: left; margin: 0 0 0 0; padding: 20px 15px 0px 20px; }
 #promos .promo-copy { float: none; width: 370px; padding: 10px 0; }
@@ -577,7 +578,7 @@ a.btn_cta span {
 
 
 /**
- * EOEL
+ * EOEL osaejfklasehfkjljsdrgjlrkdsjkgosidhjioehksjoihiojhiohu
  */
  
 #right_content .module-eoel { background: #fff; padding: 10px 20px 20px; }
