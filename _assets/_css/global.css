@@ -591,17 +591,24 @@ a.btn_cta span {
  * Social Networking Module
  */
  
-#right_content .module-social-networking { background: #fff; padding: 10px 20px 20px; }
+#right_content div.module-social-networking { margin-bottom: 0; background: #fff; padding: 10px 20px 20px; text-align: center; }
 #right_content .module-social-networking ul { }
-#right_content .module-social-networking ul li { margin: 0; padding: 0; padding: 0; background: none; }
+#right_content .module-social-networking ul li { margin: 0; padding: 0; padding: 0; background: none; text-align: left; }
 #right_content .module-social-networking .social-networking-services { margin-bottom: 0; }
 #right_content .module-social-networking .social-networking-services a { 
     background-position: 0 0;
     background-repeat: no-repeat;
     padding: 5px 5px 5px 37px; display: block;
-    height: 32px;
-    opacity: 1; }
-#right_content .module-social-networking .social-networking-services a:hover { opacity: 0.8; }
+    height: 32px; }
+#right_content .module-social-networking .social-networking-services a:hover { }
+#right_content .module-social-networking .social-networking-services-small { display: inline-block; *zoom: 1; *display: inline; }
+#right_content .module-social-networking .social-networking-services-small a { padding-left: 0; display: inline-block; *zoom: 1; *display: inline; }
+#right_content .module-social-networking .fb,
+#right_content .module-social-networking .tw,
+#right_content .module-social-networking .lin { opacity: 1; text-align: left; text-indent: -9999px; width: 34px; }
+#right_content .module-social-networking .fb:hover,
+#right_content .module-social-networking .tw:hover,
+#right_content .module-social-networking .lin:hover { opacity: 0.8; }
 #right_content .module-social-networking .fb { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -10px no-repeat !important; height: 26px !important; }
 #right_content .module-social-networking .tw { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -48px no-repeat !important; height: 26px !important; }
 #right_content .module-social-networking .lin { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -85px no-repeat !important; height: 26px !important; }
