@@ -527,7 +527,7 @@ a.btn_cta span {
  *                  after a nearly subversive social investigation.
  */
  
-#promos { line-height: 1.25em; }
+#promos { margin: 1.5em 0 0 0; line-height: 1.25em; }
 #promos a { opacity: .8; text-decoration: none; display: block; }
 #promos a:hover { opacity: 1; }
 #promos h2 { margin: 7px 0 5px; color: #00693c; }
