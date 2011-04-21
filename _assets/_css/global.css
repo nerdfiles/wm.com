@@ -526,8 +526,8 @@ a.btn_cta span {
  */
  
 #promos { margin: 1.5em 0 0 0; line-height: 1.25em; }
-#promos a { opacity: .8; text-decoration: none; display: block; }
-#promos a:hover { opacity: 1; }
+#promos a { text-decoration: none; display: block; }
+#promos a:hover { }
 #promos h2 { margin: 7px 0 5px; color: #00693c; }
 #promos ul { }
 /*
@@ -556,6 +556,7 @@ a.btn_cta span {
     -moz-border-radius: 0.4em;
     border-radius: 0.4em;
 }
+#promos ul li.promo:hover { background: #f3f2ec !important; }
 #promos .promo-inner {
     min-height: 119px;
     height: auto !important;
