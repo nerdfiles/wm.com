@@ -598,8 +598,8 @@ a.btn_cta span {
 #right_content .module-social-networking .social-networking-services a { 
     background-position: 0 0;
     background-repeat: no-repeat;
-    padding: 5px 5px 5px 37px; display: block;
-    height: 32px; }
+    padding: 10px 5px 5px 37px; display: block;
+    height: 22px; }
 #right_content .module-social-networking .social-networking-services a:hover { }
 #right_content .module-social-networking .social-networking-services-small { display: inline-block; *zoom: 1; *display: inline; }
 #right_content .module-social-networking .social-networking-services-small a { padding-left: 0; display: inline-block; *zoom: 1; *display: inline; }
@@ -609,9 +609,9 @@ a.btn_cta span {
 #right_content .module-social-networking li:hover .fb,
 #right_content .module-social-networking li:hover .tw,
 #right_content .module-social-networking li:hover .lin { opacity: 0.8; }
-#right_content .module-social-networking .fb { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -10px no-repeat !important; height: 26px !important; }
-#right_content .module-social-networking .tw { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -48px no-repeat !important; height: 26px !important; }
-#right_content .module-social-networking .lin { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -85px no-repeat !important; height: 26px !important; }
+#right_content .module-social-networking .fb { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -10px no-repeat !important; height: 20px !important; }
+#right_content .module-social-networking .tw { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -48px no-repeat !important; height: 20px !important; }
+#right_content .module-social-networking .lin { background: url(/_assets/images/careers-social-media-icons-sprite-small.png) -10px -85px no-repeat !important; height: 20px !important; }
 
 
 /**
