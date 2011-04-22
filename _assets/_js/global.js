@@ -148,7 +148,7 @@ jQuery(document).ready(function() {
         jQuery("#carousel-list").jcarousel({
             scroll: 1,
             auto: 3,
-            //animation: 0,
+            animation: 0,
             wrap: 'last',
             initCallback: initCarousel,
             buttonNextHTML: null,
