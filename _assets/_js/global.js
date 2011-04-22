@@ -159,7 +159,7 @@ jQuery(document).ready(function() {
             itemFirstOutCallback: {
                 onBeforeAnimation: unsetActive,
             },
-            fade: false
+            fade: true
         });
   
 });
