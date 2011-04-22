@@ -591,7 +591,7 @@ a.btn_cta span {
  * Social Networking Module
  */
  
-#right_content div.module-social-networking { margin-bottom: 0; background: #fff; padding: 10px 20px 20px; text-align: center; }
+#right_content div.module-social-networking { margin-bottom: 0; background: #fff; padding: 10px 20px 20px; text-align: left; }
 #right_content .module-social-networking ul { }
 #right_content .module-social-networking ul li { margin: 0; padding: 0; padding: 0; background: none; text-align: left; }
 #right_content .module-social-networking .social-networking-services { margin-bottom: 0; }
