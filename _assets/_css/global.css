@@ -642,3 +642,16 @@ a.btn_cta span {
 #right_content { background: #fff; }
 
 .related_links { border-radius: 5px; background: #E0DED0; }
+
+/* Header - green border-bottom */
+
+div.header { margin-bottom: 10px; border-bottom: 3px #7ab800 solid; }
+div.header h2 { font-size: 1.5em; margin: 0 0 5px 0 !important; float:left; }
+div.header h3 {float:left; }
+div.header .meta-controls { padding-top:7px; font-size:11px; }
+
+/* Sub-Header - this-gray border-bottom */
+
+div.header.sub{ border-bottom: 1px #CCC solid; }
+div.header.sub h3{ /*color:#00693C;*/ }
+div.header.sub .meta-controls{ padding-top: 0px;}
