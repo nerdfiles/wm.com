@@ -684,6 +684,8 @@ div.header.sub .meta-controls{ padding-top: 0px;}
 
 table { margin: 1em 0; }
 table.style-1 { border: 1px #ccc solid; }
+table.style-1 th { text-align: left; }
+table.style-1 td { }
 table.style-1 td,
 table.style-1 th { padding: 5px; border: 1px #ccc solid; }
 table.style-cart-delivery-schedule { }
