@@ -676,8 +676,8 @@ div.header.sub .meta-controls{ padding-top: 0px;}
 .file-list li { background: none !important; margin: 0 !important; padding: 0 !important; }
 .file-list-pdf li { }
 .file-list-mixed li { }
-.file-list a { padding: 2px 0 2px 24px; display: inline-block; *zoom: 1; *display: inline; }
-.file-list-pdf a { background: url(http://dummyimage.com/16x16/ccc/fff) 0 0.2em no-repeat; }
+.file-list a { }
+.file-list-pdf a { }
 
 /**
  */
