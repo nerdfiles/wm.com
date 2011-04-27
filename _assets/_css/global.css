@@ -157,7 +157,7 @@ ul.years span.sep { color: #ccc; }
 /* Module Types for Pages and Right Rail */
 .module-two-column .figcaption { }
 .module-two-column ul { float: left; margin: 0 !important; padding: 0 !important; }
-.module-two-column li { background: none !important; margin: 0 0 1em 0 !important; padding: 0 !important; }
+.module-two-column li { background: none !important; margin: 0 0 .5em 0 !important; padding: 0 !important; }
  
  
 /**
