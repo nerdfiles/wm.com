@@ -138,8 +138,8 @@ ul.years span.sep { color: #ccc; }
 .module-figure-caption .grid_2 img { width: auto; max-width: 100px; *width: auto !important; *width: 100px; }
 .module-figure-caption .grid_3 img { width: auto; max-width: 160px; *width: auto !important; *width: 160px; }
 .module-figure-caption .grid_4 img { width: auto; max-width: 220px; *width: auto !important; *width: 220px; }
-.module-figure-caption .grid_5 img { width: auto; max-width: 220px; *width: auto !important; *width: 220px; }
-.module-figure-caption .grid_6 img { width: auto; max-width: 220px; *width: auto !important; *width: 220px; }
+.module-figure-caption .grid_5 img { width: auto; max-width: 280px; *width: auto !important; *width: 280px; }
+.module-figure-caption .grid_6 img { width: auto; max-width: 340px; *width: auto !important; *width: 340px; }
  
 .figcaption { 
     display: block; 
@@ -668,3 +668,26 @@ div.header .meta-controls { padding-top:7px; font-size:11px; }
 div.header.sub{ border-bottom: 1px #CCC solid; }
 div.header.sub h3{ /*color:#00693C;*/ }
 div.header.sub .meta-controls{ padding-top: 0px;}
+
+/**
+ */
+
+.file-list { margin: 0 !important; padding: 0 !important; } 
+.file-list li { background: none !important; margin: 0 !important; padding: 0 !important; }
+.file-list-pdf li { }
+.file-list-mixed li { }
+.file-list a { padding: 2px 0 2px 24px; display: inline-block; *zoom: 1; *display: inline; }
+.file-list-pdf a { background: url(http://dummyimage.com/16x16/ccc/fff) 0 0.2em no-repeat; }
+
+/**
+ */
+
+table { margin: 1em 0; }
+table.style-1 { border: 1px #ccc solid; }
+table.style-1 td,
+table.style-1 th { padding: 5px; border: 1px #ccc solid; }
+table.style-cart-delivery-schedule { }
+table.style-cart-delivery-schedule-1 { }
+    table.style-cart-delivery-schedule .section { width: 20%; }
+    table.style-cart-delivery-schedule .delivery { width: 40%; }
+    table.style-cart-delivery-schedule .note { width: 40%; }
