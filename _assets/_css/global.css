@@ -693,3 +693,7 @@ table.style-cart-delivery-schedule-1 { }
     table.style-cart-delivery-schedule .note { width: 40%; }
 
 hr { clear: both; }
+
+*+html .clearfix{
+  min-height: 1%;
+}
