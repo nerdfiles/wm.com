@@ -157,7 +157,7 @@ jQuery(document).ready(function() {
                 onBeforeAnimation: setActive
             },
             itemFirstOutCallback: {
-                onBeforeAnimation: unsetActive,
+                onBeforeAnimation: unsetActive
             },
             fade: true
         });
