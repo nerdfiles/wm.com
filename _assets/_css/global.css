@@ -138,6 +138,8 @@ ul.years span.sep { color: #ccc; }
 .module-figure-caption .grid_2 img { width: auto; max-width: 100px; *width: auto !important; *width: 100px; }
 .module-figure-caption .grid_3 img { width: auto; max-width: 160px; *width: auto !important; *width: 160px; }
 .module-figure-caption .grid_4 img { width: auto; max-width: 220px; *width: auto !important; *width: 220px; }
+.module-figure-caption .grid_5 img { width: auto; max-width: 220px; *width: auto !important; *width: 220px; }
+.module-figure-caption .grid_6 img { width: auto; max-width: 220px; *width: auto !important; *width: 220px; }
  
 .figcaption { 
     display: block; 
