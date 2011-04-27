@@ -134,19 +134,28 @@ ul.years span.sep { color: #ccc; }
 .module-figure-caption { margin: 1em 0; }
 .module-figure-caption p:first-of-type { margin-top: 0 !important; }
 .module-figure-caption img { display: block; margin: 0; }
-.module-figure-caption .grid_1 img { width: auto; }
-.module-figure-caption .grid_2 img { width: auto; }
-.module-figure-caption .grid_3 img { width: auto; }
-.module-figure-caption .grid_4 img { width: auto; }
+.module-figure-caption .grid_1 img { width: auto; max-width: 40px; *width: auto !important; *width: 40px; }
+.module-figure-caption .grid_2 img { width: auto; max-width: 100px; *width: auto !important; *width: 100px; }
+.module-figure-caption .grid_3 img { width: auto; max-width: 160px; *width: auto !important; *width: 160px; }
+.module-figure-caption .grid_4 img { width: auto; max-width: 220px; *width: auto !important; *width: 220px; }
  
 .figcaption { 
     display: block; 
     margin-top: .5em; 
+    /*
     line-height: 1.25em; 
     font-size: .9em;
+    */
+    /* Why? */
+    font-size: 12px; 
     color: #777; 
     width: 100%; 
     text-align: left; }
+    
+/* Module Types for Pages and Right Rail */
+.module-two-column .figcaption { }
+.module-two-column ul { float: left; margin: 0 !important; padding: 0 !important; }
+.module-two-column li { background: none !important; margin: 0 0 1em 0 !important; padding: 0 !important; }
  
  
 /**
@@ -277,6 +286,7 @@ ul.delim-list-alternate li.first-child,
  * Site Consolidation CSS above
  */
  
+html { overflow-y: scroll; }
 body,
 input,
 textarea { line-height: 1.6; text-rendering: optimizeLegibility; }
@@ -316,6 +326,8 @@ textarea { line-height: 1.25em; }
 /* block? we usually use these in the right rail, but what about elsewhere? */
 a.btn_cta_lg { 
     line-height: 1.25;
+    text-shadow: 1px 1px 1px #f3f2ec; 
+    padding-right: 2.5em;
     /*display: inline-block; *zoom: 1; *display: inline;*/ }
 a.btn_cta_lg span {
     padding-top: 10px;
@@ -463,9 +475,6 @@ a.btn_cta span {
  */
 
 #sections { line-height: 1.25em; } 
-#sections .btn_cta_lg { 
-    text-shadow: 1px 1px 1px #f3f2ec; 
-    padding-right: 2.5em; }
 #sections h2 { margin: 0; border-bottom: 3px #7ab700 solid; padding: 5px; }
 #sections ul { }
 #sections ul li { 
@@ -645,9 +654,11 @@ a.btn_cta span {
 
 /* Header - green border-bottom */
 
+/* For h2 and h3 with a back to top link; always clearfix these headers*/
+div.header .to-top { float: right; margin: 1em 0 0; }
 div.header { margin-bottom: 10px; border-bottom: 3px #7ab800 solid; }
 div.header h2 { font-size: 1.5em; margin: 0 0 5px 0 !important; float:left; }
-div.header h3 {float:left; }
+div.header h3 { float:left; }
 div.header .meta-controls { padding-top:7px; font-size:11px; }
 
 /* Sub-Header - this-gray border-bottom */
