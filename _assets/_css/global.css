@@ -731,11 +731,11 @@ hr { clear: both; }
 .promo-table .column-3 { margin-right: 0; }
 .promo-table .header { margin: 0; }
     .promo-table .header h3 { }
-.promo-table .most-popular { position: absolute; margin: -0.7em 0 0 1em; }
+.promo-table .most-popular { position: absolute; margin: -1.7em 0 0 -1em; }
     .promo-table .most-popular img { }
-.promo-table .img { }
+.promo-table .img { margin: 2em 0 0 0; }
     .promo-table .img img { display: block; }
-.promo-table .summary { margin: .2em 0.5em 1.2em; font-size: 1.2em; text-align: center; }
+.promo-table .summary { margin: 1em 0.5em 1.2em; font-size: 1.2em; text-align: center; }
 .promo-table .summary p { margin: 0 !important; }
     .promo-table .ratio { font-size: 2em; color: #076637; font-weight: bold; }
 .promo-table .cost-options { color: #fff; line-height: 1; }
