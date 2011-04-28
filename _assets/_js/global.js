@@ -214,7 +214,7 @@ $(function() {
             if ('undefined' == (typeof retValue) || retValue.length == 0) {
                 var nakedElem = this.get(0);
                 if (nakedElem) {
-                    if (nakedElem.hasOwnProperty('dataset')) {
+                    if (nakedElem.hasOwnProperty && nakedElem.hasOwnProperty('dataset')) {
                         if ('undefined' != (typeof nakedElem.dataset[key])) {
                             retValue = nakedElem.dataset[key];
                         }
