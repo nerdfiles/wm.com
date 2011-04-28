@@ -754,7 +754,7 @@ hr { clear: both; }
             .promo-table .many .size { }
             .promo-table .many .type { }
         .promo-table .many .cost { }
-.promo-table .display-footer { text-align: center; color: #076637; font-size: 1.7em; }
+.promo-table .display-footer { clear: left; text-align: center; color: #076637; font-size: 1.7em; }
 .promo-table .display-footer .line-1 { }
 .promo-table .display-footer .line-2 { color: #78b400; }
 
