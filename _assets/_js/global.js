@@ -161,5 +161,22 @@ jQuery(document).ready(function() {
             },
             fade: true
         });
+        
+        jQuery(".module-branding-carousel ul").jcarousel({
+            scroll: 1,
+            auto: 2,
+            animation: 0,
+            wrap: 'last',
+            initCallback: initCarousel,
+            buttonNextHTML: null,
+            buttonPrevHTML: null,
+            itemFirstInCallback: {
+                onBeforeAnimation: setActive
+            },
+            itemFirstOutCallback: {
+                onBeforeAnimation: unsetActive
+            },
+            fade: true
+        });
   
 });

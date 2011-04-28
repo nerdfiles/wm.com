@@ -22,7 +22,7 @@
     padding: 20px 40px;
     */
     width: 760px;
-    height: 300px;
+    /*height: 300px;*/
 }
 
 .jcarousel-skin-wm .jcarousel-container-vertical {
@@ -41,7 +41,7 @@
     height: 75px;
     */
     width: 760px;
-    height: 300px;
+    /*height: 300px;*/
 }
 
 .jcarousel-skin-wm .jcarousel-clip-vertical {
@@ -55,7 +55,7 @@
     height: 75px;
     */
     width: 760px;
-    height: 300px;
+    /*height: 300px;*/
 }
 
 .jcarousel-skin-wm .jcarousel-item-horizontal {
@@ -73,6 +73,84 @@
 }
 
 .jcarousel-skin-wm .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+#carousel-list.jcarousel-clip-horizontal { height: 300px; }
+#carousel-list.jcarousel-clip-horizontal li.jcarousel-item { height: 300px; }
+
+.jcarousel-skin-wm-imageslider .jcarousel-container {
+    /*
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;
+    */
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-container-horizontal {
+    /*
+    width: 245px;
+    padding: 20px 40px;
+    */
+    /*width: 760px;*/
+    /*height: 300px;*/
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-clip-horizontal {
+    /*
+    width:  245px;
+    height: 75px;
+    */
+    /*width: 760px;*/
+    /*height: 300px;*/
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-clip-vertical {
+    width:  75px;
+    height: 245px;
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-item {
+    /*
+    width: 75px;
+    height: 75px;
+    */
+    /*width: 760px;*/
+    /*height: 300px;*/
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-item-horizontal {
+	margin-left: 0;
+    margin-right: 10px;
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.jcarousel-skin-wm-imageslider .jcarousel-item-placeholder {
     background: #fff;
     color: #000;
 }

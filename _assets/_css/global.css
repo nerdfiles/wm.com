@@ -757,3 +757,8 @@ hr { clear: both; }
 .promo-table .display-footer { text-align: center; color: #076637; font-size: 1.7em; }
 .promo-table .display-footer .line-1 { }
 .promo-table .display-footer .line-2 { color: #78b400; }
+
+
+.module-branding-carousel { }
+.module-branding-carousel ul { margin: 0 !important; padding: 0 !important; }
+.module-branding-carousel li { margin: 0 !important; padding: 0 !important; }
