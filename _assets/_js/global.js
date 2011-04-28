@@ -213,12 +213,14 @@ $(function() {
             retValue = $.fn._data(key, value);
             if ('undefined' == (typeof retValue) || retValue.length == 0) {
                 var nakedElem = this.get(0);
-                if (nakedElem && nakedElem.hasOwnProperty('dataset')) {
+                if (nakedElem)
+                if (nakedElem.hasOwnProperty('dataset')) {
                     if ('undefined' != (typeof nakedElem.dataset[key])) {
                         retValue = nakedElem.dataset[key];
                     }
                 } else {
                     retValue = this.attr('data-'+key);
+                }
                 }
             }
             return retValue;
