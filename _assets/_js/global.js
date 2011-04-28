@@ -1,4 +1,8 @@
 /**
+ * Site Consolidation / Manhattan Beach
+ */
+
+/**
  * jQuery Metadata Configuration
  *
  * jQuery Metadata Configuration
@@ -189,6 +193,10 @@ $(function() {
   $("#container-selection-form").validate();
     
 });
+
+/**
+ * Careers
+ */
 
 (function($){
     $.fn.extend({
