@@ -205,7 +205,7 @@ $(function() {
             retValue = $.fn._data(key, value);
             if ('undefined' == (typeof retValue) || retValue.length == 0) {
                 var nakedElem = this.get(0);
-                if (nakedElem.hasOwnProperty('dataset')) {
+                if (nakedElem && nakedElem.hasOwnProperty('dataset')) {
                     if ('undefined' != (typeof nakedElem.dataset[key])) {
                         retValue = nakedElem.dataset[key];
                     }
@@ -292,9 +292,7 @@ function setActive(carousel, state) {
     if ($(state).find("> div").data("duration")) {
         secs = parseInt($(state).find("> div").data("duration"));
     }
-    
-    console.log( secs );    
-    
+        
     if ( typeof( secs ) === "number" ) {
         if (secs === 0) {
             carousel.stopAuto();
