@@ -160,16 +160,16 @@
  */
 
 #carousel { background: url(bg-1.png) top left no-repeat; }
-#carousel ul li { margin-left: 0; margin-right: 3px; }
+#carousel ul li { margin-left: 0 !important; margin-right: 3px !important; background: #fff !important; padding: 0 !important; margin-top: 0 !important }
 #carousel-inner { position: relative; }
 ul#carousel-list li { padding-left: 0; background: none; }
-#carousel h2 { font-size: 33px; margin: 0.5em 0 0 0; }
+#carousel h2 { font-size: 33px !important; margin: 0 !important; }
 #carousel h2 .style-1 { color: #7ab700; }
 #carousel h2 .style-2 { color: #00693c; }
-#carousel p { font-size: 20px; color: #7ab700; }
+#carousel p { font-size: 20px; line-height: 1.5; font-weight: normal; color: #7ab700; }
 #carousel .carousel-item { }
 #carousel .carousel-item-img { margin-right: 1em; float: left; }
-#carousel .carousel-item-copy { padding: 0 20px; margin: 0; }
+#carousel .carousel-item-copy { padding: 20px; margin: 0; }
 #carousel h2 { margin-top: 0; }
 
 /**

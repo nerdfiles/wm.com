@@ -1,9 +1,15 @@
 /**
- * Static Template
+ * Static Template CSS
+ *
+ * @author          kfargaso
+ * @tested          Site Consolidation, Careers, Manhatta Beach (failed because of invalid HTML)
+ */
+
+
+/**
+ * No Search
  */
  
-
-/* CSS Document */
 body.no-search #mainnav{
     width:100% !important;
 }
@@ -11,27 +17,33 @@ body.no-search #header{
     background-image:none !important;
 }
 body.no-search #topnav{
-    width:700px !important;
+    width: 700px !important;
 }
 body.no-search #search_top{
     display:none;
 }
 body.no-search #topnav ul li.noborder{
-    margin-right:2px !important;
-    padding-right:0px !important;
+    margin-right: 2px !important;
+    padding-right: 0px !important;
 
 }
-#header{background-position:757px 0px}
-#header-separation{
-    border-bottom:10px solid #006A3C;
-    margin-top:10px;
-    margin-bottom:10px;
-}
-#footer-static-template{
-    height:50px;
-}
+
+/**
+ */
+ 
+#header { position: relative; background-position: 757px 0px; }
+#header-separation {
+    border-bottom: 10px solid #006A3C;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+/**
+ */
+     
+#footer-static-template { height: 50px; }
+
 #footer-static-template ul li {
-    border-right:1px solid #CCCCCC;
+    border-right:1px solid #ccc;
     font-size:12px;
     padding:0 15px 0 0;
     display:block;
@@ -39,6 +51,7 @@ body.no-search #topnav ul li.noborder{
     list-style:none outside none;
     margin:20px 20px 0 0;
 }
+
 #footer-static-template ul li a{
     color:#FFF;
     text-decoration:none;
@@ -60,39 +73,36 @@ float: none;
 margin: 0 0 15px;
 }
 
-
-
-
-
 #header h1{
-    font-size:24px;
-    text-align:right;
-}
+    font-size: 24px;
+    text-align: right; }
+#content h2 { font-size:18px; font-weight:normal; margin:14px 0 20px; color:#222222;  }
+#content .header h2 { margin-bottom: 5px;} /* KF R2 merge hack */
 
-
-
-
-
-    #content h2 { font-size:18px; font-weight:normal; margin:14px 0 20px; color:#222222;  }
-   #content .header h2 { margin-bottom: 5px;} /* KF R2 merge hack */
-
+    /*
     #content h3 { margin:20px 0 5px; }
     #content p, #content ul, #content h2, #content h1 { margin-right:280px; }
     #content p { margin-bottom:5px; }
+    */
+    
     #content ul { font-size:12px; color:#222222; margin:0 0 15px 0; }
     #content ul li { margin:0 0 8px 3px; padding:0 0 0 8px; background:url('/assets/images/icons/icon_bullet_defaultsub.gif') top left no-repeat; }
     #content img { display:block; }
 
+    /* TODO: Removed
     #right_content { width:340px; float:right; border-left:20px solid #fff; border-bottom:20px solid #fff; }
     #right_content img { display:block; }
     #right_content ul { margin:0; }
     #right_content ul li { font-size:12px; }
+    */
 
+    /*
     #right_content .rightcontentpod { padding:15px; border-bottom:15px solid #fff; margin:0; background:none; }
     #right_content .rightcontentpod a { padding:0 0 0 70px; }
     #right_content .rightcontentpod a strong { margin:0 0 5px 0; color:#222222; }
     #right_content .rightcontentpod a span { display:block; color:#063; font-weight:bold; margin:15px 0 0 0; }
     #right_content .foundinthissection { border-top:2px solid #E0DED0; }
+    */
 
 
 
@@ -182,15 +192,6 @@ input {
     padding: 4px 3px; }
 
 
-
-
-
-
-
-
-
-
-
 /**
  * Header
  *
@@ -231,7 +232,7 @@ input {
  * @valid               true
  */
 
-#content h1 { margin-bottom: .5em; margin-top: .2em; }
+#content h1 { /*margin-bottom: .5em; margin-top: .2em;*/ }
 #content ul { padding-bottom: 0; }
 #content {
     line-height: 1.5em;
@@ -248,7 +249,7 @@ input {
     background: url(http://www.wm.com/_assets/images/icons/icon_bullet_defaultsub.gif) no-repeat .3em 0; }
 #content ol { list-style: decimal; margin-left: 2em; }
 #content ol li { }
-#content dl { margin: 1em 0 .5em; }
+#content dl { margin: .5em 0 .5em; }
 #content dt { font-weight: bold; }
 /* #content dd { padding-left: 1em; }
  KF removed 3/23/11 this conflicts with R2 style tables account-section
@@ -336,260 +337,8 @@ input {
 
 
 /**
- * @todo            Move up to Sections: Utilities and HTML elements
+ * Site Consolidation CSS
  */
-
-.align-left { float: left; margin: 0 1em 1em 0; }
-.align-right { float: right; margin: 0 0 1em 1em; }
-
-sup { vertical-align: super; font-size: .9em; }
-sub { vertical-align: sub; font-size: .9em; }
-abbr { border-bottom: 1px #222 dotted; }
-
-
-/**
- * Breadcrumb
- *
- * Breadcrumb
- *
- * @author              aalexan1
- * @project             wm-redesign
- * @package             wm-redesign-r2
- * @subpackage          site-consolidation
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
- * @valid               true
- */
-
-#breadcrumb { margin: 15px 0 5px; }
-#breadcrumb li { display: inline; }
-#breadcrumb a { text-decoration: none; }
-#breadcrumb a:visited { }
-#breadcrumb a:hover { }
-#breadcrumb a:active { }
-
-
-/**
- * Years List
- *
- * A presentation of years
- *
- * @author              aalexan1
- * @project             wm-redesign
- * @package             wm-redesign-r2
- * @subpackage          site-consolidation
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
- * @valid               true
- */
-
-ul.years { margin: 10px 0 15px !important; padding: 0 !important; font-size: 1.5em !important; }
-ul.years a { text-decoration: none; }
-ul.years li { background: none !important; margin: 0 !important; padding: 0 !important; display: inline; }
-ul.years span.sep { color: #ccc; }
-
-
-/**
- * Module window overrides
- *
- * Module window overrides
- *
- * @author              aalexan1
- * @project             wm-redesign
- * @package             wm-redesign-r2
- * @subpackage          site-consolidation
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
- * @valid               true
- */
-
-.modal-window-container h2 { font-size: 33px; color: #555; margin: 0 10px 10px 10px; }
-.modal-window-container .modal-window-container-inner { margin: 10px; height: 75%; overflow-y: auto; }
-
-
-/**
- * Module Link List
- *
- * Desc
- *
- * @author              bgarcia8
- * @project             wm-redesign
- * @package             wm-redesign-r2
- * @subpackage          site-consolidation
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
- * @valid               true
- */
-
-.module-link-list dt a { color: #000; text-decoration: none; }
-.module-link-list dt a:hover { color: #00693c; text-decoration: none; }
-.module-link-list dd { padding-left: 0 !important; }
-.module-link-list dd p { margin-top: .25em !important; }
-.module-link-list a.more_links { font-weight: bold; }
-
-
-/**
- * Module Figure Caption
- *
- * Desc
- *
- * @author              bgarcia8
- * @project             wm-redesign
- * @package             wm-redesign-r2
- * @subpackage          site-consolidation
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
- * @valid               true
- */
-
-.module-figure-caption { margin-bottom: 2em; }
-.module-figure-caption p:first-of-type { margin-top: 0 !important; }
-.module-figure-caption .grid_2 img { width: 100px; }
-.module-figure-caption .grid_3 img { width: 160px; }
-.module-figure-caption .grid_4 img { width: 220px; }
-
-.figcaption { display: block; margin-top: .5em; line-height: 1.25em; font-size: .9em; color: #777; width: 100%; text-align: left; }
-
-
-/**
- * Sub-level headers
- *
- * Sub-level headers
- *
- * @author              bgarcia8
- * @project             wm-redesign
- * @package             wm-redesign-r2
- * @subpackage          site-consolidation
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
- * @valid               true
- */
-
-.sub-level h1 { float: left; width: 75% !important; }
-.sub-level a { display: inline-block; float: right; width: 25%; margin: 1.25em 0 0 0; }
-
-
-/**
- * Cross-browser, print sensitive FAQ
- *
- * A model for FAQs.
- *
- * @author              aalexan1
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
- * @valid               true
- */
-
-.faq-toggle-list { margin: 10px 0 15px !important; }
-
-.faq-toggle-list dt,
-.faq-toggle-list dd { clear: left; }
-
-.faq-toggle-list dd p { margin: 10px 0 15px !important; }
-
-.faq-toggle-list dt {
-    font-weight: bold;
-    cursor: pointer;
-    color:#006A3C;
-    text-decoration:underline; } /*kf*/
-.faq-toggle-list dd {
-    padding: 0 !important;
-    display: none; }
-.faq-toggle-list dd div { }
-.toggle-next {
-        background: url(http://www.wm.com/_assets/images/icons/icon_faqs_plusminus.gif) 0 3px no-repeat;
-        padding: 0 0 0 14px; }
-div.faq-header .toggle-all {
-        cursor: pointer;
-        color:#006A3C;
-        text-decoration:underline;
-        background: url(http://www.wm.com/_assets/images/icons/icon_faqs_plusminus.gif) 0 1px no-repeat;
-        padding: 0 0 0 14px; }
-div.faq-header .toggle-all-active { background-position: 0 -90px; }
-.toggle-next-active { background-position: 0 -88px; }
-.faq-toggle-list .faq-answer-container { }
-
-div.faq-container { }
-div.faq-header { border-bottom: 1px #ccc solid; margin: 0; padding: 2px 0; text-align: right; }
-ul.faq-header-inner { margin: 0 !important; padding: 0 !important; }
-div.faq-header li { padding: 0 !important; margin: 0 !important; background: none !important; }
-#content div.faq-header h3 { float: left; margin: 0; padding: 0; }
-
-
-/**
- * Print media
- *
- * For print media
- *
- * @author              aalexan1
- * @project             wm-redesign
- * @package             wm-redesign-r2
- * @subpackage          site-consolidation
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              ie6,ie7,ie8,chrome_10.x,opera_11.x,firefox_3.6.x,safari_5.x,
- * @valid               true
- */
-
-@media print {
-
-    .faq-header { display: none !important; }
-    .toggle-next { background: none !important; padding: 0 !important; }
-    .faq-toggle-list dd {
-        display: block !important;
-    }
-
-}
-
-
-/**
- * Next section
- *
- * Description
- *
- * @author              dev
- * @project             wm-redesign
- * @package             wm-redesign-r2
- * @subpackage          site-consolidation
- * @version             0.0.1
- * @lastmodified        03-18-2011 1:40PM
- *
- * @css-for             all
- * @tested              all
- * @valid               true
- * NOTE: this can be removed after R1 and R2 are merged
- */
-
-
-ul.delim-list-alternate li.first-child,
-    ul.delim-list-alternate li.first {
-        padding-left: 0px;
-    background-image:none !important;
-    }
-
 
 /**
  * Careers Section CSS
@@ -878,7 +627,7 @@ ul.delim-list-alternate li.first-child,
 
 
 /**
- * Site Consolidation CSS above
+ * Careers CSS above
  */
  
 html { overflow-y: scroll; }
@@ -1095,8 +844,8 @@ a.btn_cta span {
 #offers h2 { margin: 7px 0 0px; color: #00693c; }
 #offers p { margin: .5em 0; }
 #offers ul li.offer {
-    padding: 0;
     margin: 0 15px 0 0; 
+    padding: 0; 
     width: 243px; 
     float: left; 
     position: relative;
@@ -1113,7 +862,7 @@ a.btn_cta span {
 #offers .offer-img { width: 125px; float: left; }
 #offers img { position: relative; top: -5px; left: 2px; }
 #offers .offer-copy { width: 108px; float: left; margin-left: -5px; }
-#offers .offer-link { text-shadow: none; position: absolute; bottom: 1em; color: #fff; font-weight: bold; }
+#offers .offer-link { text-shadow: none; position: absolute; right: 47px; bottom: .8em; color: #fff; font-weight: bold; }
 #offers a { 
     min-height: 150px;
     height: auto !important;
@@ -1181,10 +930,11 @@ a.btn_cta span {
 
 
 /**
- * EOEL osaejfklasehfkjljsdrgjlrkdsjkgosidhjioehksjoihiojhiohu
+ * EOEL
  */
  
 #right_content .module-eoel { background: #fff; padding: 10px 20px 20px; }
+#right_content .module-eoel .module-inner { border: none; }
 #right_content .module-eoel ul { }
 #right_content .module-eoel ul li { margin: 0; padding: 0; padding: 0; background: none; }
 #right_content .module-eoel .eoel { margin-top: 0; }
@@ -1196,6 +946,7 @@ a.btn_cta span {
  */
  
 #right_content div.module-social-networking { margin-bottom: 0; background: #fff; padding: 10px 20px 20px; text-align: left; }
+#right_content div.module-social-networking .module-inner { border: none; }
 #right_content .module-social-networking ul { }
 #right_content .module-social-networking ul li { margin: 0; padding: 0; padding: 0; background: none; text-align: left; }
 #right_content .module-social-networking .social-networking-services { margin-bottom: 0; }
@@ -1252,6 +1003,7 @@ a.btn_cta span {
 /* For h2 and h3 with a back to top link; always clearfix these headers*/
 div.header .to-top { float: right; margin: 20px 0 0; }
 div.header { margin-bottom: 10px; border-bottom: 3px #7ab800 solid; }
+.article div.header { margin-bottom: 1em; border-bottom: none; }
 div.header h2 { font-size: 1.5em; margin: 0 0 5px 0 !important; float:left; }
 div.header h3 { float:left; font-size: 18px !important; }
 div.header .meta-controls { padding-top:7px; font-size:11px; }
@@ -1352,6 +1104,9 @@ hr { clear: both; }
 .promo-table .display-footer .line-2 { color: #78b400; }
 
 
+.module-branding-image .module-inner { border: none; }
+
 .module-branding-carousel { }
+.module-branding-carousel .module-inner { border: none; }
 .module-branding-carousel ul { margin: 0 !important; padding: 0 !important; }
 .module-branding-carousel li { margin: 0 !important; padding: 0 !important; }
