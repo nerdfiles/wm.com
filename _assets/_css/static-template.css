@@ -355,8 +355,10 @@ input {
  * @todo            Move up to Sections: Utilities and HTML elements
  */
  
-.align-left { float: left; margin: 0 1em 1em 0; }
-.align-right { float: right; margin: 0 0 1em 1em; }
+.align-left,
+.float-right { float: left; margin: 0 1em 1em 0; }
+.align-right,
+.float-right { float: right; margin: 0 0 1em 1em; }
 
 sup { vertical-align: super; font-size: .9em; }
 sub { vertical-align: sub; font-size: .9em; }
@@ -619,6 +621,7 @@ div.faq-header li { padding: 0 !important; margin: 0 !important; background: non
  * NOTE: this can be removed after R1 and R2 are merged
  */
 
+#content ul.delim-list-alternate li { margin-bottom: 0; }
 ul.delim-list-alternate li.first-child,
     ul.delim-list-alternate li.first {
         padding-left: 0px; 
@@ -1123,6 +1126,10 @@ hr { clear: both; }
 /**
  * Manhattan Beach Form (From R2)
  */
+ 
+#container-selection-form dt.grid_1 { margin-left: 40px !important; }
+#container-selection-form .checkbox-block label { display: inline; }
+#container-selection-form .meta-controls { padding-top: 0; }
 
 /* ======= Tables ======= */
  
