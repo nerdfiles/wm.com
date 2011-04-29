@@ -1110,3 +1110,126 @@ hr { clear: both; }
 .module-branding-carousel .module-inner { border: none; }
 .module-branding-carousel ul { margin: 0 !important; padding: 0 !important; }
 .module-branding-carousel li { margin: 0 !important; padding: 0 !important; }
+
+.module-testimonials { border: none; }
+.module-testimonials .module-inner { border: none; }
+#content .module-testimonials ul { margin: 0; padding: 0; }
+#content .module-testimonials li { background: none; margin: 0; padding: 0; }
+
+.module-landing-block { }
+.module-landing-block .module-inner { border: none; }
+
+
+/**
+ * Manhattan Beach Form (From R2)
+ */
+
+/* ======= Tables ======= */
+ 
+table.thin-rows tr td{
+   padding-top:2px !important;
+   padding-bottom:2px !important;  
+}
+table.medium-rows tr td{
+   padding-top:5px !important;
+   padding-bottom:5px !important;  
+}
+table.medium-rows tr td .checkbox{
+   margin: 1px;
+}
+table.thick-rows tr td{
+   padding-top:10px !important;
+   padding-bottom:10px !important;
+}
+ 
+table.account-section{
+  
+}
+table.account-section thead tr th{
+   padding:0px 10px 2px 0px;
+}
+table.account-section thead tr{
+   border-bottom:#D5D5D5 solid 1px;
+}
+table.account-section tbody tr{
+   border-bottom:#D5D5D5 solid 1px;
+}
+ 
+table.account-section tbody tr td{
+   padding: 5px 10px 5px 0px;
+}
+table.account-section tbody tr.even{
+   background-color:#F3F2ED;
+}
+table.account-section th.invoice{
+   width:130px;
+}
+/*on hover change color*/
+/*table.account-section tbody tr:hover{
+   background-color:#FFF8D7 !important;
+}*/
+ 
+/* ======= Drop ======= */
+ 
+    .drop,
+    .drop_1 { margin-top: 5px; }
+    .drop_2 { margin-top: 10px; }
+    .drop_3 { margin-top: 15px; }
+    .drop_4 { margin-top: 20px; }
+    .drop_5 { margin-top: 25px; }
+    .drop_6 { margin-top: 30px; }
+    .drop_7 { margin-top: 35px; }
+    .drop_8 { margin-top: 40px; }
+    .drop_9 { margin-top: 45px; }
+    .drop_10 { margin-top: 50px; }
+   
+    
+ 
+    /* Tables */
+    table {
+        table-layout: fixed;
+        width: 100%; }
+ 
+    table.hide-empty { empty-cells: hide; }
+ 
+    thead,
+    tbody,
+    tfoot { width: 100%; }
+ 
+    th { text-align: left; }
+    td { vertical-align: top; }
+    th.grid_1,
+    td.grid_1,
+    th.grid_2,
+    td.grid_2,
+    th.grid_3,
+    td.grid_3,
+    th.grid_4,
+    td.grid_4,
+    th.grid_5,
+    td.grid_5,
+    th.grid_6,
+    td.grid_6,
+    th.grid_7,
+    td.grid_7,
+    th.grid_8,
+    td.grid_8,
+    th.grid_9,
+    td.grid_9,
+    th.grid_10,
+    td.grid_10,
+    th.grid_11,
+    td.grid_11,
+    th.grid_12,
+    td.grid_12,
+    th.grid_13,
+    td.grid_13,
+    th.grid_14,
+    td.grid_14,
+    th.grid_15,
+    td.grid_15 { margin: 0 !important; padding: 0 10px; }
+    th.alpha,
+    td.alpha { padding-left: 0; }
+    th.omega,
+    td.omega { padding-right: 0; }
+    
