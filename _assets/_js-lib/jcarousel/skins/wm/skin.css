@@ -99,7 +99,7 @@
     width: 245px;
     padding: 20px 40px;
     */
-    /*width: 760px;*/
+    width: 340px;
     /*height: 300px;*/
 }
 
@@ -118,7 +118,7 @@
     width:  245px;
     height: 75px;
     */
-    /*width: 760px;*/
+    width: 340px;
     /*height: 300px;*/
 }
 
@@ -132,7 +132,7 @@
     width: 75px;
     height: 75px;
     */
-    /*width: 760px;*/
+    width: 340px;
     /*height: 300px;*/
 }
 
@@ -154,6 +154,8 @@
     background: #fff;
     color: #000;
 }
+
+.jcarousel-skin-wm-imageslider .caption { background: #f3f2ec; padding: .5em; }
 
 /**
  * WM Carousel Container

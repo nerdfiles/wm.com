@@ -198,7 +198,7 @@ $(function() {
  * Careers
  */
 
-(function($){
+;(function($){
     $.fn.extend({
         '_data': $.fn.data,
         'data' : function( key, value ) {
@@ -279,14 +279,14 @@ function setActive(carousel, state) {
     
     $(state).animate({
         opacity: 1
-    }, 300, function() {
+    }, 500, function() {
     
     });
     
     if ( carousel.options.fade === true ) {
         $(state).next().animate({
             opacity: 0
-        }, 300);
+        }, 500);
     }
     
     /**
@@ -332,7 +332,7 @@ function unsetActive(carousel, state) {
         if ( carousel.options.fade === true ) {
             $(state).animate({
                 opacity: 0
-            }, 300);        
+            }, 500);        
         } else {
         }
     }
@@ -348,7 +348,6 @@ jQuery(document).ready(function() {
         jQuery("#carousel-list").jcarousel({
             scroll: 1,
             auto: 3,
-            animation: 0,
             wrap: 'last',
             initCallback: initCarousel,
             buttonNextHTML: null,
