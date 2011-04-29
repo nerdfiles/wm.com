@@ -1240,3 +1240,6 @@ table.account-section th.invoice{
     th.omega,
     td.omega { padding-right: 0; }
     
+input.radio,
+input.checkbox { border: none !important; }
+    
