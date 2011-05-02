@@ -285,7 +285,17 @@ $(function(){
 	/* DIVIDEND HISTORY */
 $('.dividend_history td').hover( function() { $('.info_tooltip', this).show(); }, function() { $('.info_tooltip', this).hide(); });
 				
-	// KF - footer always flush bottom - 3-2-2011
+/**
+ * Sticky Footer
+ *
+ * footer always flush bottom
+ *
+ * @author          kfargaso
+ * @date            3-2-2011
+ * @lastmodifiedby  aalexan1
+ * @lastmodified    11:21AM 05-02-2011
+ */
+ 
 $(window).bind('resize initFooterPos', function(){
     var footer = $('#footer'),
         win = $(window),
