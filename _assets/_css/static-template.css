@@ -1081,7 +1081,7 @@ hr { clear: both; }
 .promo-table .column-3 { margin-right: 0; }
 .promo-table .header { margin: 0; }
     .promo-table .header h3 { }
-.promo-table .most-popular { position: absolute; top: -17px; left: -15px; }
+.promo-table .most-popular { position: absolute; top: 30px; left: -15px; }
     .promo-table .most-popular img { }
 .promo-table .img { margin: 2em 0 0 0; }
     .promo-table .img img { display: block; }
