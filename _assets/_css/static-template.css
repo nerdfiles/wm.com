@@ -1092,8 +1092,8 @@ hr { clear: both; }
     .promo-table .label { display: inline-block; *zoom: 1; *display: inline; margin: 0 30px 0 0; }
     .promo-table .size { margin: 0 0 .5em 0; }
     .promo-table .cost { display: inline-block; *zoom: 1; *display: inline; font-size: 30px; position: relative; top: -5px; }
-    .promo-table .option { text-shadow: 1px 1px 0 #076637; padding: 20px; position: relative; font-size: 14px; }
-    .promo-table .single { text-shadow: 1px 1px 0 #222; background: #076637; }
+    .promo-table .option { text-shadow: 0 -1px 1px #076637; padding: 20px 20px 15px 20px; position: relative; font-size: 14px; }
+    .promo-table .single { text-shadow: 0 -1px 1px #222; background: #076637; }
         .promo-table .single .label { }
             .promo-table .single .size { }
             .promo-table .single .type { }
@@ -1105,8 +1105,8 @@ hr { clear: both; }
             .promo-table .many .type { }
         .promo-table .many .cost { }
 .promo-table .display-footer { clear: left; text-align: center; color: #076637; font-size: 1.7em; }
-.promo-table .display-footer .line-1 { }
-.promo-table .display-footer .line-2 { color: #78b400; }
+.promo-table .display-footer .line-1 { padding: 1px; margin: 0 0 5px 0; }
+.promo-table .display-footer .line-2 { padding: 1px; color: #78b400; }
 
 
 .module-branding-image .module-inner { border: none; }
