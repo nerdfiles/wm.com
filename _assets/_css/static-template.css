@@ -522,7 +522,7 @@ ul.years span.sep { color: #ccc; }
  */
  
 .sub-level h1 { float: left; width: 75% !important; }
-.sub-level a { display: inline-block; float: right; width: 25%; margin: 1.25em 0 0 0; }
+.sub-level a { display: inline-block; *zoom: 1; *display: inline; float: right; width: 25%; margin: 1.25em 0 0 0; }
 
 
 /**
@@ -685,7 +685,9 @@ a.btn_cta_lg span {
 
 a.btn_cta { 
     line-height: 1.5;
-    display: inline-block; *zoom: 1; *display: inline; }
+    display: inline-block; 
+    *zoom: 1; 
+    *display: inline; }
 a.btn_cta span {
     display: block; 
     cursor: pointer; 
@@ -1087,9 +1089,9 @@ hr { clear: both; }
 .promo-table .summary p { margin: 0 !important; }
     .promo-table .ratio { font-size: 2em; color: #076637; font-weight: bold; }
 .promo-table .cost-options { color: #fff; line-height: 1; }
-    .promo-table .label { display: inline-block; margin: 0 30px 0 0; }
+    .promo-table .label { display: inline-block; *zoom: 1; *display: inline; margin: 0 30px 0 0; }
     .promo-table .size { margin: 0 0 .5em 0; }
-    .promo-table .cost { display: inline-block; font-size: 30px; position: relative; top: -5px; }
+    .promo-table .cost { display: inline-block; *zoom: 1; *display: inline; font-size: 30px; position: relative; top: -5px; }
     .promo-table .option { text-shadow: 1px 1px 0 #076637; padding: 20px; position: relative; font-size: 14px; }
     .promo-table .single { text-shadow: 1px 1px 0 #222; background: #076637; }
         .promo-table .single .label { }
