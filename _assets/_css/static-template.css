@@ -1075,7 +1075,7 @@ hr { clear: both; }
 .promo-table { margin: 1em 0; }
 .promo-table-inner { }
 .promo-table-content { }
-.promo-table .column { width: 240px; float: left; margin: 0 20px 10px 0; }
+.promo-table .column { position: relative; width: 240px; float: left; margin: 0 20px 10px 0; }
 .promo-table .column-1 { }
 .promo-table .column-2 { }
 .promo-table .column-3 { margin-right: 0; }
