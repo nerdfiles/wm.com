@@ -359,6 +359,8 @@ input {
 .float-right { float: left; margin: 0 1em 1em 0; }
 .align-right,
 .float-right { float: right; margin: 0 0 1em 1em; }
+.clear-left { clear: left; }
+.clear-right { clear: right; }
 
 sup { vertical-align: super; font-size: .9em; }
 sub { vertical-align: sub; font-size: .9em; }
@@ -1132,6 +1134,7 @@ hr { clear: both; }
 #container-selection-form dt.grid_1 { margin-left: 40px !important; }
 #container-selection-form .checkbox-block label { display: inline; }
 #container-selection-form .meta-controls { padding-top: 0; }
+#container-selection-form label.error { margin: 0; padding: 0; }
 
 /* ======= Tables ======= */
  
