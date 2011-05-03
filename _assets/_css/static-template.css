@@ -654,6 +654,7 @@ textarea { line-height: 1.25em; }
 #content input.text { padding: 5px; border: 1px #bbb solid; -moz-box-shadow: 1px 1px 3px #ccc inset; -webkit-box-shadow: 1px 1px 3px #ccc inset; box-shadow: 1px 1px 3px #ccc inset; }
 #content h3 { margin: .7em 0; }
 #content ul { margin: .7em 0; padding: 0; }
+#page ol { list-style: decimal; margin-left: 20px; }
 #content h4 { margin: .7em 0; }
 #content dt { margin: .7em 0; }
 #content dd { margin: .7em 0; padding: 0; }
@@ -1250,3 +1251,5 @@ input.radio,
 input.checkbox { border: none !important; }
     
 #home_hero_container { padding-top: 10px; }
+
+

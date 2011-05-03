@@ -3,6 +3,7 @@
  */
 
 .jcarousel-skin-wm .jcarousel-container {
+    background: url(bg-1.png) top left no-repeat; 
     /*
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -162,7 +163,7 @@
  */
 
 #carousel { background: url(bg-1.png) top left no-repeat; }
-#carousel ul li { margin-left: 0 !important; margin-right: 3px !important; background: #fff !important; padding: 0 !important; margin-top: 0 !important }
+#carousel ul li { margin-left: 0 !important; margin-right: 3px !important; background: none !important; padding: 0 !important; margin-top: 0 !important }
 #carousel-inner { position: relative; }
 ul#carousel-list li { padding-left: 0; background: none; }
 #carousel h2 { font-weight: bold; color: #7ab700 !important; font-size: 40px !important; margin: 0 !important; }
