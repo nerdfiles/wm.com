@@ -1249,4 +1249,4 @@ table.account-section th.invoice{
 input.radio,
 input.checkbox { border: none !important; }
     
-#home_hero { margin: 10px 0 0 0; }
+#home_hero_container { padding-top: 10px; }
