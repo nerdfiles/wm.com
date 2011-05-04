@@ -358,7 +358,7 @@ jQuery(document).ready(function() {
             itemFirstOutCallback: {
                 onBeforeAnimation: unsetActive
             },
-            fade: true
+            fade: false
         });
         
         jQuery(".module-branding-carousel ul").jcarousel({
