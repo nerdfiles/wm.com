@@ -288,7 +288,7 @@ function setActive(carousel, state) {
     } else {
 
         $(state).css({
-            opacity: 1
+            //opacity: 1
         });
 
     }
@@ -343,7 +343,6 @@ function unsetActive(carousel, state) {
             $(state).animate({
                 opacity: 0
             }, 500);        
-        } else {
         }
     }
     
