@@ -277,11 +277,21 @@ function setActive(carousel, state) {
     
     /* fade in item */
     
-    $(state).animate({
-        opacity: 1
-    }, 500, function() {
+    if ( carousel.options.fade === true ) {
     
-    });
+        $(state).animate({
+            opacity: 1
+        }, 500, function() {
+        
+        });
+    
+    } else {
+
+        $(state).css({
+            opacity: 1
+        });
+
+    }
     
     if ( carousel.options.fade === true ) {
         $(state).next().animate({
