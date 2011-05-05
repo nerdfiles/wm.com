@@ -256,42 +256,40 @@ function initCarousel(carousel) {
     // disable if next or prev
     
     carousel.buttonNext.bind('click', function() {
-        carousel.startAuto();
+        carousel.startAuto(0);
     });
  
     carousel.buttonPrev.bind('click', function() {
-        carousel.startAuto();
+        carousel.startAuto(0);
     });
     
     // pause on hover
     
     carousel.clip.hover(function() {
-        carousel.stopAuto();
+        carousel.stopAuto(0);
     }, function() {
-        carousel.startAuto();
+        carousel.startAuto(0);
     });
     
 }
 
 function setActive(carousel, state) {
-    
-    /* fade in item */
-    
-    if ( carousel.options.fade === true ) {
-    
-        $(state).animate({
-            opacity: 1
-        }, 500, function() {
-        
-        });
-    
-    } else {
 
-        $(state).css({
-            //opacity: 1
-        });
-
-    }
+    $(state).css({
+        position: "relative"
+    });
+    $(state).animate({
+        left: 0
+    }, 500);
+    
+    /*$(state).parent().find('li').css({
+        position: "absolute",
+        left: "-10000px",
+        top: "auto",
+        width: "1px",
+        height: "1px",
+        overflow: "hidden"
+    });*/
     
     /**
      * for custom timing in seconds 
@@ -329,28 +327,6 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
-
-    //if ( carousel.options.animation !== 0 ) {
-        // if animation; for fade and slide
-        // need to check for fade; comment opacity for slide only
-        
-    if ( carousel.options.fade === true ) {
-    
-        $(state).animate({
-            opacity: 1
-        }, 500, function() {
-        
-        });
-    
-    } else {
-
-        $(state).css({
-            //opacity: 1
-        });
-
-    }
-        
-    //}
     
     /* unset control from active */
     
@@ -362,7 +338,7 @@ jQuery(document).ready(function() {
 
         jQuery("#carousel-list").jcarousel({
             scroll: 1,
-            auto: 3,
+            auto: 10,
             wrap: 'circular',
             initCallback: initCarousel,
             buttonNextHTML: null,
@@ -380,7 +356,7 @@ jQuery(document).ready(function() {
             scroll: 1,
             auto: 2,
             animation: 0,
-            wrap: 'last',
+            wrap: 'circular',
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
