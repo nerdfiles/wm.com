@@ -240,16 +240,22 @@ function initCarousel(carousel) {
     
     jQuery('#carousel-map a').bind('click', function() {
         carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+        Cufon.replace('#carousel h2');
+        Cufon.replace('#carousel p');
         return false;
     });
  
     jQuery('#carousel-next').bind('click', function() {
         carousel.next();
+        Cufon.replace('#carousel h2');
+        Cufon.replace('#carousel p');
         return false;
     });
  
     jQuery('#carousel-prev').bind('click', function() {
         carousel.prev();
+        Cufon.replace('#carousel h2');
+        Cufon.replace('#carousel p');
         return false;
     });
     
@@ -275,13 +281,16 @@ function initCarousel(carousel) {
 
 function setActive(carousel, state) {
 
+    Cufon.replace('#carousel h2');
+    Cufon.replace('#carousel p');
+        
     $(state).css({
         position: "relative"
-    }).hide();
+    });
     
     $(state).animate({
         left: 0
-    }, 500).show();
+    }, 500);
     
     /*$(state).parent().find('li').css({
         position: "absolute",
@@ -339,7 +348,7 @@ jQuery(document).ready(function() {
 
         jQuery("#carousel-list").jcarousel({
             scroll: 1,
-            auto: 10,
+            auto: 2,
             wrap: 'circular',
             initCallback: initCarousel,
             buttonNextHTML: null,
