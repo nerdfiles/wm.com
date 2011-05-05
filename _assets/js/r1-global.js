@@ -272,10 +272,10 @@ $(function(){
 	
 		
 /* NEW PDF LOGIC. OPEN IN NEW WINDOW WITH "ABBREVIATED" HEADER 	*/	
-	$('a[href$=.pdf]').bind('click',function(){
+	$('a[href$=.pdf]').bind('click',function(e){
 		var getHref = $(this).attr('href');
-		window.open(getHref,'wm_pdf','status=1,resizable=1');
-		return false;
+		window.open(getHref,'wm_pdf','status=yes,resizable=yes');
+		e.preventDefault();
 	}); 
 		
 
