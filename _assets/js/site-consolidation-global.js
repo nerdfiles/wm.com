@@ -274,11 +274,6 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
-    
-    if ( $(state).find('.cufon').length !== 0 ) {
-        Cufon.replace('#carousel h2');
-        Cufon.replace('#carousel p');
-    }
         
     $(state).css({
         position: "relative"
@@ -349,6 +344,12 @@ jQuery(document).ready(function() {
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
+            initCallback: function() {
+            
+                    Cufon.replace('#carousel h2');
+                    Cufon.replace('#carousel p');
+            
+            },
             itemFirstInCallback: {
                 onBeforeAnimation: setActive
             },
