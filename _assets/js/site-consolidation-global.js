@@ -276,14 +276,16 @@ function initCarousel(carousel) {
 function setActive(carousel, state) {
 
     document.createElement("cufon");
-
+    
     var $copy = $(state).find('.carousel-item-copy').detach();
 
-    //if ( $(state).find('cufon').length ) {
+    if ( $(state).find('p cufon').length ) {
+    } else {
+        // found cufon
         $(state).find('.carousel-item-img').parent().append($copy);
         Cufon.replace('#carousel h2');
         Cufon.replace('#carousel p');
-    //}
+    }
         
     $(state).css({
         position: "relative"
