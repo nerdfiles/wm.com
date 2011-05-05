@@ -240,22 +240,16 @@ function initCarousel(carousel) {
     
     jQuery('#carousel-map a').bind('click', function() {
         carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
-        Cufon.replace('#carousel h2');
-        Cufon.replace('#carousel p');
         return false;
     });
  
     jQuery('#carousel-next').bind('click', function() {
         carousel.next();
-        Cufon.replace('#carousel h2');
-        Cufon.replace('#carousel p');
         return false;
     });
  
     jQuery('#carousel-prev').bind('click', function() {
         carousel.prev();
-        Cufon.replace('#carousel h2');
-        Cufon.replace('#carousel p');
         return false;
     });
     
