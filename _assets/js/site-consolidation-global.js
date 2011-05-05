@@ -276,7 +276,7 @@ function initCarousel(carousel) {
 function setActive(carousel, state) {
 
     Cufon.replace('#carousel h2');
-    Cufon.replace('#carousel p');
+    //Cufon.replace('#carousel p');
         
     $(state).css({
         position: "relative"
