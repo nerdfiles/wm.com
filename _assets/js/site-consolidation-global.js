@@ -277,10 +277,11 @@ function setActive(carousel, state) {
 
     $(state).css({
         position: "relative"
-    });
+    }).hide();
+    
     $(state).animate({
         left: 0
-    }, 500);
+    }, 500).fadeIn();
     
     /*$(state).parent().find('li').css({
         position: "absolute",
