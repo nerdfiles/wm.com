@@ -279,10 +279,6 @@ function setActive(carousel, state) {
     
     var $copy = $(state).find('.carousel-item-copy').detach();
     
-    if ( $(state).find('p cufon').length ) {
-        $(state).find('cufon').remove();
-    }
-
         // found cufon
         $(state).find('.carousel-item-img').parent().append($copy);
         Cufon.replace('#carousel h2');
@@ -341,6 +337,10 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
+    
+    if ( $(state).find('p cufon').length ) {
+        $(state).find('cufon').remove();
+    }
     
     /* unset control from active */
     
