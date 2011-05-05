@@ -336,7 +336,7 @@ function setActive(carousel, state) {
 
 function unsetActive(carousel, state) {
 
-    if ( carousel.options.animation !== 0 ) {
+    //if ( carousel.options.animation !== 0 ) {
         // if animation; for fade and slide
         // need to check for fade; comment opacity for slide only
         if ( carousel.options.fade === true ) {
@@ -344,7 +344,13 @@ function unsetActive(carousel, state) {
                 opacity: 0
             }, 500);        
         }
-    }
+        
+        $(state).next().animate({
+            opacity: 1
+        }, 500);
+        
+        console.log( $(state).next() );
+    //}
     
     /* unset control from active */
     
