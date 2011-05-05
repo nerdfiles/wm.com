@@ -169,7 +169,7 @@ ul#carousel-list li { padding-left: 0; background: none; }
 #carousel h2 { font-weight: bold; color: #7ab700 !important; font-size: 40px !important; margin: 0 !important; }
 #carousel h2 .style-1 { color: #7ab700; }
 #carousel h2 .style-2 { color: #00693c; }
-#carousel p { font-size: 20px; line-height: 1.5; font-weight: normal; color: #555; }
+#carousel p { font-size: 20px; line-height: 1.3; font-weight: normal; color: #555; }
 #carousel .carousel-item { }
 #carousel .carousel-item-img { margin-right: 1em; float: left; }
 #carousel .carousel-item-copy { padding: 20px; margin: 0; }

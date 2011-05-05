@@ -293,12 +293,6 @@ function setActive(carousel, state) {
 
     }
     
-    if ( carousel.options.fade === true ) {
-        $(state).next().animate({
-            opacity: 0
-        }, 500);
-    }
-    
     /**
      * for custom timing in seconds 
      *
@@ -339,17 +333,23 @@ function unsetActive(carousel, state) {
     //if ( carousel.options.animation !== 0 ) {
         // if animation; for fade and slide
         // need to check for fade; comment opacity for slide only
-        if ( carousel.options.fade === true ) {
-            $(state).animate({
-                opacity: 0
-            }, 500);        
-        }
         
-        $(state).next().animate({
+    if ( carousel.options.fade === true ) {
+    
+        $(state).animate({
             opacity: 1
-        }, 500);
+        }, 500, function() {
         
-        console.log( $(state).next() );
+        });
+    
+    } else {
+
+        $(state).css({
+            //opacity: 1
+        });
+
+    }
+        
     //}
     
     /* unset control from active */
@@ -363,7 +363,7 @@ jQuery(document).ready(function() {
         jQuery("#carousel-list").jcarousel({
             scroll: 1,
             auto: 3,
-            wrap: 'last',
+            wrap: 'circular',
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
@@ -385,10 +385,16 @@ jQuery(document).ready(function() {
             buttonNextHTML: null,
             buttonPrevHTML: null,
             itemFirstInCallback: {
-                onBeforeAnimation: setActive
+                onBeforeAnimation: setActive,
+                onAfterAnimation: function() {}
             },
             itemFirstOutCallback: {
-                onBeforeAnimation: unsetActive
+                onBeforeAnimation: unsetActive,
+                onAfterAnimation: function() {}
+            },
+            itemLastInCallback: {
+                onBeforeAnimation: function() {},
+                onAfterAnimation: function() {}
             },
             fade: true
         });

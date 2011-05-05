@@ -86,7 +86,7 @@ margin: 0 0 15px;
     */
     
     #content ul { font-size:12px; color:#222222; margin:0 0 15px 0; }
-    #content ul li { margin:0 0 8px 3px; padding:0 0 0 8px; background:url('/assets/images/icons/icon_bullet_defaultsub.gif') top left no-repeat; }
+    #content ul li { margin:0 0 8px 3px; padding:0 0 0 8px; background:url('/_assets/images/icons/icon_bullet_defaultsub.gif') top left no-repeat; }
     #content img { display:block; }
 
     /* TODO: Removed
