@@ -275,7 +275,7 @@ function initCarousel(carousel) {
 
 function setActive(carousel, state) {
     
-    if ( $(state).find('canvas').length !== 0 ) {
+    if ( $(state).find('.cufon').length !== 0 ) {
         Cufon.replace('#carousel h2');
         Cufon.replace('#carousel p');
     }
