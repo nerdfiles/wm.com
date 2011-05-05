@@ -274,9 +274,11 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
-
-    Cufon.replace('#carousel h2');
-    //Cufon.replace('#carousel p');
+    
+    if ( $(state).find('canvas').length !== 0 ) {
+        Cufon.replace('#carousel h2');
+        Cufon.replace('#carousel p');
+    }
         
     $(state).css({
         position: "relative"
