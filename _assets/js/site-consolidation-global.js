@@ -311,11 +311,9 @@ function setActive(carousel, state) {
     $(state).find('.carousel-item-copy').prepend(header);
     $(state).find('.carousel-item-copy h2').after($p);
     
-    //console.log( $(state) );
-    
     $(state).find('.carousel-item-copy').hide().delay(1000).fadeIn('slow', function() {
-        Cufon.replace('#carousel h2');
-        Cufon.replace('#carousel p');
+        Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
+        Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
     });
     
     //alert(header);
