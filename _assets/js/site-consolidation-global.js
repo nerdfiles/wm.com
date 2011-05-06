@@ -288,37 +288,8 @@ function setActive(carousel, state) {
         header = $("<h2></h2>"),
         $p = $state.find('p'),
         div = $("<div></div>");
-    
-    $state.show();
-    
-    $state.find('.carousel-item-copy div').remove();    
-    $state.find('p').remove();
-
-    $p.each(function() {
-        var $self = $(this),
-            $copy = "<p>"+$self.clone().text()+"</p>";
         
-        div.prepend($copy);
-    });
-    
-    $state.find('p').remove();
-    
-    $state.find('.carousel-item-copy').prepend(div);
 
-    $state.find('h2').remove();
-    
-    $elems.each(function() {
-        var $self = $(this),
-            $copy = "<span>"+$self.clone().text()+"</span>";
-        
-        header.prepend($copy);
-    });
-    
-    $state.find('h2').remove();
-    
-    $state.find('.carousel-item-copy').prepend(header);
-    
-    Cufon.refresh();
     
     /**
      * for custom timing in seconds 
