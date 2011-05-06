@@ -311,12 +311,12 @@ function setActive(carousel, state) {
     $(state).find('.carousel-item-copy').prepend(header);
     $(state).find('.carousel-item-copy h2').after($p);
     
-    $(state).find('.carousel-item-copy').hide().delay(300).fadeIn();
+    $(state).find('.carousel-item-copy').hide().delay(300).fadeIn('slow', function() {
+        Cufon.replace('#carousel h2');
+        Cufon.replace('#carousel p');
+    });
     
     //alert(header);
-    
-    Cufon.replace('#carousel h2');
-    Cufon.replace('#carousel p');
         
     $(state).css({
         position: "relative"
