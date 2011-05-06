@@ -230,7 +230,8 @@ $(function() {
 
 var t = false,
     carouselPick,
-    carouselLength;
+    carouselLength,
+    carouselCount = 0;
     
 function initCarousel(carousel) {
 
@@ -366,12 +367,11 @@ function unsetActive(carousel, state) {
   
 jQuery(document).ready(function() {
 
-        var carouselCount = 0;
-
         jQuery("#carousel-list").jcarousel({
             scroll: 1,
             auto: 2,
             wrap: 'circular',
+            animation: 800,
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
