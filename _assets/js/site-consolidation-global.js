@@ -288,8 +288,19 @@ function setActive(carousel, state) {
     document.createElement("cufoncanvas");
     
     var $elems = $(state).find('h2 span'),
-        header = $("<h2>");
+        header = $("<h2>"),
+        $p = $(state).find('p');
         
+        
+    $(state).find('p').remove();
+    
+    $p.each(function() {
+        var $self = $(this),
+            $copy = $self.clone();
+            
+        $(state).find('.carousel-item-copy').prepend($copy);
+    });        
+
     $(state).find('h2').remove();
     
     $elems.each(function() {
