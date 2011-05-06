@@ -291,13 +291,12 @@ function setActive(carousel, state) {
         header = $("<h2>"),
         $p = $(state).find('p');
         
-        
-    $(state).find('p').remove();
     
     $p.each(function() {
         var $self = $(this),
             $copy = $self.clone();
-            
+        
+        $(state).find('p').remove();    
         $(state).find('.carousel-item-copy').prepend($copy);
     });        
 
