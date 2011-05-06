@@ -369,9 +369,9 @@ jQuery(document).ready(function() {
 
         jQuery("#carousel-list").jcarousel({
             scroll: 1,
-            auto: 2,
+            auto: 5,
             wrap: 'circular',
-            animation: 800,
+            animation: 1000,
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
