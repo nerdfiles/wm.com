@@ -291,10 +291,11 @@ function setActive(carousel, state) {
     $(state).animate({
         left: 0
     }, 500, function() {
-    /*
+
     document.createElement("cufon");
     document.createElement("cufoncanvas");
     
+    /*    
     var $elems = $(state).find('h2 cufon, h2 br'),
         header = $("<h2>");
     
@@ -315,7 +316,7 @@ function setActive(carousel, state) {
     
     //$(state).find("h2").remove();
     //$(state).find("p").remove();
-    //$(state).find("cufoncanvas,cufon").remove();
+    $(state).find("cufoncanvas,cufon").remove();
     //$(state).find('.carousel-item-copy').prepend($p);
     //$(state).find('.carousel-item-copy').prepend(header);
     
