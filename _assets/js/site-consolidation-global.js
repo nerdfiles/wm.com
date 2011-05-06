@@ -284,11 +284,11 @@ function setActive(carousel, state) {
 
     $(state).css({
         position: "relative"
-    }).hide();
+    });
     
     $(state).animate({
         left: 0
-    }, 500).fadeIn();
+    }, 800).show();
     
     /*
     var fade = carousel.options.fade,
