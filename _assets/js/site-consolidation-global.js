@@ -305,8 +305,10 @@ function setActive(carousel, state) {
     $(state).find("h2").remove();
     $(state).find('.carousel-item-copy').prepend(header);
     
-    Cufon.replace('#carousel h2');
-    Cufon.replace('#carousel p');
+    //alert(header);
+    
+    //Cufon.replace('#carousel h2');
+    //Cufon.replace('#carousel p');
         
     $(state).css({
         position: "relative"
