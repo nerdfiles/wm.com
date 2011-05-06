@@ -291,7 +291,7 @@ function setActive(carousel, state) {
     $(state).animate({
         left: 0
     }, 500, function() {
-    
+    /*
     document.createElement("cufon");
     document.createElement("cufoncanvas");
     
@@ -310,22 +310,22 @@ function setActive(carousel, state) {
         }
     
     });
-    
-    var $p = $(state).find('p');
+    */
+    //var $p = $(state).find('p');
     
     //$(state).find("h2").remove();
     //$(state).find("p").remove();
     //$(state).find("cufoncanvas,cufon").remove();
-    $(state).find('.carousel-item-copy').prepend($p);
-    $(state).find('.carousel-item-copy').prepend(header);
+    //$(state).find('.carousel-item-copy').prepend($p);
+    //$(state).find('.carousel-item-copy').prepend(header);
     
     
     
-    $(state).find('.carousel-item-copy').hide().delay(500).fadeIn('slow', function() {
-        Cufon.refresh('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
-        Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
-    });
-    
+    //$(state).find('.carousel-item-copy').hide().delay(500).fadeIn('slow', function() {
+        //Cufon.refresh('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
+        //Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
+    //});
+    Cufon.refresh();
     });
     
     /*$(state).parent().find('li').css({
