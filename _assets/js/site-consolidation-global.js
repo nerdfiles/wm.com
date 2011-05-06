@@ -315,12 +315,14 @@ function setActive(carousel, state) {
     
     $(state).find("h2").remove();
     $(state).find("p").remove();
-    $(state).find("cufoncanvas").remove();
+    $(state).find("cufoncanvas,cufon").remove();
     $(state).find('.carousel-item-copy').prepend(header);
     $(state).find('.carousel-item-copy h2').after($p);
     
+    
+    
     $(state).find('.carousel-item-copy').hide().delay(500).fadeIn('slow', function() {
-        Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
+        Cufon.refresh('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
         Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
     });
     
