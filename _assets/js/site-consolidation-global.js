@@ -227,7 +227,9 @@ $(function() {
         }
     });
 })(jQuery);
-
+var t = false,
+    carouselPick;
+    
 function initCarousel(carousel) {
 
     jQuery('#carousel-map a').bind('mouseover', function() {
@@ -239,7 +241,10 @@ function initCarousel(carousel) {
     });
     
     jQuery('#carousel-map a').bind('click', function() {
-        carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+        var c = jQuery.jcarousel.intval(jQuery(this).text());
+        t = true;
+        carouselPick = c;
+        carousel.scroll(c);
         return false;
     });
  
@@ -256,19 +261,19 @@ function initCarousel(carousel) {
     // disable if next or prev
     
     carousel.buttonNext.bind('click', function() {
-        carousel.startAuto(0);
+        carousel.startAuto();
     });
  
     carousel.buttonPrev.bind('click', function() {
-        carousel.startAuto(0);
+        carousel.startAuto();
     });
     
     // pause on hover
     
     carousel.clip.hover(function() {
-        carousel.stopAuto(0);
+        carousel.stopAuto();
     }, function() {
-        carousel.startAuto(0);
+        carousel.startAuto();
     });
     
 }
@@ -278,26 +283,24 @@ function setActive(carousel, state) {
     //document.createElement("cufon");
     
     var $elems = $(state).find('h2 cufon, h2 br'),
-        header = $("<h2></h2>");
+        header = $("<h2>");
     
     $elems.each(function() {
+        
+        var $self = $(this),
+            $copy = $self.clone();
     
-        if ( $(this)[0].nodeName === "CUFON" ) {
-            header.append($(this).text());
-        } else if ( $(this)[0].nodeName === "BR" ) {
-            header.append($(this));
+        if ( $self[0].nodeName === "CUFON" ) {
+            header.append($copy.text());
+        } else if ( $self[0].nodeName === "BR" ) {
+            header.append($copy);
         }
-        //
     
     });
     
-    //console.log(header);
+    $(state).find("h2").remove();
+    $(state).find('.carousel-item-copy').prepend(header);
     
-    //$('#left_nav').append(header);
-    
-    // found cufon
-    //$(state).find('.carousel-item-copy').prepend("<p>"+$p+"</p>");
-    //$(state).find('.carousel-item-copy').prepend("<h2>"+$h2+"</h2>");
     Cufon.replace('#carousel h2');
     Cufon.replace('#carousel p');
         
@@ -346,26 +349,16 @@ function setActive(carousel, state) {
             }, secs );
         }
     }
-    
-    /* set control to active */
-    
-    $("#carousel-map a").eq($(state).index()).addClass('active');
-    
+
 }
 
 function unsetActive(carousel, state) {
-    
-    if ( $(state).find('p cufon').length ) {
-        $(state).find('cufon').remove();
-    }
-    
-    /* unset control from active */
-    
-    $("#carousel-map a").eq($(state).index()).removeClass('active');
-    
+$('#carousel-map a.active').parent().find('a').removeClass('active');
 }
   
 jQuery(document).ready(function() {
+
+        var carouselCount = 0;
 
         jQuery("#carousel-list").jcarousel({
             scroll: 1,
@@ -374,11 +367,41 @@ jQuery(document).ready(function() {
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
+            setupCallback: function(carousel) {
+                //$('#carousel-map a').eq(carouselCount).addClass("active");
+                //carouselCount = carouselCount + 1;
+            },
             itemFirstInCallback: {
-                onBeforeAnimation: setActive
+                onBeforeAnimation: setActive,
+                onAfterAnimation: function(carousel, state) {
+                    var l = ($('#carousel-map a').length);
+                    
+                    
+                    carouselCount = carouselCount + 1;
+                    
+                    if ( l === carouselCount )
+                        carouselCount = 0;
+                        
+                    if ( t === true )
+                        carouselCount = carouselPick;
+                    
+                    //console.log( 'Max ' + l );
+                    //console.log( 'Count ' + carouselCount );
+                    
+                    $('#carousel-map a').eq((carouselCount-1)).addClass('active');
+                    t = false;
+                }
             },
             itemFirstOutCallback: {
-                onBeforeAnimation: unsetActive
+                onBeforeAnimation: unsetActive,
+                onAfterAnimation: function(carousel, state) {
+                }
+            },
+            itemLastInCallback: {
+                onBeforeAnimation: function(carousel, state, index) {
+                },
+                onAfterAnimation: function(carousel, state, index) {
+                }
             },
             fade: false
         });
