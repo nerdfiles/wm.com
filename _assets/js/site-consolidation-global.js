@@ -285,10 +285,11 @@ function setActive(carousel, state) {
     var fade = carousel.options.fade,
         $state = $(state),
         $elems = $state.find('h2 span'),
-        header = $("<h2>"),
+        header = $("<h2></h2>"),
         $p = $state.find('p'),
-        div = $("<div>");
-        
+        div = $("<div></div>");
+    
+    $state.find('.carousel-item-copy div').remove();    
     $state.find('p').remove();
 
     $p.each(function() {
