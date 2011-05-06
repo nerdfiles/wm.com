@@ -281,11 +281,6 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
-
-    $(state).parent().find('li').css({
-        position: "relative",
-        left: "0px",
-    }).show();
     
     var fade = carousel.options.fade,
         $state = $(state),
