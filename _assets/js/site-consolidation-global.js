@@ -302,13 +302,17 @@ function setActive(carousel, state) {
     
     });
     
+    var $p = $(state).find('p');
+    
     $(state).find("h2").remove();
+    $(state).find("p").remove();
     $(state).find('.carousel-item-copy').prepend(header);
+    $(state).find('.carousel-item-copy h2').after($p);
     
     //alert(header);
     
-    //Cufon.replace('#carousel h2');
-    //Cufon.replace('#carousel p');
+    Cufon.replace('#carousel h2');
+    Cufon.replace('#carousel p');
         
     $(state).css({
         position: "relative"
