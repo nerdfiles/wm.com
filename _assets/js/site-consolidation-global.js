@@ -284,7 +284,8 @@ function setActive(carousel, state) {
     
     var fade = carousel.options.fade;
 
-    //document.createElement("cufon");
+    document.createElement("cufon");
+    document.createElement("cufoncanvas");
     
     var $elems = $(state).find('h2 cufon, h2 br'),
         header = $("<h2>");
@@ -306,7 +307,7 @@ function setActive(carousel, state) {
     
     $(state).find("h2").remove();
     $(state).find("p").remove();
-    $(state).find("cufon").remove();
+    $(state).find("cufoncanvas").remove();
     $(state).find('.carousel-item-copy').prepend(header);
     $(state).find('.carousel-item-copy h2').after($p);
     
