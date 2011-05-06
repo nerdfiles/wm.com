@@ -209,7 +209,7 @@ input {
  * @valid               true
  */
 
-#header {
+#header.simple-header {
     border-bottom: 10px solid #006A3C;
     padding: 0 0 1em 0;
     margin: 0 10px 0 10px; }
