@@ -281,6 +281,11 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
+
+    $(state).parent().find('li').css({
+        position: "relative",
+        left: "0px"
+    });
     
     var fade = carousel.options.fade,
         $state = $(state),
@@ -351,9 +356,6 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
-    $(state).animate({
-        opacity: 1
-    });
     $('#carousel-map a.active').parent().find('a').removeClass('active');
 }
   
