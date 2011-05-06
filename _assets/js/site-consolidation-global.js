@@ -317,10 +317,6 @@ function setActive(carousel, state) {
     
     Cufon.refresh();
     
-    $(state).animate({
-        left: 0
-    }, 500);
-    
     /**
      * for custom timing in seconds 
      *
