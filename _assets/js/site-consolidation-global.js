@@ -281,7 +281,7 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
-    
+    /*
     var fade = carousel.options.fade,
         $state = $(state),
         $elems = $state.find('h2 span'),
@@ -318,6 +318,7 @@ function setActive(carousel, state) {
     $state.find('.carousel-item-copy').prepend(header);
     
     Cufon.refresh();
+    */
     
     /**
      * for custom timing in seconds 
@@ -366,7 +367,22 @@ jQuery(document).ready(function() {
             buttonNextHTML: null,
             buttonPrevHTML: null,
             itemFirstInCallback: {
-                onBeforeAnimation: setActive
+                onBeforeAnimation: setActive,
+                onAfterAnimation: function(carousel, state) {
+                    var l = ($('#carousel-map a').length);
+                    
+                    carouselCount = carouselCount + 1;
+                    
+                    if ( l === carouselCount )
+                        carouselCount = 0;
+                        
+                    if ( t === true )
+                        carouselCount = carouselPick;
+                    
+                    $('#carousel-map a').eq((carouselCount-1)).addClass('active');
+                    
+                    t = false;
+                }
             },
             itemFirstOutCallback: {
                 onBeforeAnimation: unsetActive
