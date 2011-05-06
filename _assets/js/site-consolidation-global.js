@@ -282,7 +282,13 @@ function initCarousel(carousel) {
 
 function setActive(carousel, state) {
 
-    console.log( $(state).fadeIn() );
+    $(state).css({
+        position: "relative"
+    }).hide();
+    
+    $(state).animate({
+        left: 0
+    }, 500).fadeIn();
     
     /*
     var fade = carousel.options.fade,
