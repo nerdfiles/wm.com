@@ -285,7 +285,7 @@ function setActive(carousel, state) {
     $(state).parent().find('li').css({
         position: "relative",
         left: "0px",
-    }).hide().fadeIn('slow');
+    });
     
     var fade = carousel.options.fade,
         $state = $(state),
@@ -356,10 +356,6 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
-    $(state).parent().find('li').css({
-        position: "relative",
-        left: "0px",
-    }).hide().fadeIn('slow');
     $('#carousel-map a.active').parent().find('a').removeClass('active');
 }
   
@@ -393,9 +389,21 @@ jQuery(document).ready(function() {
                 }
             },
             itemFirstOutCallback: {
-                onBeforeAnimation: unsetActive
+                onBeforeAnimation: unsetActive,
+                onAfterAnimation: function(carousel, state) {
+                
+                }
             },
-            fade: false
+            itemLastInCallback: {
+                onAfterAnimation: function(carousel, state) {
+                                    $(state).parent().find('li').css({
+                        position: "relative",
+                        left: "0px",
+                    }).fadeIn(800);
+                }
+            },
+            fade: false,
+            itemFallbackDimension: 760
         });
         
         jQuery(".module-branding-carousel ul").jcarousel({
