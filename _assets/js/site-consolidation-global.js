@@ -283,19 +283,10 @@ function initCarousel(carousel) {
 function setActive(carousel, state) {
     
     var fade = carousel.options.fade;
-        
-    $(state).css({
-        position: "relative"
-    });
-    
-    $(state).animate({
-        left: 0
-    }, 500, function() {
 
     document.createElement("cufon");
     document.createElement("cufoncanvas");
-    
-    /*    
+    /*
     var $elems = $(state).find('h2 cufon, h2 br'),
         header = $("<h2>");
     
@@ -311,23 +302,30 @@ function setActive(carousel, state) {
         }
     
     });
-    */
-    //var $p = $(state).find('p');
     
-    //$(state).find("h2").remove();
-    //$(state).find("p").remove();
-    //$(state).find("cufoncanvas,cufon").remove();
-    //Cufon.refresh();
-    //$(state).find('.carousel-item-copy').prepend($p);
-    //$(state).find('.carousel-item-copy').prepend(header);
+    var $p = $(state).find('p');
     
+    $(state).find("h2").remove();
+    $(state).find("p").remove();
+    $(state).find("cufoncanvas").remove();
+    $(state).find('.carousel-item-copy').prepend(header);
+    $(state).find('.carousel-item-copy h2').after($p);
     
-    
-    //$(state).find('.carousel-item-copy').hide().delay(500).fadeIn('slow', function() {
-        //Cufon.refresh('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
-        //Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
-    //});
+    $(state).find('.carousel-item-copy').hide().delay(1000).fadeIn('slow', function() {
+        Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
+        Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
     });
+    */
+    
+    Cufon.refresh();
+        
+    $(state).css({
+        position: "relative"
+    });
+    
+    $(state).animate({
+        left: 0
+    }, 500);
     
     /*$(state).parent().find('li').css({
         position: "absolute",
