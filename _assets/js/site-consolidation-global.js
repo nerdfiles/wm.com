@@ -316,7 +316,8 @@ function setActive(carousel, state) {
     
     //$(state).find("h2").remove();
     //$(state).find("p").remove();
-    $(state).find("cufoncanvas,cufon").remove();
+    //$(state).find("cufoncanvas,cufon").remove();
+    //Cufon.refresh();
     //$(state).find('.carousel-item-copy').prepend($p);
     //$(state).find('.carousel-item-copy').prepend(header);
     
