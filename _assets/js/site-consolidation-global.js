@@ -289,6 +289,8 @@ function setActive(carousel, state) {
         $p = $state.find('p'),
         div = $("<div></div>");
     
+    $state.show();
+    
     $state.find('.carousel-item-copy div').remove();    
     $state.find('p').remove();
 
@@ -350,7 +352,6 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
-    $(state).parent().find('li').show();
     $('#carousel-map a.active').parent().find('a').removeClass('active');
 }
   
