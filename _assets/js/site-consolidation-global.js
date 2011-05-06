@@ -282,9 +282,9 @@ function initCarousel(carousel) {
 
 function setActive(carousel, state) {
 
-    $(state).css({
+    $(state).parent().find('li').css({
         position: "relative"
-    });
+    }).show();
     
     $(state).animate({
         left: 0
