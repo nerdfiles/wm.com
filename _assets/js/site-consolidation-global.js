@@ -285,7 +285,7 @@ function setActive(carousel, state) {
     $(state).parent().find('li').css({
         position: "relative",
         left: "0px",
-    });
+    }).show();
     
     var fade = carousel.options.fade,
         $state = $(state),
@@ -370,6 +370,12 @@ jQuery(document).ready(function() {
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
+            setupCallback: function(carousel) {
+            },
+            itemLoadCallback: {
+                onBeforeAnimation: function(carousel, state) {},
+                onAfterAnimation: function(carousel, state) {}
+            },
             itemFirstInCallback: {
                 onBeforeAnimation: setActive,
                 onAfterAnimation: function(carousel, state) {
@@ -391,15 +397,13 @@ jQuery(document).ready(function() {
             itemFirstOutCallback: {
                 onBeforeAnimation: unsetActive,
                 onAfterAnimation: function(carousel, state) {
-                
                 }
             },
             itemLastInCallback: {
-                onAfterAnimation: function(carousel, state) {
-                                    $(state).parent().find('li').css({
-                        position: "relative",
-                        left: "0px",
-                    }).fadeIn(800);
+                onBeforeAnimation: function(carousel, li, index, state) {
+                    
+                },
+                onAfterAnimation: function(carousel, li, index, state) {
                 }
             },
             fade: false,
