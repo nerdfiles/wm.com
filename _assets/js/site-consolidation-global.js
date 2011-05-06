@@ -283,7 +283,15 @@ function initCarousel(carousel) {
 function setActive(carousel, state) {
     
     var fade = carousel.options.fade;
-
+        
+    $(state).css({
+        position: "relative"
+    });
+    
+    $(state).animate({
+        left: 0
+    }, 500, function() {
+    
     document.createElement("cufon");
     document.createElement("cufoncanvas");
     
@@ -311,21 +319,12 @@ function setActive(carousel, state) {
     $(state).find('.carousel-item-copy').prepend(header);
     $(state).find('.carousel-item-copy h2').after($p);
     
-    $(state).find('.carousel-item-copy').hide().delay(1000).fadeIn('slow', function() {
-        Cufon.refresh();
+    $(state).find('.carousel-item-copy').hide().delay(500).fadeIn('slow', function() {
         Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
         Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
     });
     
-    //alert(header);
-        
-    $(state).css({
-        position: "relative"
     });
-    
-    $(state).animate({
-        left: 0
-    }, 500);
     
     /*$(state).parent().find('li').css({
         position: "absolute",
