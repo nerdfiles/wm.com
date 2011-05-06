@@ -652,8 +652,16 @@ textarea { line-height: 1.25em; }
 .inline { display: inline !important; }
 .inline-block { display: inline-block !important; *zoom: 1 !important; *display: inline !important; }
 
-#carousel a { opacity: .8; }
-#carousel a.btn_cta:hover { opacity: 1; }
+#carousel a { opacity: .8; cursor: pointer; }
+#carousel a.btn_cta:hover { 
+    opacity: 1; 
+    background-image: url(/_assets/img-ui/btn_cta_right_hover.gif);
+    }
+#carousel a.btn_cta:hover span {    
+    background-image: url(/_assets/img-ui/btn_cta_left_hover.gif);
+    display: block;
+    background-repeat: no-repeat;
+}
 #content label { padding: .6em 0 0 0; display: inline-block; *zoom: 1; *display: inline; }
 #content input.text { padding: 5px; border: 1px #bbb solid; -moz-box-shadow: 1px 1px 3px #ccc inset; -webkit-box-shadow: 1px 1px 3px #ccc inset; box-shadow: 1px 1px 3px #ccc inset; }
 #content h3 { margin: .7em 0; }

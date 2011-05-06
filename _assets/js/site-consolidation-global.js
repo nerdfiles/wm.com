@@ -397,12 +397,18 @@ jQuery(document).ready(function() {
         
         jQuery(".module-branding-carousel ul").jcarousel({
             scroll: 1,
-            auto: 2,
+            auto: 4,
             animation: 0,
-            wrap: 'wrap',
-            initCallback: initCarousel,
+            wrap: 'last',
             buttonNextHTML: null,
             buttonPrevHTML: null,
+            itemFirstInCallback: {
+                onBeforeAnimation: function(carousel, state, index) {
+                },
+                onAfterAnimation: function(carousel, state, index) {
+                    
+                }
+            },
             fade: true
         });
   
