@@ -312,6 +312,7 @@ function setActive(carousel, state) {
     $(state).find('.carousel-item-copy h2').after($p);
     
     $(state).find('.carousel-item-copy').hide().delay(1000).fadeIn('slow', function() {
+        Cufon.refresh();
         Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
         Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
     });
