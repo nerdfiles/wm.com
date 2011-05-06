@@ -309,6 +309,8 @@ function setActive(carousel, state) {
     $(state).find('.carousel-item-copy').prepend(header);
     $(state).find('.carousel-item-copy h2').after($p);
     
+    $(state).find('.carousel-item-copy').hide().delay(300).fadeIn();
+    
     //alert(header);
     
     Cufon.replace('#carousel h2');
