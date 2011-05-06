@@ -313,11 +313,11 @@ function setActive(carousel, state) {
     
     var $p = $(state).find('p');
     
-    $(state).find("h2").remove();
-    $(state).find("p").remove();
-    $(state).find("cufoncanvas,cufon").remove();
+    //$(state).find("h2").remove();
+    //$(state).find("p").remove();
+    //$(state).find("cufoncanvas,cufon").remove();
+    $(state).find('.carousel-item-copy').prepend($p);
     $(state).find('.carousel-item-copy').prepend(header);
-    $(state).find('.carousel-item-copy h2').after($p);
     
     
     
