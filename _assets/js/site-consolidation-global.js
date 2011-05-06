@@ -349,6 +349,7 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
+    $(state).parent().find('li').show();
     $('#carousel-map a.active').parent().find('a').removeClass('active');
 }
   
