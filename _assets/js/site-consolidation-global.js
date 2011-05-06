@@ -325,7 +325,6 @@ function setActive(carousel, state) {
         //Cufon.refresh('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
         //Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
     //});
-    Cufon.refresh();
     });
     
     /*$(state).parent().find('li').css({
