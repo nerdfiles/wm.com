@@ -275,14 +275,31 @@ function initCarousel(carousel) {
 
 function setActive(carousel, state) {
 
-    document.createElement("cufon");
+    //document.createElement("cufon");
     
-    var $copy = $(state).find('.carousel-item-copy').detach();
+    var $elems = $(state).find('h2 cufon, h2 br'),
+        header = $("<h2></h2>");
     
-        // found cufon
-        $(state).find('.carousel-item-img').parent().append($copy);
-        Cufon.replace('#carousel h2');
-        Cufon.replace('#carousel p');
+    $elems.each(function() {
+    
+        if ( $(this)[0].nodeName === "CUFON" ) {
+            header.append($(this).text());
+        } else if ( $(this)[0].nodeName === "BR" ) {
+            header.append($(this));
+        }
+        //
+    
+    });
+    
+    //console.log(header);
+    
+    //$('#left_nav').append(header);
+    
+    // found cufon
+    //$(state).find('.carousel-item-copy').prepend("<p>"+$p+"</p>");
+    //$(state).find('.carousel-item-copy').prepend("<h2>"+$h2+"</h2>");
+    Cufon.replace('#carousel h2');
+    Cufon.replace('#carousel p');
         
     $(state).css({
         position: "relative"
