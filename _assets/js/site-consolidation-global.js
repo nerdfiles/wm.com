@@ -227,8 +227,10 @@ $(function() {
         }
     });
 })(jQuery);
+
 var t = false,
-    carouselPick;
+    carouselPick,
+    carouselLength;
     
 function initCarousel(carousel) {
 
@@ -279,6 +281,8 @@ function initCarousel(carousel) {
 }
 
 function setActive(carousel, state) {
+    
+    var fade = carousel.options.fade;
 
     //document.createElement("cufon");
     
@@ -353,7 +357,7 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
-$('#carousel-map a.active').parent().find('a').removeClass('active');
+    $('#carousel-map a.active').parent().find('a').removeClass('active');
 }
   
 jQuery(document).ready(function() {
@@ -367,15 +371,10 @@ jQuery(document).ready(function() {
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
-            setupCallback: function(carousel) {
-                //$('#carousel-map a').eq(carouselCount).addClass("active");
-                //carouselCount = carouselCount + 1;
-            },
             itemFirstInCallback: {
                 onBeforeAnimation: setActive,
                 onAfterAnimation: function(carousel, state) {
                     var l = ($('#carousel-map a').length);
-                    
                     
                     carouselCount = carouselCount + 1;
                     
@@ -385,23 +384,13 @@ jQuery(document).ready(function() {
                     if ( t === true )
                         carouselCount = carouselPick;
                     
-                    //console.log( 'Max ' + l );
-                    //console.log( 'Count ' + carouselCount );
-                    
                     $('#carousel-map a').eq((carouselCount-1)).addClass('active');
+                    
                     t = false;
                 }
             },
             itemFirstOutCallback: {
-                onBeforeAnimation: unsetActive,
-                onAfterAnimation: function(carousel, state) {
-                }
-            },
-            itemLastInCallback: {
-                onBeforeAnimation: function(carousel, state, index) {
-                },
-                onAfterAnimation: function(carousel, state, index) {
-                }
+                onBeforeAnimation: unsetActive
             },
             fade: false
         });
@@ -410,22 +399,10 @@ jQuery(document).ready(function() {
             scroll: 1,
             auto: 2,
             animation: 0,
-            wrap: 'circular',
+            wrap: 'wrap',
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
-            itemFirstInCallback: {
-                onBeforeAnimation: setActive,
-                onAfterAnimation: function() {}
-            },
-            itemFirstOutCallback: {
-                onBeforeAnimation: unsetActive,
-                onAfterAnimation: function() {}
-            },
-            itemLastInCallback: {
-                onBeforeAnimation: function() {},
-                onAfterAnimation: function() {}
-            },
             fade: true
         });
   
