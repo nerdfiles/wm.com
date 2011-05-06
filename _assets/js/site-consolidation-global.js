@@ -290,7 +290,7 @@ function setActive(carousel, state) {
         left: 0
     }, 800).show();
     
-    /*
+
     var fade = carousel.options.fade,
         $state = $(state),
         $elems = $state.find('h2 span'),
@@ -327,7 +327,7 @@ function setActive(carousel, state) {
     $state.find('.carousel-item-copy').prepend(header);
     
     Cufon.refresh();
-    */
+
     
     /**
      * for custom timing in seconds 
