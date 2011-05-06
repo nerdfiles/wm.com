@@ -316,10 +316,6 @@ function setActive(carousel, state) {
     $state.find('.carousel-item-copy').prepend(header);
     
     Cufon.refresh();
-        
-    $(state).css({
-        position: "relative"
-    });
     
     $(state).animate({
         left: 0
