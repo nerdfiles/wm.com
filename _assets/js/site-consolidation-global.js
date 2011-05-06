@@ -365,6 +365,27 @@ jQuery(document).ready(function() {
             initCallback: initCarousel,
             buttonNextHTML: null,
             buttonPrevHTML: null,
+            itemFirstInCallback: {
+                onBeforeAnimation: setActive,
+                onAfterAnimation: function(carousel, state) {
+                    var l = ($('#carousel-map a').length);
+                    
+                    carouselCount = carouselCount + 1;
+                    
+                    if ( l === carouselCount )
+                        carouselCount = 0;
+                        
+                    if ( t === true )
+                        carouselCount = carouselPick;
+                    
+                    $('#carousel-map a').eq((carouselCount-1)).addClass('active');
+                    
+                    t = false;
+                }
+            },
+            itemFirstOutCallback: {
+                onBeforeAnimation: unsetActive
+            },
             fade: false,
             itemFallbackDimension: 760
         });
