@@ -282,17 +282,14 @@ function initCarousel(carousel) {
 
 function setActive(carousel, state) {
     
-    var fade = carousel.options.fade;
-
-    document.createElement("cufon");
-    document.createElement("cufoncanvas");
-    
-    var $elems = $(state).find('h2 span'),
+    var fade = carousel.options.fade,
+        $state = $(state),
+        $elems = $state.find('h2 span'),
         header = $("<h2>"),
-        $p = $(state).find('p'),
+        $p = $state.find('p'),
         div = $("<div>");
         
-    $(state).find('p').remove();
+    $state.find('p').remove();
 
     $p.each(function() {
         var $self = $(this),
@@ -301,10 +298,11 @@ function setActive(carousel, state) {
         div.prepend($copy);
     });
     
-    $(state).find('p').remove();
-    $(state).find('.carousel-item-copy').prepend(div);
+    $state.find('p').remove();
+    
+    $state.find('.carousel-item-copy').prepend(div);
 
-    $(state).find('h2').remove();
+    $state.find('h2').remove();
     
     $elems.each(function() {
         var $self = $(this),
@@ -313,39 +311,9 @@ function setActive(carousel, state) {
         header.prepend($copy);
     });
     
-    $(state).find('h2').remove();
-    $(state).find('.carousel-item-copy').prepend(header);
+    $state.find('h2').remove();
     
-    /*
-    var $elems = $(state).find('h2 cufon, h2 br'),
-        header = $("<h2>");
-    
-    $elems.each(function() {
-        
-        var $self = $(this),
-            $copy = $self.clone();
-    
-        if ( $self[0].nodeName === "CUFON" ) {
-            header.append($copy.text());
-        } else if ( $self[0].nodeName === "BR" ) {
-            header.append($copy);
-        }
-    
-    });
-    
-    var $p = $(state).find('p');
-    
-    $(state).find("h2").remove();
-    $(state).find("p").remove();
-    $(state).find("cufoncanvas").remove();
-    $(state).find('.carousel-item-copy').prepend(header);
-    $(state).find('.carousel-item-copy h2').after($p);
-    
-    $(state).find('.carousel-item-copy').hide().delay(1000).fadeIn('slow', function() {
-        Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] h2');
-        Cufon.replace('#carousel li[jcarouselindex="'+$(state).attr("jcarouselindex")+'"] p');
-    });
-    */
+    $state.find('.carousel-item-copy').prepend(header);
     
     Cufon.refresh();
         
@@ -356,15 +324,6 @@ function setActive(carousel, state) {
     $(state).animate({
         left: 0
     }, 500);
-    
-    /*$(state).parent().find('li').css({
-        position: "absolute",
-        left: "-10000px",
-        top: "auto",
-        width: "1px",
-        height: "1px",
-        overflow: "hidden"
-    });*/
     
     /**
      * for custom timing in seconds 
