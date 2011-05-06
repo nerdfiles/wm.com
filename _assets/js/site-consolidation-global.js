@@ -306,6 +306,7 @@ function setActive(carousel, state) {
     
     $(state).find("h2").remove();
     $(state).find("p").remove();
+    $(state).find("cufon").remove();
     $(state).find('.carousel-item-copy').prepend(header);
     $(state).find('.carousel-item-copy h2').after($p);
     
