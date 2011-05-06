@@ -356,6 +356,10 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
+    $(state).parent().find('li').css({
+        position: "relative",
+        left: "0px",
+    }).hide().fadeIn('slow');
     $('#carousel-map a.active').parent().find('a').removeClass('active');
 }
   
