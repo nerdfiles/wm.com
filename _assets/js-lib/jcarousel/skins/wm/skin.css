@@ -199,6 +199,12 @@ html.js #carousel li { }
 #carousel-prev { background-position: 0 -16px; }
 #carousel-next { }
 
+#carousel-pause,
+#carousel-play { width: 43px; height: 14px; background: url(carousel-control-sprite.png) 0 -1px no-repeat; text-indent: -9999px; text-align: left; display: inline-block; *zoom: 1; *display: inline; }
+#carousel-pause { background-position: 0 -16px; }
+#carousel-play { }
+
+
 #carousel-map { 
     margin: 0 0.3em; 
     display: inline-block; 

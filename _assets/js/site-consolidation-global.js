@@ -233,8 +233,33 @@ var t = false,
     carouselLength,
     carouselCount = 0;
     
-function initCarousel(carousel) {
+function initCarousel(carousel, state) {
 
+      if (state == 'init') { 
+
+        carousel.startAutoOrig = carousel.startAuto; 
+        carousel.startAuto = function() { 
+          if (!carousel.paused) { 
+            carousel.startAutoOrig(); 
+          } 
+        } 
+
+        carousel.pause = function() { 
+          carousel.paused = true; 
+          carousel.stopAuto(); 
+        }; 
+
+        carousel.play = function() { 
+          carousel.paused = false; 
+          carousel.startAuto(); 
+        }; 
+        
+    }
+    
+    $('#carousel-play').hide();
+    
+    carousel.play();
+    
     jQuery('#carousel-map a').bind('mouseover', function() {
         $(this).addClass('hover');
     });
@@ -250,7 +275,33 @@ function initCarousel(carousel) {
         carousel.scroll(c);
         return false;
     });
- 
+    
+    
+    jQuery('#carousel-pause').bind('click', function() {
+        
+        var $self = $(this);
+        
+        $('#carousel-pause').hide();
+        $('#carousel-play').show();
+        
+        carousel.pause();
+        
+        return false;
+    });
+    
+    jQuery('#carousel-play').bind('click', function() {
+        
+        var $self = $(this);
+        
+        $('#carousel-play').hide();
+        $('#carousel-pause').show();
+        
+        carousel.play();
+        
+        return false;
+    });
+    
+    /*
     jQuery('#carousel-next').bind('click', function() {
         carousel.next();
         return false;
@@ -260,6 +311,7 @@ function initCarousel(carousel) {
         carousel.prev();
         return false;
     });
+    */
     
     // disable if next or prev
     
