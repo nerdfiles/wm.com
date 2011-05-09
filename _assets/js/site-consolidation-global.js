@@ -454,14 +454,15 @@ jQuery(document).ready(function() {
     $('.module-branding-carousel ul').each(function() {
     
         var $self = $(this),
-            marginBottom = 10,
+            marginBottom = 15,
             l = ($self.find('li').length),
             c = 0,
-            init = true;
+            init = true,
+            $lis = $self.find('li');
         
-        $self.height($self.find('li').height()+marginBottom);
-        $self.find('li').hide();
-        $self.find('li').eq(c).addClass('active').show();
+        $self.height($lis.height()+marginBottom);
+        $lis.hide();
+        $lis.eq(c).addClass('active').show();
         
         window.setInterval(function() {
         
@@ -473,14 +474,11 @@ jQuery(document).ready(function() {
                 c = 0;
             }
             
-            $self.find('li').fadeOut();
-            $self.find('li').eq(c).addClass('active').fadeIn();
+            $lis.fadeOut();
+            $lis.eq(c).addClass('active').fadeIn();
         
             if ( init === true ) {
                 init = false;
-                //$self.find('li').eq((1)).addClass('active').fadeIn();
-            } else {
-                //$self.find('li').eq((c-1)).addClass('active').fadeIn();
             }
         
         }, 4000);
