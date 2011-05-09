@@ -260,6 +260,8 @@ function initCarousel(carousel, state) {
     
     carousel.play();
     
+    $('#carousel-controls').hide().delay(500).fadeIn('slow');
+    
     jQuery('#carousel-map a').bind('mouseover', function() {
         $(this).addClass('hover');
     });
@@ -421,7 +423,7 @@ jQuery(document).ready(function() {
 
     jQuery("#carousel-list").jcarousel({
         scroll: 1,
-        auto: 1,
+        auto: 7,
         wrap: 'circular',
         animation: 1500,
         initCallback: initCarousel,
