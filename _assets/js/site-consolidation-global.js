@@ -260,10 +260,10 @@ function initCarousel(carousel, state) {
     
     carousel.play();
     
-    $('#carousel-controls').css({
+    $('#carousel-controls').hide().css({
         bottom: "20px",
         right: "20px" 
-    }).hide().delay(1000).fadeIn('slow');
+    }).delay(1000).fadeIn('slow');
     
     jQuery('#carousel-map a').bind('mouseover', function() {
         $(this).addClass('hover');
