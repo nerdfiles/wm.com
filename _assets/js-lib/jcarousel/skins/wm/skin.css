@@ -191,7 +191,7 @@ html.js #carousel li { }
  * WM Horizontal Buttons
  */
 
-#carousel-controls {  position: absolute; bottom: 20px; right: 20px; }
+#carousel-controls {  position: absolute; right: -9999px; bottom: -9999px; }
 #carousel-controls a { opacity: .6; cursor: pointer; }
 #carousel-controls a:hover { opacity: 1; }
  
