@@ -439,6 +439,8 @@ jQuery(document).ready(function() {
                     
                 if ( t === true )
                     carouselCount = carouselPick;
+                    
+                alert(carouselCount);
                 
                 $('#carousel-map a').eq((carouselCount-1)).addClass('active');
                 
