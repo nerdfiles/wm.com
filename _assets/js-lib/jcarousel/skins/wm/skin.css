@@ -137,6 +137,9 @@
     /*height: 300px;*/
 }
 
+.jcarousel-skin-wm-imageslider .jcarousel-item img {
+}
+
 .jcarousel-skin-wm-imageslider .jcarousel-item-horizontal {
 	margin-left: 0;
     margin-right: 10px;

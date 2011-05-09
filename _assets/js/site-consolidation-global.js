@@ -419,53 +419,60 @@ function unsetActive(carousel, state) {
   
 jQuery(document).ready(function() {
 
-        jQuery("#carousel-list").jcarousel({
-            scroll: 1,
-            auto: 5,
-            wrap: 'circular',
-            animation: 1000,
-            initCallback: initCarousel,
-            buttonNextHTML: null,
-            buttonPrevHTML: null,
-            itemFirstInCallback: {
-                onBeforeAnimation: setActive,
-                onAfterAnimation: function(carousel, state) {
-                    var l = ($('#carousel-map a').length);
+    jQuery("#carousel-list").jcarousel({
+        scroll: 1,
+        auto: 5,
+        wrap: 'circular',
+        animation: 1000,
+        initCallback: initCarousel,
+        buttonNextHTML: null,
+        buttonPrevHTML: null,
+        itemFirstInCallback: {
+            onBeforeAnimation: setActive,
+            onAfterAnimation: function(carousel, state) {
+                var l = ($('#carousel-map a').length);
+                
+                carouselCount = carouselCount + 1;
+                
+                if ( l === carouselCount )
+                    carouselCount = 0;
                     
-                    carouselCount = carouselCount + 1;
-                    
-                    if ( l === carouselCount )
-                        carouselCount = 0;
-                        
-                    if ( t === true )
-                        carouselCount = carouselPick;
-                    
-                    $('#carousel-map a').eq((carouselCount-1)).addClass('active');
-                    
-                    t = false;
-                }
-            },
-            itemFirstOutCallback: {
-                onBeforeAnimation: unsetActive
-            },
-            fade: false
-        });
+                if ( t === true )
+                    carouselCount = carouselPick;
+                
+                $('#carousel-map a').eq((carouselCount-1)).addClass('active');
+                
+                t = false;
+            }
+        },
+        itemFirstOutCallback: {
+            onBeforeAnimation: unsetActive
+        },
+        fade: false
+    });
+    
+    $('.module-branding-carousel ul').each(function() {
+    
+        var $self = $(this),
+            marginBottom = 10;
         
-        jQuery(".module-branding-carousel ul").jcarousel({
-            scroll: 1,
-            auto: 4,
-            animation: 0,
-            wrap: 'last',
-            buttonNextHTML: null,
-            buttonPrevHTML: null,
-            itemFirstInCallback: {
-                onBeforeAnimation: function(carousel, state, index) {
-                },
-                onAfterAnimation: function(carousel, state, index) {
-                    
-                }
-            },
-            fade: true
+        $self.height($self.find('li').height()+marginBottom);
+        
+        $self.find('li').hide().css({
+            position: 'absolute'
         });
+        $self.find('li').eq(0).show().addClass('active');
+        
+        window.setTimeout(function() {
+            
+            var $n = $self.find('li.active');
+            $self.find('li').removeClass('active');    
+            
+            $n.next().addClass('active').fadeIn();
+            $n.fadeOut();
+        
+        }, 500);
+    
+    });
   
 });

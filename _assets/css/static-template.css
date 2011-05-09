@@ -1126,12 +1126,19 @@ hr { clear: both; }
 .promo-table .display-footer .line-2 { padding: 1px; color: #78b400; }
 
 
+#right_content .module-branding-image { margin-bottom: 0; }
 .module-branding-image .module-inner { border: none; }
 
-#right_content .module-branding-carousel { position: relative; margin-bottom: 0; background: url(/_assets/img-ui/careers/ui-carousel-bg-1.jpg) no-repeat; }
+#right_content .module-branding-carousel { 
+    position: relative; 
+    margin-bottom: 0; 
+    background: url(/_assets/img-ui/careers/ui-carousel-bg-1.jpg) no-repeat; }
 .module-branding-carousel .module-inner { border: none; }
 .module-branding-carousel ul { margin: 0 !important; padding: 0 !important; }
-.module-branding-carousel li { background: none !important; margin: 0 !important; padding: 0 !important; }
+.module-branding-carousel li { 
+    background: none !important; 
+    margin: 0 !important; 
+    padding: 0 !important; }
 #right_content .module-branding-carousel .caption { }
 
 .module-testimonials { border: none; }
