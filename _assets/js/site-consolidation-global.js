@@ -414,7 +414,7 @@ function setActive(carousel, state) {
 }
 
 function unsetActive(carousel, state) {
-    //$('#carousel-map a.active').parent().find('a').removeClass('active');
+    $('#carousel-map a').removeClass('active');
 }
   
 jQuery(document).ready(function() {
