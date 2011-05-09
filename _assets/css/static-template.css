@@ -1140,7 +1140,13 @@ hr { clear: both; }
     margin: 0 !important; 
     padding: 0 !important;
     position: absolute; }
-#right_content .module-branding-carousel .caption { background: orange; padding: 5px; }
+#right_content .module-branding-carousel .caption { 
+    background: #fff; 
+    padding: 5px; 
+    opacity: .7; 
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
 
 .module-testimonials { border: none; }
 .module-testimonials .module-inner { border: none; }
