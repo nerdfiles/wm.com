@@ -421,7 +421,7 @@ jQuery(document).ready(function() {
 
     jQuery("#carousel-list").jcarousel({
         scroll: 1,
-        auto: 5,
+        auto: 1,
         wrap: 'circular',
         animation: 1500,
         initCallback: initCarousel,
@@ -434,13 +434,11 @@ jQuery(document).ready(function() {
                 
                 carouselCount = carouselCount + 1;
                 
-                if ( l === carouselCount )
+                if ( l == carouselCount )
                     carouselCount = 0;
                     
                 if ( t === true )
                     carouselCount = carouselPick;
-                    
-                alert(carouselCount);
                 
                 $('#carousel-map a').eq((carouselCount-1)).addClass('active');
                 
