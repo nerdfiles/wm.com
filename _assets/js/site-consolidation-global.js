@@ -460,7 +460,7 @@ jQuery(document).ready(function() {
             init = true,
             $lis = $self.find('li');
         
-        $self.height($lis.height()+marginBottom);
+        $self.height( $lis.height() + marginBottom );
         $lis.hide();
         $lis.eq(c).addClass('active').show();
         
