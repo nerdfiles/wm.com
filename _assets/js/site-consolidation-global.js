@@ -474,8 +474,8 @@ jQuery(document).ready(function() {
                 c = 0;
             }
             
-            $lis.fadeOut();
-            $lis.eq(c).addClass('active').fadeIn();
+            $lis.fadeOut('slow');
+            $lis.eq(c).addClass('active').fadeIn('slow');
         
             if ( init === true ) {
                 init = false;
