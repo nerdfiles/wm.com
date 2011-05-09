@@ -341,7 +341,7 @@ function setActive(carousel, state) {
     
     $(state).animate({
         left: 0
-    }, 800).show();
+    }, 900).show();
     
 
     var fade = carousel.options.fade,
@@ -423,7 +423,7 @@ jQuery(document).ready(function() {
         scroll: 1,
         auto: 5,
         wrap: 'circular',
-        animation: 1000,
+        animation: 1500,
         initCallback: initCarousel,
         buttonNextHTML: null,
         buttonPrevHTML: null,
