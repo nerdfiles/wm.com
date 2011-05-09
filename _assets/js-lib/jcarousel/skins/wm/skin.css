@@ -179,12 +179,10 @@ ul#carousel-list li { padding-left: 0; background: none; }
 #carousel .carousel-item-copy { padding: 20px; margin: 0; }
 #carousel h2 { margin-top: 0; }
 #carousel li {
-/*
 position:absolute;
-left:-9999px;
+right:-9999px;
 top:auto;
 overflow:hidden;
-*/
 }
 html.js-enabled #carousel li,
 html.js #carousel li { }
