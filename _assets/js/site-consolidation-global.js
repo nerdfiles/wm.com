@@ -455,19 +455,35 @@ jQuery(document).ready(function() {
     
         var $self = $(this),
             marginBottom = 10,
-            l = $self.find('li').length,
-            c = 0;
+            l = ($self.find('li').length),
+            c = 0,
+            init = true;
         
         $self.height($self.find('li').height()+marginBottom);
         $self.find('li').hide();
-        $self.find('li').eq(0).addClass('active').fadeIn();
-        
+        $self.find('li').eq(c).addClass('active').show();
         
         window.setInterval(function() {
         
-            console.log( $self.find('li.active') );
+            var $oldactive = $self.find('li.active');
+            
+            if ( c < (l-1) ) {
+                c = c + 1;
+            } else {
+                c = 0;
+            }
+            
+            $self.find('li').fadeOut();
+            $self.find('li').eq(c).addClass('active').fadeIn();
         
-        }, 1000);
+            if ( init === true ) {
+                init = false;
+                //$self.find('li').eq((1)).addClass('active').fadeIn();
+            } else {
+                //$self.find('li').eq((c-1)).addClass('active').fadeIn();
+            }
+        
+        }, 4000);
     
     });
   

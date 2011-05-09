@@ -1140,7 +1140,7 @@ hr { clear: both; }
     margin: 0 !important; 
     padding: 0 !important;
     position: absolute; }
-#right_content .module-branding-carousel .caption { }
+#right_content .module-branding-carousel .caption { background: orange; padding: 5px; }
 
 .module-testimonials { border: none; }
 .module-testimonials .module-inner { border: none; }
