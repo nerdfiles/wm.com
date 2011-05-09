@@ -454,24 +454,20 @@ jQuery(document).ready(function() {
     $('.module-branding-carousel ul').each(function() {
     
         var $self = $(this),
-            marginBottom = 10;
+            marginBottom = 10,
+            l = $self.find('li').length,
+            c = 0;
         
         $self.height($self.find('li').height()+marginBottom);
+        $self.find('li').hide();
+        $self.find('li').eq(0).addClass('active').fadeIn();
         
-        $self.find('li').hide().css({
-            position: 'absolute'
-        });
-        $self.find('li').eq(0).show().addClass('active');
         
-        window.setTimeout(function() {
-            
-            var $n = $self.find('li.active');
-            $self.find('li').removeClass('active');    
-            
-            $n.next().addClass('active').fadeIn();
-            $n.fadeOut();
+        window.setInterval(function() {
         
-        }, 500);
+            console.log( $self.find('li.active') );
+        
+        }, 1000);
     
     });
   

@@ -862,7 +862,7 @@ a.btn_cta span {
     padding: 0 0 2.5em 0;
     margin: 1.5em 0 1em 0;
     text-shadow: 1px 1px 1px #f3f2ec; 
-    background: url(http://www.wm.com/_assets/images/backgrounds/bkg_homehero_shadow.gif) bottom center no-repeat; }
+    background: url(/_assets/img-ui/careers/careers_blur_divider.png) bottom center no-repeat; }
 #offers h2 { margin: 7px 0 0px; color: #00693c; }
 #offers p { margin: .5em 0; }
 #offers ul li.offer {
@@ -1138,7 +1138,8 @@ hr { clear: both; }
 .module-branding-carousel li { 
     background: none !important; 
     margin: 0 !important; 
-    padding: 0 !important; }
+    padding: 0 !important;
+    position: absolute; }
 #right_content .module-branding-carousel .caption { }
 
 .module-testimonials { border: none; }
