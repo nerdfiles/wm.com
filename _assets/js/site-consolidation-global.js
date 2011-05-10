@@ -292,7 +292,6 @@ function initCarousel(carousel, state) {
         
         //carousel.scrollTail(c);
         //return false;
-        e.preventDefault();
     });
     
     
@@ -358,29 +357,27 @@ function initCarousel(carousel, state) {
 
 function setActive(carousel, state) {
 
-    $(state).parent().find('li').css({
-    
-        position: "relative"
-        
-    }).show();
-    
-    $(state).animate({
-    
-        left: 0
-        
-    }, 900).show();
-    
-
     var fade = carousel.options.fade,
         $state = $(state),
+        $ul = $state.parent(),
+        $li = $ul.find('li'),
+        $p = $ul.find('p'),
         $elems = $state.find('h2 span'),
         header = $("<h2></h2>"),
         $p = $state.find('p'),
         div = $("<div></div>");
-        
+    
+    // ...    
+    $li.css({ position: "relative" }).show();
+    
+    // ...
+    
+    $state.animate({ left: 0 }, 900).show();
+    
+    // remove old content
     
     $state.find('.carousel-item-copy div').remove();    
-    $state.find('p').remove();
+    $p.remove();
 
     $p.each(function() {
         var $self = $(this),
@@ -389,7 +386,7 @@ function setActive(carousel, state) {
         div.prepend($copy);
     });
     
-    $state.find('p').remove();
+    $p.remove();
     
     $state.find('.carousel-item-copy').prepend(div);
 
@@ -437,6 +434,10 @@ function setActive(carousel, state) {
             }, secs );
         }
     }
+    
+    $('#carousel-controls a').animate({
+        opacity: .5
+    }, 700);
 
 }
 
@@ -456,13 +457,6 @@ jQuery(document).ready(function() {
         buttonNextHTML: null,
         buttonPrevHTML: null,
         itemLoadCallback: {
-            onBeforeAnimation: function() {
-                //alert('aa');
-                
-                $('#carousel-controls a').animate({
-                    opacity: .5
-                }, 700);
-            },
             onAfterAnimation: function() {
                 //alert('aa');
                 
