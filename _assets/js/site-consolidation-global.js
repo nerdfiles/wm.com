@@ -362,7 +362,9 @@ function setActive(carousel, state) {
         $state = $(state),
         $ul = $state.parent(),
         $li = $ul.find('li'),
+        $h2 = $p = $ul.find('p'),
         $p = $ul.find('p'),
+        $copyContainer = $state.find('.carousel-item-copy'),
         $elems = $state.find('h2 span'),
         header = $("<h2></h2>"),
         $p = $state.find('p'),
@@ -377,7 +379,7 @@ function setActive(carousel, state) {
     
     // remove old content
     
-    $state.find('.carousel-item-copy div').remove();    
+    $copyContainer.find('> div').remove();    
     $p.remove();
 
     $p.each(function() {
@@ -389,7 +391,7 @@ function setActive(carousel, state) {
     
     $p.remove();
     
-    $state.find('.carousel-item-copy').prepend(div);
+    $copyContainer.prepend(div);
 
     $state.find('h2').remove();
     
@@ -402,7 +404,7 @@ function setActive(carousel, state) {
     
     $state.find('h2').remove();
     
-    $state.find('.carousel-item-copy').prepend(header);
+    $copyContainer.prepend(header);
     
     Cufon.refresh();
 
@@ -414,11 +416,11 @@ function setActive(carousel, state) {
      * uses carousel object's "auto" if neither one is set
      */
      
-    var secs = ($(state).find('> div[class*="carousel-item-duration"]').length) ?
-        parseInt($(state).find('> div').attr('class').match(/carousel\-item\-duration\-([0-9]+)/)[1]) : false;
+    var secs = ($state.find('> div[class*="carousel-item-duration"]').length) ?
+        parseInt($state.find('> div').attr('class').match(/carousel\-item\-duration\-([0-9]+)/)[1]) : false;
     
-    if ($(state).find("> div").data("duration")) {
-        secs = parseInt($(state).find("> div").data("duration"));
+    if ($state.find("> div").data("duration")) {
+        secs = parseInt($state.find("> div").data("duration"));
     }
         
     if ( typeof( secs ) === "number" ) {
