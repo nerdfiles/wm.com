@@ -190,7 +190,7 @@ $(function() {
 	$("#container-selection-form #container-selection-zip").attr("validate", "required: true, postalcode:true");
 	$("#container-selection-form #container-selection-email").attr("validate", "required: true, maxlength: 50, email:true");
 
-  $("#container-selection-form").validate();
+    $("#container-selection-form").validate();
     
 });
 
@@ -235,23 +235,23 @@ var t = false,
     
 function initCarousel(carousel, state) {
 
-      if (state == 'init') { 
-
+    if (state == 'init') { 
+    
         carousel.startAutoOrig = carousel.startAuto; 
         carousel.startAuto = function() { 
-          if (!carousel.paused) { 
-            carousel.startAutoOrig(); 
-          } 
+            if (!carousel.paused) { 
+                carousel.startAutoOrig(); 
+            } 
         } 
-
+        
         carousel.pause = function() { 
-          carousel.paused = true; 
-          carousel.stopAuto(); 
+            carousel.paused = true; 
+            carousel.stopAuto(); 
         }; 
-
+        
         carousel.play = function() { 
-          carousel.paused = false; 
-          carousel.startAuto(); 
+            carousel.paused = false; 
+            carousel.startAuto(); 
         }; 
         
     }
@@ -263,7 +263,7 @@ function initCarousel(carousel, state) {
     $('#carousel-controls').hide().css({
         bottom: "20px",
         right: "20px" 
-    }).delay(1000).fadeIn('slow');
+    }).delay(1500).fadeIn('slow');
     
     jQuery('#carousel-map a').bind('mouseover', function() {
         $(this).addClass('hover');
@@ -277,7 +277,20 @@ function initCarousel(carousel, state) {
         var c = jQuery.jcarousel.intval(jQuery(this).text());
         t = true;
         carouselPick = c;
+        
+        $('ul#carousel-list').animate({
+            opacity: .4
+        }, 1000, function() {
+        
+            $('ul#carousel-list').animate({
+                opacity: 1
+            }, 250);
+        
+        });
+        
         carousel.scroll(c);
+        
+        //carousel.scrollTail(c);
         return false;
     });
     
@@ -331,9 +344,13 @@ function initCarousel(carousel, state) {
     // pause on hover
     
     carousel.clip.hover(function() {
+    
         carousel.stopAuto();
+        
     }, function() {
+    
         carousel.startAuto();
+        
     });
     
 }
@@ -341,11 +358,15 @@ function initCarousel(carousel, state) {
 function setActive(carousel, state) {
 
     $(state).parent().find('li').css({
+    
         position: "relative"
+        
     }).show();
     
     $(state).animate({
+    
         left: 0
+        
     }, 900).show();
     
 
