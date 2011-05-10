@@ -292,6 +292,7 @@ function initCarousel(carousel, state) {
         
         //carousel.scrollTail(c);
         //return false;
+        e.preventDefault();
     });
     
     
@@ -452,7 +453,7 @@ jQuery(document).ready(function() {
         auto: 7,
         wrap: 'circular',
         easing: 'easeOutQuad',
-        animation: 2700,
+        animation: 2400,
         initCallback: initCarousel,
         buttonNextHTML: null,
         buttonPrevHTML: null,
