@@ -273,7 +273,7 @@ function initCarousel(carousel, state) {
         $(this).removeClass('hover');
     });
     
-    jQuery('#carousel-map a').bind('click', function() {
+    jQuery('#carousel-map a').bind('click', function(e) {
         var c = jQuery.jcarousel.intval(jQuery(this).text());
         t = true;
         carouselPick = c;
@@ -291,7 +291,8 @@ function initCarousel(carousel, state) {
         carousel.scroll(c);
         
         //carousel.scrollTail(c);
-        return false;
+        //return false;
+        e.preventDefault();
     });
     
     
@@ -454,18 +455,36 @@ jQuery(document).ready(function() {
         initCallback: initCarousel,
         buttonNextHTML: null,
         buttonPrevHTML: null,
+        itemLoadCallback: {
+            onBeforeAnimation: function() {
+                //alert('aa');
+                
+                $('#carousel-controls a').animate({
+                    opacity: .5
+                }, 700);
+            },
+            onAfterAnimation: function() {
+                //alert('aa');
+                
+                $('#carousel-controls a').animate({
+                    opacity: 1
+                }, 700);
+            }
+        },
         itemFirstInCallback: {
             onBeforeAnimation: setActive,
             onAfterAnimation: function(carousel, state) {
                 var l = ($('#carousel-map a').length);
                 
                 carouselCount = carouselCount + 1;
-                
-                if ( l == carouselCount )
-                    carouselCount = 0;
                     
                 if ( t === true )
                     carouselCount = carouselPick;
+                    
+                if ( l == carouselCount )
+                    carouselCount = 0;
+                    
+                //console.log(carouselCount-1);
                 
                 $('#carousel-map a').eq((carouselCount-1)).addClass('active');
                 
