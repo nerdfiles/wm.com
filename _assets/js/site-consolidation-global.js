@@ -362,8 +362,6 @@ function setActive(carousel, state) {
         $state = $(state),
         $ul = $state.parent(),
         $li = $ul.find('li'),
-        $h2 = $p = $ul.find('p'),
-        $p = $ul.find('p'),
         $copyContainer = $state.find('.carousel-item-copy'),
         $elems = $state.find('h2 span'),
         header = $("<h2></h2>"),
@@ -375,7 +373,7 @@ function setActive(carousel, state) {
     
     // ...
     
-    $state.animate({ left: 0 }, 900).show();
+    $state.animate({ left: 0 }, 900).fadeIn(1000);
     
     // remove old content
     
@@ -455,7 +453,7 @@ jQuery(document).ready(function() {
         auto: 7,
         wrap: 'circular',
         easing: 'easeOutQuad',
-        animation: 2400,
+        animation: 2500,
         initCallback: initCarousel,
         buttonNextHTML: null,
         buttonPrevHTML: null,
