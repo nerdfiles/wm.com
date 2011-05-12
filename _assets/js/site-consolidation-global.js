@@ -393,6 +393,7 @@ function setActive(carousel, state, index, s) {
         div = $("<div></div>");
     
     // ...
+    
     $ul.css({
         height: $li.height()+"px"
     });
@@ -401,13 +402,6 @@ function setActive(carousel, state, index, s) {
         position: "relative",
         left: "0px"
     });
-    /*
-    $state.animate({
-    
-        opacity: 1
-    
-    }, 1000);
-    */
     
     // ...
     
@@ -495,7 +489,7 @@ jQuery(document).ready(function() {
         auto: 7,
         wrap: 'circular',
         easing: 'easeInOutQuad',
-        animation: 2500,
+        animation: 2600,
         initCallback: initCarousel,
         buttonNextHTML: null,
         buttonPrevHTML: null,
@@ -507,7 +501,9 @@ jQuery(document).ready(function() {
                 carouselControl = true;
                 
                 $lis
+                    
                     .delay(1000)
+                    
                     .animate({
                         opacity: 1
                     }, 1500);     
@@ -525,7 +521,7 @@ jQuery(document).ready(function() {
                 
                 $ctrls.animate({
                     opacity: 1
-                }, 700);
+                }, 2000);
             }
         },
         itemFirstInCallback: {
