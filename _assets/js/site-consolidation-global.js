@@ -275,15 +275,17 @@ function initCarousel(carousel, state) {
     });
     
     jQuery('#carousel-map a').bind('click', function(e) {
+    
         var c = jQuery.jcarousel.intval(jQuery(this).text()),
-            uCarouselCount = c;
+            uCarouselCount = c,
+            $a = $('#carousel-map a');
         
         if (carouselControl === false) {
         
             var carouselPick = c,
-                carouselLength = ($('#carousel-map a').length);
+                carouselLength = ($a.length);
             
-            $(this).parent().find('a').animate({
+            $a.animate({
                 opacity: .1
             }, 1000);
                 
@@ -292,8 +294,8 @@ function initCarousel(carousel, state) {
             if ( carouselLength === carouselCount )
                 carouselCount = 0;
             
-            $('#carousel-map a').removeClass('active');
-            $('#carousel-map a').eq(carouselCount).addClass('active');
+            $a.removeClass('active');
+            $a.eq(carouselCount).addClass('active');
             
             //carouselPick = null;
             
@@ -375,7 +377,7 @@ function initCarousel(carousel, state) {
     
 }
 
-function setActive(carousel, state, index) {
+function setActive(carousel, state, index, s) {
 
     var fade = carousel.options.fade,
         $state = $(state),
@@ -388,11 +390,17 @@ function setActive(carousel, state, index) {
         div = $("<div></div>");
     
     // ...    
-    $li.css({ position: "relative" }).show();
+    $li.css({ position: "relative", right: 0 }).animate({
+        opacity: .6
+    }, 1, function() {
+    
+    });
+    
+            $state.animate({
+            opacity: 1
+        }, 1000);
     
     // ...
-    
-    $state.animate({ left: 0 }, 900).fadeIn(1000);
     
     // remove old content
     
@@ -466,9 +474,8 @@ function setActive(carousel, state, index) {
     } else {
     
         carouselCount = 1;
-    }
     
-    //console.log( carousel.pos(index) );
+    }
 
 }
   
@@ -485,14 +492,8 @@ jQuery(document).ready(function() {
         buttonPrevHTML: null,
         itemLoadCallback: {
             onBeforeAnimation: function(carousel, state, callbackName) {
+            
                 carouselControl = true;
-        
-                /*
-                if ( !carousel.prevLast )
-                    carouselCount = 0;
-                else
-                    carouselCount = carouselCount + 1;
-                */
                 
             },
             onAfterAnimation: function(carousel, state, callbackName) {
@@ -510,6 +511,7 @@ jQuery(document).ready(function() {
         itemFirstInCallback: {
             onBeforeAnimation: setActive,
             onAfterAnimation: function(a,b,c) {
+            
             }
         },
         fade: false
