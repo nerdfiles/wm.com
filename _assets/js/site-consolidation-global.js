@@ -467,7 +467,7 @@ function setActive(carousel, state) {
         carouselCount = 1;
     }
         
-    console.log(carouselCount);
+    //console.log(carouselCount);
 
 }
   
