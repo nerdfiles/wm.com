@@ -303,8 +303,11 @@ function initCarousel(carousel, state) {
             
             // Leave this alone; it's smart enough to know which node to
             // actually scroll to.
-            
-            carousel.scroll(c);
+            $('#carousel li').delay(500).animate({
+                opacity: .6
+            }, 800, function() {
+                carousel.scroll(c);
+            });
         
         } else {
             //var carouselPick = c;
@@ -389,16 +392,22 @@ function setActive(carousel, state, index, s) {
         $p = $state.find('p'),
         div = $("<div></div>");
     
-    // ...    
-    $li.css({ position: "relative", right: 0 }).animate({
-        opacity: .6
-    }, 1, function() {
-    
+    // ...
+    $ul.css({
+        height: $li.height()+"px"
     });
     
-            $state.animate({
-            opacity: 1
-        }, 1000);
+    $li.css({
+        position: "relative",
+        left: "0px",
+        opacity: .6
+    });
+    
+    $state.animate({
+    
+        opacity: 1
+    
+    }, 1000);
     
     // ...
     
