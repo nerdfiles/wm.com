@@ -399,15 +399,15 @@ function setActive(carousel, state, index, s) {
     
     $li.css({
         position: "relative",
-        left: "0px",
-        opacity: .6
+        left: "0px"
     });
-    
+    /*
     $state.animate({
     
         opacity: 1
     
     }, 1000);
+    */
     
     // ...
     
@@ -494,7 +494,7 @@ jQuery(document).ready(function() {
         scroll: 1,
         auto: 7,
         wrap: 'circular',
-        easing: 'easeOutQuad',
+        easing: 'easeInOutQuad',
         animation: 2500,
         initCallback: initCarousel,
         buttonNextHTML: null,
@@ -502,25 +502,56 @@ jQuery(document).ready(function() {
         itemLoadCallback: {
             onBeforeAnimation: function(carousel, state, callbackName) {
             
+                var $lis = $('#carousel li');
+                
                 carouselControl = true;
                 
+                $lis
+                    .delay(1000)
+                    .animate({
+                        opacity: 1
+                    }, 1500);     
+
             },
             onAfterAnimation: function(carousel, state, callbackName) {
                 
-                carouselControl = false;
-
-                $('#carousel-map a').removeClass('active');
-                $('#carousel-map a').eq(carouselCount-1).addClass('active');
+                var $a = $('#carousel-map a'),
+                    $ctrls = $('#carousel-controls a');
                 
-                $('#carousel-controls a').animate({
+                carouselControl = false;
+                    
+                $a.removeClass('active');
+                $a.eq(carouselCount-1).addClass('active');
+                
+                $ctrls.animate({
                     opacity: 1
                 }, 700);
             }
         },
         itemFirstInCallback: {
-            onBeforeAnimation: setActive,
-            onAfterAnimation: function(a,b,c) {
-            
+            onBeforeAnimation: setActive
+        },
+        itemLastOutCallback: {
+            onBeforeAnimation: function(carousel) {
+                
+                var $lis = $('#carousel li');
+                
+                carousel.pause();
+                
+                $lis
+                    .animate({
+                        opacity: 1
+                    }, 800)
+                    
+                    .delay(100)
+                    
+                    .animate({
+                        opacity: 1
+                    }, 700, function() {
+                        carousel.play();
+                    });
+
+                
             }
         },
         fade: false
