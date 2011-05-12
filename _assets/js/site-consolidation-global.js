@@ -322,6 +322,7 @@ function initCarousel(carousel, state) {
         $('#carousel-play').show();
         
         carousel.pause();
+        //carousel.pauseAuto();
         
         return false;
     });
@@ -374,7 +375,7 @@ function initCarousel(carousel, state) {
     
 }
 
-function setActive(carousel, state) {
+function setActive(carousel, state, index) {
 
     var fade = carousel.options.fade,
         $state = $(state),
@@ -466,8 +467,8 @@ function setActive(carousel, state) {
     
         carouselCount = 1;
     }
-        
-    //console.log(carouselCount);
+    
+    //console.log( carousel.pos(index) );
 
 }
   
