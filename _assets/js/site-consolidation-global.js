@@ -228,10 +228,11 @@ $(function() {
     });
 })(jQuery);
 
-var t = false,
-    carouselPick,
+var carouselPick = null,
     carouselLength,
-    carouselCount = 0;
+    carouselCount = 0,
+    uCarouselCount = carouselCount,
+    carouselControl = false;
     
 function initCarousel(carousel, state) {
 
@@ -274,21 +275,38 @@ function initCarousel(carousel, state) {
     });
     
     jQuery('#carousel-map a').bind('click', function(e) {
-        var c = jQuery.jcarousel.intval(jQuery(this).text());
-        t = true;
-        carouselPick = c;
+        var c = jQuery.jcarousel.intval(jQuery(this).text()),
+            uCarouselCount = c;
         
-        $('ul#carousel-list').animate({
-            opacity: .4
-        }, 1000, function() {
+        if (carouselControl === false) {
         
-            $('ul#carousel-list').animate({
-                opacity: 1
-            }, 250);
+            var carouselPick = c,
+                carouselLength = ($('#carousel-map a').length);
+            
+            $(this).parent().find('a').animate({
+                opacity: .1
+            }, 1000);
+                
+            carouselCount = carouselPick-1;
+                
+            if ( carouselLength === carouselCount )
+                carouselCount = 0;
+            
+            $('#carousel-map a').removeClass('active');
+            $('#carousel-map a').eq(carouselCount).addClass('active');
+            
+            //carouselPick = null;
+            
+            carouselControl = true;
+            
+            // Leave this alone; it's smart enough to know which node to
+            // actually scroll to.
+            
+            carousel.scroll(c);
         
-        });
-        
-        carousel.scroll(c);
+        } else {
+            //var carouselPick = c;
+        }
         
         //carousel.scrollTail(c);
         //return false;
@@ -439,11 +457,18 @@ function setActive(carousel, state) {
     $('#carousel-controls a').animate({
         opacity: .5
     }, 700);
+    
+    if ( carouselCount < $('#carousel-map a').length ) {
+        
+        carouselCount = carouselCount + 1;
+        
+    } else {
+    
+        carouselCount = 1;
+    }
+        
+    console.log(carouselCount);
 
-}
-
-function unsetActive(carousel, state) {
-    $('#carousel-map a').removeClass('active');
 }
   
 jQuery(document).ready(function() {
@@ -458,8 +483,23 @@ jQuery(document).ready(function() {
         buttonNextHTML: null,
         buttonPrevHTML: null,
         itemLoadCallback: {
-            onAfterAnimation: function() {
-                //alert('aa');
+            onBeforeAnimation: function(carousel, state, callbackName) {
+                carouselControl = true;
+        
+                /*
+                if ( !carousel.prevLast )
+                    carouselCount = 0;
+                else
+                    carouselCount = carouselCount + 1;
+                */
+                
+            },
+            onAfterAnimation: function(carousel, state, callbackName) {
+                
+                carouselControl = false;
+
+                $('#carousel-map a').removeClass('active');
+                $('#carousel-map a').eq(carouselCount-1).addClass('active');
                 
                 $('#carousel-controls a').animate({
                     opacity: 1
@@ -468,26 +508,8 @@ jQuery(document).ready(function() {
         },
         itemFirstInCallback: {
             onBeforeAnimation: setActive,
-            onAfterAnimation: function(carousel, state) {
-                var l = ($('#carousel-map a').length);
-                
-                carouselCount = carouselCount + 1;
-                    
-                if ( t === true )
-                    carouselCount = carouselPick;
-                    
-                if ( l == carouselCount )
-                    carouselCount = 0;
-                    
-                //console.log(carouselCount-1);
-                
-                $('#carousel-map a').eq((carouselCount-1)).addClass('active');
-                
-                t = false;
+            onAfterAnimation: function(a,b,c) {
             }
-        },
-        itemFirstOutCallback: {
-            onBeforeAnimation: unsetActive
         },
         fade: false
     });
