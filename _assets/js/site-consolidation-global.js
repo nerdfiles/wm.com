@@ -692,12 +692,12 @@ jQuery(document).ready(function() {
             });
             }
             
-            $lis.parent().fadeOut('normal', function() {
+            $lis.parent().animate({opacity: 0}, 500, function() {
                 $lis.hide();
                 $lis.eq(c).addClass('active').show();
             });
 
-            $lis.parent().fadeIn('normal', function() {
+            $lis.parent().animate({opacity: 1}, 500, function() {
                 
             });
         
