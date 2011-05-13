@@ -606,7 +606,10 @@ jQuery(document).ready(function() {
                 
                 carouselControl = true;
                 
-                if ( !$.browser.ie ) {
+                if ( $.browser.ie ) {
+                    $lis.show();
+                }
+                
                 $lis
                     
                     .delay(1000)
@@ -614,7 +617,6 @@ jQuery(document).ready(function() {
                     .animate({
                         opacity: 1
                     }, 1500);
-                }
 
             },
             onAfterAnimation: function(carousel, state, callbackName) {
@@ -642,7 +644,7 @@ jQuery(document).ready(function() {
                 
                 carousel.pause();
                 if ( $.browser.ie ) {
-                    $lis.css({opacity:1});
+                    $lis.show();
                 }
                 $lis
                     .animate({
