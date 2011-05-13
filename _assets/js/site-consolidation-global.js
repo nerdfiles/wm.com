@@ -303,11 +303,14 @@ function initCarousel(carousel, state) {
             
             // Leave this alone; it's smart enough to know which node to
             // actually scroll to.
+            
+            //if ( !$.browser.ie ) {
             $('#carousel li').delay(500).animate({
                 opacity: .6
             }, 800, function() {
                 carousel.scroll(c);
             });
+            //}
         
         } else {
             //var carouselPick = c;
@@ -597,11 +600,13 @@ jQuery(document).ready(function() {
         itemLoadCallback: {
             onBeforeAnimation: function(carousel, state, callbackName) {
             
+                // onpageload intro fade
+                
                 var $lis = $('#carousel li');
                 
                 carouselControl = true;
                 
-                if ( !$.browser.ie ) {
+                //if ( !$.browser.ie ) {
                 $lis
                     
                     .delay(1000)
@@ -609,7 +614,7 @@ jQuery(document).ready(function() {
                     .animate({
                         opacity: 1
                     }, 1500);
-                }
+                //}
 
             },
             onAfterAnimation: function(carousel, state, callbackName) {
@@ -623,7 +628,7 @@ jQuery(document).ready(function() {
                 $a.eq(carouselCount-1).addClass('active');
                 
                 $ctrls.animate({
-                    opacity: oS
+                    opacity: 1
                 }, 2000);
             }
         },
@@ -633,25 +638,23 @@ jQuery(document).ready(function() {
         itemLastOutCallback: {
             onBeforeAnimation: function(carousel) {
                 
-                var $lis = $('#carousel li'),
-                    oS = ($.browser.ie) ? 'show' : 1,
-                    oH = ($.browser.ie) ? 'hide' : 0;
+                var $lis = $('#carousel li');
                 
                 carousel.pause();
-                
+                if ( !$.browser.ie ) {
                 $lis
                     .animate({
-                        opacity: oS
+                        opacity: 1
                     }, 800)
                     
                     .delay(100)
                     
                     .animate({
-                        opacity: oS
+                        opacity: 1
                     }, 700, function() {
                         carousel.play();
                     });
-                
+                }
             }
         },
         fade: false
