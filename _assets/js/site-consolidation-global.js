@@ -308,12 +308,8 @@ function initCarousel(carousel, state) {
             $('#carousel li').parent().animate({
                 opacity: .6,
                 easing: "easeInBack"
-            }, 1800, function() {
-                $('#carousel li').parent().animate({
-                    opacity: .4
-                }, 200, function() {            
-                    carousel.scroll(c);
-                });
+            }, 1000, function() {
+                carousel.scroll(c);
             });
             //}
         
@@ -595,8 +591,8 @@ jQuery(document).ready(function() {
         scroll: 1,
         auto: 7,
         wrap: 'circular',
-        easing: 'easeInOutQuad',
-        animation: 2600,
+        easing: 'swing',
+        animation: 3000,
         initCallback: initCarousel,
         buttonNextHTML: null,
         buttonPrevHTML: null,
@@ -609,7 +605,10 @@ jQuery(document).ready(function() {
                 
                 carouselControl = true;
                 
+                if ( state === 'init' ) {
+                
                 //if ( !$.browser.ie ) {
+
                 $lis.parent()
                     
                     .delay(200)
@@ -617,7 +616,10 @@ jQuery(document).ready(function() {
                     .animate({
                         opacity: 1
                     }, 1500);
+
                 //}
+                
+                }
 
             },
             onAfterAnimation: function(carousel, state, callbackName) {
@@ -639,7 +641,7 @@ jQuery(document).ready(function() {
             onBeforeAnimation: setActive
         },
         itemLastOutCallback: {
-            onBeforeAnimation: function(carousel, s, b, p, a, r) {
+            onAfterAnimation: function(carousel) {
                 
                 var $lis = $('#carousel li');
                 
