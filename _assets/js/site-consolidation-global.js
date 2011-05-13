@@ -663,15 +663,15 @@ jQuery(document).ready(function() {
     $('.module-branding-carousel ul').each(function() {
     
         var $self = $(this),
-            marginBottom = 15,
+            marginBottom = 0,
             l = ($self.find('li').length),
             c = 0,
             init = true,
             $lis = $self.find('li');
         
         $self.height( $lis.height() + marginBottom );
-        $lis.hide();
-        $lis.eq(c).addClass('active').show();
+        $lis.filter(':eq(1)').hide();
+        $lis.eq(c).addClass('active');
         
         window.setInterval(function() {
         
