@@ -684,7 +684,7 @@ jQuery(document).ready(function() {
                 _src = $lis.eq(c-1).next().find('img').attr('src');
             } else {
                 c = 0;
-                _src = $lis.eq(0).find('img').attr('src');
+                _src = $lis.eq(0).next().find('img').attr('src');
             }
 
             if (crossFade === true) {
