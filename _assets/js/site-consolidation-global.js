@@ -597,19 +597,19 @@ jQuery(document).ready(function() {
         itemLoadCallback: {
             onBeforeAnimation: function(carousel, state, callbackName) {
             
-                var $lis = $('#carousel li'),
-                    oS = ($.browser.ie) ? 'show' : 1,
-                    oH = ($.browser.ie) ? 'hide' : 0;
+                var $lis = $('#carousel li');
                 
                 carouselControl = true;
                 
+                if ( !$.browser.ie ) {
                 $lis
                     
                     .delay(1000)
                     
                     .animate({
-                        opacity: oS
-                    }, 1500);     
+                        opacity: 1
+                    }, 1500);
+                }
 
             },
             onAfterAnimation: function(carousel, state, callbackName) {
