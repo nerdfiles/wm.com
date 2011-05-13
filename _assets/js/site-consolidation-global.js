@@ -639,13 +639,10 @@ jQuery(document).ready(function() {
         },
         itemLastOutCallback: {
             onBeforeAnimation: function(carousel) {
-                
+                /*
                 var $lis = $('#carousel li');
                 
                 carousel.pause();
-                if ( $.browser.ie ) {
-                    $lis.css({opacity:'show'});
-                }
                 $lis
                     .animate({
                         opacity: 1
@@ -658,6 +655,7 @@ jQuery(document).ready(function() {
                     }, 700, function() {
                         carousel.play();
                     });
+                */
             }
         },
         fade: false
