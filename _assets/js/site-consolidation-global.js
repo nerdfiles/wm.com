@@ -606,17 +606,15 @@ jQuery(document).ready(function() {
                 
                 carouselControl = true;
                 
-                if ( $.browser.ie ) {
-                    $lis.css({opacity:'show'});
-                }
-                
-                $lis.parent()
+                //if ( !$.browser.ie ) {
+                $lis
                     
                     .delay(1000)
                     
                     .animate({
                         opacity: 1
                     }, 1500);
+                //}
 
             },
             onAfterAnimation: function(carousel, state, callbackName) {
@@ -639,10 +637,12 @@ jQuery(document).ready(function() {
         },
         itemLastOutCallback: {
             onBeforeAnimation: function(carousel) {
+                
                 var $lis = $('#carousel li');
                 
                 carousel.pause();
-                $lis.parent()
+                
+                $lis
                     .animate({
                         opacity: 1
                     }, 800)
@@ -654,6 +654,7 @@ jQuery(document).ready(function() {
                     }, 700, function() {
                         carousel.play();
                     });
+                
             }
         },
         fade: false

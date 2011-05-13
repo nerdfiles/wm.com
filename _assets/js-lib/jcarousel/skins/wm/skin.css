@@ -178,8 +178,9 @@ ul#carousel-list li { padding-left: 0; background: none; }
 #carousel .carousel-item-img { margin-right: 1em; float: left; }
 #carousel .carousel-item-copy { padding: 20px; margin: 0; }
 #carousel h2 { margin-top: 0; }
-#carousel ul { opacity: 0; }
+#carousel ul { }
 #carousel li {
+opacity: 0; 
 position:absolute;
 left:-9999px;
 top:auto;
