@@ -305,10 +305,15 @@ function initCarousel(carousel, state) {
             // actually scroll to.
             
             //if ( !$.browser.ie ) {
-            $('#carousel li').delay(500).animate({
-                opacity: .6
-            }, 800, function() {
-                carousel.scroll(c);
+            $('#carousel li').parent().animate({
+                opacity: .6,
+                easing: "easeInBack"
+            }, 1800, function() {
+                $('#carousel li').parent().animate({
+                    opacity: .4
+                }, 200, function() {            
+                    carousel.scroll(c);
+                });
             });
             //}
         
@@ -524,9 +529,7 @@ jQuery(document).ready(function() {
                                 background: "orange",
                                 border: "1px #ccc solid",
                                 opacity: 0
-                            }),
-                oS = ($.browser.ie) ? 'show' : 1,
-                oH = ($.browser.ie) ? 'hide' : 0;
+                            });
             
             $('#'+this.oldFrameId).animate({opacity: 0}, 500, function() { $(this).remove() });
             
@@ -536,7 +539,7 @@ jQuery(document).ready(function() {
             
             $newFrame.animate({
             
-                opacity: oS,
+                opacity: 1,
                 easing: "easeOutExpo"
             
             }, 900, function() {
@@ -544,7 +547,7 @@ jQuery(document).ready(function() {
                 if ( oS === 'show' ) {
                 $(this).delay(300).animate({
                 
-                    opacity: oS
+                    opacity: 1
                 
                 }, 500);
                 } else {
@@ -563,7 +566,7 @@ jQuery(document).ready(function() {
                 var $self = $(this);
                 
                 $self.animate({
-                    opacity: oH
+                    opacity: 0
                 }, 500, function() { 
                     $(this).remove();
                 });
@@ -607,9 +610,9 @@ jQuery(document).ready(function() {
                 carouselControl = true;
                 
                 //if ( !$.browser.ie ) {
-                $lis
+                $lis.parent()
                     
-                    .delay(1000)
+                    .delay(200)
                     
                     .animate({
                         opacity: 1
@@ -636,23 +639,17 @@ jQuery(document).ready(function() {
             onBeforeAnimation: setActive
         },
         itemLastOutCallback: {
-            onBeforeAnimation: function(carousel) {
+            onBeforeAnimation: function(carousel, s, b, p, a, r) {
                 
                 var $lis = $('#carousel li');
                 
-                carousel.pause();
+                //carousel.pause();
                 
-                $lis
-                    .animate({
-                        opacity: 1
-                    }, 800)
-                    
-                    .delay(100)
-                    
+                $lis.parent()
                     .animate({
                         opacity: 1
                     }, 700, function() {
-                        carousel.play();
+                        //carousel.play();
                     });
                 
             }
