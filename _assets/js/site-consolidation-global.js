@@ -676,15 +676,25 @@ jQuery(document).ready(function() {
         
         window.setInterval(function() {
         
-            var $oldactive = $self.find('li.active');
+            var $oldactive = $self.find('li.active'),
+                _src
             
             if ( c < (l-1) ) {
                 c = c + 1;
+                
+            
+                
             } else {
                 c = 0;
+                
+                
             }
             
-            var _src = $lis.eq(c).find('img').attr('src');
+            _src = $lis.eq(c).next().find('img').attr('src');
+            
+            if ( c == (l-1) ) {
+                _src = $lis.eq(c).find('img').attr('src');
+            }
             
             if (crossFade === true) {
             $lis.parent().parent().css({
