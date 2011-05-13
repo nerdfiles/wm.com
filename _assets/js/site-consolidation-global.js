@@ -521,7 +521,9 @@ jQuery(document).ready(function() {
                                 background: "orange",
                                 border: "1px #ccc solid",
                                 opacity: 0
-                            });
+                            }),
+                oS = ($.browser.ie) ? 'show' : 1,
+                oH = ($.browser.ie) ? 'hide' : 0;
             
             $('#'+this.oldFrameId).animate({opacity: 0}, 500, function() { $(this).remove() });
             
@@ -531,16 +533,24 @@ jQuery(document).ready(function() {
             
             $newFrame.animate({
             
-                opacity: 1,
+                opacity: oS,
                 easing: "easeOutExpo"
             
             }, 900, function() {
             
+                if ( oS === 'show' ) {
+                $(this).delay(300).animate({
+                
+                    opacity: oS
+                
+                }, 500);
+                } else {
                 $(this).delay(300).animate({
                 
                     opacity: .5
                 
-                }, 500);
+                }, 500);                
+                }
             
             
             });
@@ -550,7 +560,7 @@ jQuery(document).ready(function() {
                 var $self = $(this);
                 
                 $self.animate({
-                    opacity: 0
+                    opacity: oH
                 }, 500, function() { 
                     $(this).remove();
                 });
@@ -587,7 +597,9 @@ jQuery(document).ready(function() {
         itemLoadCallback: {
             onBeforeAnimation: function(carousel, state, callbackName) {
             
-                var $lis = $('#carousel li');
+                var $lis = $('#carousel li'),
+                    oS = ($.browser.ie) ? 'show' : 1,
+                    oH = ($.browser.ie) ? 'hide' : 0;
                 
                 carouselControl = true;
                 
@@ -596,7 +608,7 @@ jQuery(document).ready(function() {
                     .delay(1000)
                     
                     .animate({
-                        opacity: 1
+                        opacity: oS
                     }, 1500);     
 
             },
@@ -611,7 +623,7 @@ jQuery(document).ready(function() {
                 $a.eq(carouselCount-1).addClass('active');
                 
                 $ctrls.animate({
-                    opacity: 1
+                    opacity: oS
                 }, 2000);
             }
         },
@@ -621,23 +633,24 @@ jQuery(document).ready(function() {
         itemLastOutCallback: {
             onBeforeAnimation: function(carousel) {
                 
-                var $lis = $('#carousel li');
+                var $lis = $('#carousel li'),
+                    oS = ($.browser.ie) ? 'show' : 1,
+                    oH = ($.browser.ie) ? 'hide' : 0;
                 
                 carousel.pause();
                 
                 $lis
                     .animate({
-                        opacity: 1
+                        opacity: oS
                     }, 800)
                     
                     .delay(100)
                     
                     .animate({
-                        opacity: 1
+                        opacity: oS
                     }, 700, function() {
                         carousel.play();
                     });
-
                 
             }
         },
