@@ -507,6 +507,7 @@ jQuery(document).ready(function() {
     
         $self.bind('loadFrame', function(e) {
             var id = 'frame-'+Math.floor((Math.random()*1000)*(Math.random()*1000)),
+                $container = $self.parent().parent(),
                 $frame =  $("<div class='frame'>")
                             .attr('id', id)
                             .css({
@@ -524,15 +525,18 @@ jQuery(document).ready(function() {
             
             $('#'+this.oldFrameId).animate({opacity: 0}, 500, function() { $(this).remove() });
             
-            $self.parent().parent().prepend($frame);
+            $container.prepend($frame);
             
-            $self.parent().parent().find("#"+id).animate({
+            var $newFrame = $self.parent().parent().find("#"+id);
             
-                opacity: 1
+            $newFrame.animate({
+            
+                opacity: 1,
+                easing: "easeOutExpo"
             
             }, 900, function() {
             
-                $(this).animate({
+                $(this).delay(300).animate({
                 
                     opacity: .5
                 
@@ -541,11 +545,15 @@ jQuery(document).ready(function() {
             
             });
             
-            $self.parent().parent().find("#"+id).bind('click.rm', function(e) {
+            $newFrame.bind('click.rm', function(e) {
                 
                 var $self = $(this);
                 
-                $('#'+id).animate({opacity: 0}, 500, function() { $(this).remove() });
+                $self.animate({
+                    opacity: 0
+                }, 500, function() { 
+                    $(this).remove();
+                });
                 
                 //console.log("You've just interacted with a polygon, rect or circle. And you've now just cleared away a lazy modal.");
             
@@ -555,13 +563,14 @@ jQuery(document).ready(function() {
             
             this.oldFrameId = id;
             
-            e.preventDefault();
         });
         
         $self.trigger('loadFrame');
         
         $self.bind('click', function(e){
             $self.trigger('loadFrame');
+            
+            e.preventDefault();
         });
     
     });
