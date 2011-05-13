@@ -686,8 +686,6 @@ jQuery(document).ready(function() {
                 c = 0;
                 _src = $lis.eq(0).find('img').attr('src');
             }
-            
-            alert(_src);
 
             if (crossFade === true) {
             $lis.parent().parent().css({
@@ -696,7 +694,7 @@ jQuery(document).ready(function() {
             }
             
             $lis.parent().animate({opacity: 0}, 500, function() {
-                $lis.hide();
+                //$lis.hide();
                 $lis.eq(c).addClass('active').show();
             });
 
