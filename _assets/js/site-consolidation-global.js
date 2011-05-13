@@ -306,9 +306,9 @@ function initCarousel(carousel, state) {
             
             //if ( !$.browser.ie ) {
             $('#carousel li').parent().animate({
-                opacity: .6,
-                easing: "easeInBack"
-            }, 1000, function() {
+                opacity: .5,
+                easing: "linear"
+            }, 1600, function() {
                 carousel.scroll(c);
             });
             //}
