@@ -607,7 +607,7 @@ jQuery(document).ready(function() {
                 carouselControl = true;
                 
                 if ( $.browser.ie ) {
-                    $lis.show();
+                    $lis.css({opacity:'show'});
                 }
                 
                 $lis
@@ -644,7 +644,7 @@ jQuery(document).ready(function() {
                 
                 carousel.pause();
                 if ( $.browser.ie ) {
-                    $lis.show();
+                    $lis.css({opacity:'show'});
                 }
                 $lis
                     .animate({
