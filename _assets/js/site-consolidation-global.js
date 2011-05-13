@@ -667,7 +667,8 @@ jQuery(document).ready(function() {
             l = ($self.find('li').length),
             c = 0,
             init = true,
-            $lis = $self.find('li');
+            $lis = $self.find('li'),
+            crossFade = true;
         
         $self.height( $lis.height() + marginBottom );
         $lis.filter(':eq(1)').hide();
@@ -683,8 +684,22 @@ jQuery(document).ready(function() {
                 c = 0;
             }
             
-            $lis.fadeOut('slow');
-            $lis.eq(c).addClass('active').fadeIn('slow');
+            var _src = $lis.eq(c).find('img').attr('src');
+            
+            if (crossFade === true) {
+            $lis.parent().parent().css({
+                "background": 'url('+_src+')'
+            });
+            }
+            
+            $lis.parent().fadeOut('normal', function() {
+                $lis.hide();
+                $lis.eq(c).addClass('active').show();
+            });
+
+            $lis.parent().fadeIn('normal', function() {
+                
+            });
         
             if ( init === true ) {
                 init = false;
