@@ -306,8 +306,7 @@ function initCarousel(carousel, state) {
             
             //if ( !$.browser.ie ) {
             $('#carousel li').parent().animate({
-                opacity: .5,
-                easing: "linear"
+                opacity: .5
             }, 1600, function() {
                 carousel.scroll(c);
             });
