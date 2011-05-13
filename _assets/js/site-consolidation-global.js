@@ -693,13 +693,15 @@ jQuery(document).ready(function() {
             });
             }
             
+            //$lis.parent().animate({opacity: 0}, 500);
+            $lis.eq(c).addClass('active');
             $lis.parent().animate({opacity: 0}, 500, function() {
-                $lis.parent().animate({opacity: 1}, 500);
-                $lis.eq(c).addClass('active').show();
+                $lis.hide();
+                $lis.eq(c).show();
             });
 
             $lis.parent().animate({opacity: 1}, 500, function() {
-                
+                $lis.eq(c).addClass('active')
             });
         
             if ( init === true ) {
