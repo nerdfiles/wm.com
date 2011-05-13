@@ -641,7 +641,9 @@ jQuery(document).ready(function() {
                 var $lis = $('#carousel li');
                 
                 carousel.pause();
-                if ( !$.browser.ie ) {
+                if ( $.browser.ie ) {
+                    $lis.css({opacity:1});
+                }
                 $lis
                     .animate({
                         opacity: 1
@@ -654,7 +656,6 @@ jQuery(document).ready(function() {
                     }, 700, function() {
                         carousel.play();
                     });
-                }
             }
         },
         fade: false
