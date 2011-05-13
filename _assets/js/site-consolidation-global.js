@@ -610,7 +610,7 @@ jQuery(document).ready(function() {
                     $lis.css({opacity:'show'});
                 }
                 
-                $lis
+                $lis.parent()
                     
                     .delay(1000)
                     
