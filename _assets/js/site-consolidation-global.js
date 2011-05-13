@@ -484,6 +484,88 @@ function setActive(carousel, state, index, s) {
   
 jQuery(document).ready(function() {
 
+    $('.wm-area area').each(function(e) {
+    
+        var $self = $(this),
+            coords = $self.attr('coords'),
+            coords = coords.split(","),
+            units = "px",
+            x = coords[0]+units,
+            y = coords[1]+units,
+            w = $self.width(),
+            h = $self.height();
+            
+        $self.parent().parent().find('img').css({
+            position: "absolute",
+            "z-index": "8999"
+        });
+        
+        $self.parent().parent().css({
+            position: "relative",
+            height: $self.parent().parent().find('img').height()+"px"
+        });
+    
+        $self.bind('loadFrame', function(e) {
+            var id = 'frame-'+Math.floor((Math.random()*1000)*(Math.random()*1000)),
+                $frame =  $("<div class='frame'>")
+                            .attr('id', id)
+                            .css({
+                                cursor: "pointer",
+                                position: "absolute",
+                                "z-index": "9000",
+                                left: x,
+                                top: y,
+                                width: w,
+                                height: h,
+                                background: "orange",
+                                border: "1px #ccc solid",
+                                opacity: 0
+                            });
+            
+            $('#'+this.oldFrameId).animate({opacity: 0}, 500, function() { $(this).remove() });
+            
+            $self.parent().parent().prepend($frame);
+            
+            $self.parent().parent().find("#"+id).animate({
+            
+                opacity: 1
+            
+            }, 900, function() {
+            
+                $(this).animate({
+                
+                    opacity: .5
+                
+                }, 500);
+            
+            
+            });
+            
+            $self.parent().parent().find("#"+id).bind('click.rm', function(e) {
+                
+                var $self = $(this);
+                
+                $('#'+id).animate({opacity: 0}, 500, function() { $(this).remove() });
+                
+                //console.log("You've just interacted with a polygon, rect or circle. And you've now just cleared away a lazy modal.");
+            
+                $self.unbind('click.rm');
+                
+            });
+            
+            this.oldFrameId = id;
+            
+            e.preventDefault();
+        });
+        
+        $self.trigger('loadFrame');
+        
+        $self.bind('click', function(e){
+            $self.trigger('loadFrame');
+        });
+    
+    });
+
     jQuery("#carousel-list").jcarousel({
         scroll: 1,
         auto: 7,
