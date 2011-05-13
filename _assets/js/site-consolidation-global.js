@@ -694,7 +694,7 @@ jQuery(document).ready(function() {
             }
             
             $lis.parent().animate({opacity: 0}, 500, function() {
-                //$lis.hide();
+                $lis.parent().animate({opacity: 1}, 500);
                 $lis.eq(c).addClass('active').show();
             });
 
