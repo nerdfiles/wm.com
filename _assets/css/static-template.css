@@ -218,6 +218,7 @@ input {
 #header.simple-header,
 #header.simplified-header {
     border-bottom: 10px solid #006A3C;
+    background-position: 757px 0px; 
     padding: 0 0 1em 0;
     margin: 0 10px 0 10px; }
 
