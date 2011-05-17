@@ -539,20 +539,11 @@ jQuery(document).ready(function() {
             
             }, 900, function() {
             
-                if ( oS === 'show' ) {
                 $(this).delay(300).animate({
                 
                     opacity: 1
                 
                 }, 500);
-                } else {
-                $(this).delay(300).animate({
-                
-                    opacity: .5
-                
-                }, 500);                
-                }
-            
             
             });
             
