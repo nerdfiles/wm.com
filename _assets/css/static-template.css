@@ -4,7 +4,13 @@
  * @author          kfargaso
  * @tested          Site Consolidation, Careers, Manhatta Beach (failed because of invalid HTML)
  */
-
+ 
+/**
+ * R1 Overrides
+ */
+ 
+#mainnav_modes,
+#topnav { line-height: 14px; }
 
 /**
  * No Search
@@ -31,7 +37,7 @@ body.no-search #topnav ul li.noborder{
 /**
  */
  
-#header { position: relative; background-position: 757px 0px; }
+#header { position: relative; }
 #header-separation {
     border-bottom: 10px solid #006A3C;
     margin-top: 10px;
