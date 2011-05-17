@@ -37,7 +37,7 @@ body.no-search #topnav ul li.noborder{
 /**
  */
  
-#header { position: relative; }
+#header { }
 #header-separation {
     border-bottom: 10px solid #006A3C;
     margin-top: 10px;
