@@ -396,7 +396,7 @@ abbr { border-bottom: 1px #222 dotted; }
  * @valid               true
  */
 
-#breadcrumb { padding: 15px 0 5px !important; }
+#breadcrumb { padding: 15px 0 20px !important; }
 #breadcrumb li { display: inline; }
 #breadcrumb a { text-decoration: none; }
 #breadcrumb a:visited { }
