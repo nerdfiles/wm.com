@@ -18,16 +18,23 @@
 <script type="text/javascript" src="http://wmdev3.wm.com/_assets/js/cufon.js"></script> 		
 <script type="text/javascript" src="http://wmdev3.wm.com/_assets/js/wm_book_400.font.js"></script>	
 <script type="text/javascript">
-Cufon.replace('h1');
-Cufon.replace('h2');
+Cufon.set('fontFamily', 'wm_book').replace('h1')('h2');
+
+// Carousel 
 
 Cufon.replace('.header h3');
-
 Cufon.replace('#carousel p');
+
+// Promo Table
 
 Cufon.replace('.promo-table .display-footer .line-1'); // at this level?
 Cufon.replace('.promo-table .display-footer .line-2');
 Cufon.replace('.promo-table .summary');
+</script>
+
+<script type="text/javascript" src="../_assets/js/wm_sterling_600.font.js"></script>	
+<script type="text/javascript">
+    Cufon.set('fontFamily', 'Foundry Sterling').replace('h1');
 </script>
 <!-- VML -->
 
