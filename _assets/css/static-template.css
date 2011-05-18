@@ -859,7 +859,7 @@ a.btn_cta span {
  */
 
 #sections { line-height: 1.25em; } 
-#sections h2 { margin: 0; border-bottom: 3px #7ab700 solid; padding: 5px; }
+#sections h2 { margin: 0; border-bottom: 3px #7ab700 solid; padding: 5px 0 5px 5px; }
 #sections ul { }
 #sections ul li { 
     padding: 0; 
@@ -901,7 +901,7 @@ a.btn_cta span {
 
 #offers .offer-img { width: 125px; float: left; }
 #offers img { position: relative; top: -5px; left: 2px; }
-#offers .offer-copy { width: 108px; float: left; margin-left: -5px; }
+#offers .offer-copy { width: 110px; float: left; margin-left: -5px; }
 #offers .offer-link { text-shadow: none; position: absolute; right: 47px; bottom: .8em; color: #fff; font-weight: bold; }
 #offers a { 
     min-height: 150px;
