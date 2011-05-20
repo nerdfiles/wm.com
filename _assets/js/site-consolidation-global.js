@@ -21,6 +21,7 @@
 
 $.metadata.setType('attr', 'data-settings');
 $.metadata.setType('attr', 'data-duration');
+$.metadata.setType('attr', 'validate');
 
 
 /**
