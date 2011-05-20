@@ -20,6 +20,7 @@
  */
 
 $.metadata.setType('attr', 'data-settings');
+$.metadata.setType('attr', 'data-duration');
 
 
 /**
@@ -197,7 +198,7 @@ $(function() {
 /**
  * Careers
  */
-
+/*
 ;(function($){
     $.fn.extend({
         '_data': $.fn.data,
@@ -227,7 +228,7 @@ $(function() {
         }
     });
 })(jQuery);
-
+*/
 var carouselPick = null,
     carouselLength,
     carouselCount = 0,
@@ -445,6 +446,8 @@ function setActive(carousel, state, index, s) {
      *
      * @class is overridden by @data-duration; 
      * uses carousel object's "auto" if neither one is set
+     *
+     * @todo        Cleanup. Check if metadata plugin works here.
      */
      
     var secs = ($state.find('> div[class*="carousel-item-duration"]').length) ?
