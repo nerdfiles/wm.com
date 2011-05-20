@@ -1022,7 +1022,7 @@ a.btn_cta span {
  
 .module-careers-item .figcaption { font-size: 1em; }
 .module-careers-item .figcaption a { display: inline; }
-.module-careers-item a { font-size: 1em; font-weight: bold; margin: 0 0 .5em 0; display: block; text-decoration: none; }
+.module-careers-item a { font-size: 1em; font-weight: bold; margin: 0 0 .5em 0; display: block; }
 .module-careers-item a.more { font-size: 1em; font-weight: normal; }
 #content .module-careers-item p { margin: 15px 0 5px 0; }
 
