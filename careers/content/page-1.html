@@ -62,6 +62,15 @@
 <li>Nonexempt /Hourly employed in current position a minimum of 6 months are eligible to apply</li>
 </ul>
 <form id="form_employeeLogin" name="form_employeeLogin" action="." method="post">
+	
+	<!-- IF err on POST that is generic or not applicable to a particular field -->
+	<div id="status-message" class="status-block error-block tail_2 clear-left">
+        <span class="icon-container"></span>
+        <div class="status-block-inner">
+        	<p>We're sorry, but your password isn't correct. Please enter the correct password. Your password has between 8 to 15 characters, including 1 letter and 1 number and does not contain the @ symbol.</p>
+        </div>
+    </div>
+    
 <h3>Current Employee Validation</h3>
 <fieldset>
 <dl class="grid_7 alpha">
