@@ -601,17 +601,19 @@ jQuery(document).ready(function() {
                 
                 if ( state === 'init' ) {
                 
-                //if ( !$.browser.ie ) {
-
-                $lis.parent()
-                    
-                    .delay(200)
-                    
-                    .animate({
-                        opacity: 1
-                    }, 1500);
-
-                //}
+	                if ( !$.browser.ie ) {
+	
+	                $lis.parent()
+	                    
+	                    .delay(200)
+	                    
+	                    .animate({
+	                        opacity: 1
+	                    }, 1500);
+	
+	                } else {
+	                	$lis.parent().show();
+	                }
                 
                 }
 
@@ -640,13 +642,15 @@ jQuery(document).ready(function() {
                 var $lis = $('#carousel li');
                 
                 //carousel.pause();
-                
+
+                //if ( !$.browser.ie ) {
                 $lis.parent()
                     .animate({
                         opacity: 1
                     }, 700, function() {
                         //carousel.play();
                     });
+                //}
                 
             }
         },
