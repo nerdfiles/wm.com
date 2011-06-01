@@ -494,86 +494,49 @@ jQuery(document).ready(function() {
     $('.wm-area area').each(function(e) {
     
         var $self = $(this),
-            coords = $self.attr('coords'),
-            coords = coords.split(","),
+            coords = $self.attr('coords').split(","),
             units = "px",
             x = coords[0]+units,
             y = coords[1]+units,
             w = $self.width(),
-            h = $self.height();
+            h = $self.height(),
+            $cont = $self.parent().parent(),
+            $img = $self.parent().parent().find('img');
             
-        $self.parent().parent().find('img').css({
+        /*
+        $img.css({
             position: "absolute",
             "z-index": "8999"
         });
         
-        $self.parent().parent().css({
+        $cont.css({
             position: "relative",
-            height: $self.parent().parent().find('img').height()+"px"
+            height: $img.height()+"px"
         });
-    
+        */
+       
         $self.bind('loadFrame', function(e) {
-            var id = 'frame-'+Math.floor((Math.random()*1000)*(Math.random()*1000)),
-                $container = $self.parent().parent(),
-                $frame =  $("<div class='frame'>")
-                            .attr('id', id)
-                            .css({
-                                cursor: "pointer",
-                                position: "absolute",
-                                "z-index": "9000",
-                                left: x,
-                                top: y,
-                                width: w,
-                                height: h,
-                                background: "orange",
-                                border: "1px #ccc solid",
-                                opacity: 0
-                            });
+            var $self = $(this),
+            	$frame = $($self.attr('href'));
             
-            $('#'+this.oldFrameId).animate({opacity: 0}, 500, function() { $(this).remove() });
+            $frame.hide().css({
+            	left: x,
+            	top: y
+            }).delay(10).fadeIn();
             
-            $container.prepend($frame);
-            
-            var $newFrame = $self.parent().parent().find("#"+id);
-            
-            $newFrame.animate({
-            
-                opacity: 1,
-                easing: "easeOutExpo"
-            
-            }, 900, function() {
-            
-                $(this).delay(300).animate({
-                
-                    opacity: 1
-                
-                }, 500);
-            
+            $frame.bind('click', function() {
+            	var $self = $(this);
+            	
+            	$self.fadeOut();
             });
             
-            $newFrame.bind('click.rm', function(e) {
-                
-                var $self = $(this);
-                
-                $self.animate({
-                    opacity: 0
-                }, 500, function() { 
-                    $(this).remove();
-                });
-                
-                //console.log("You've just interacted with a polygon, rect or circle. And you've now just cleared away a lazy modal.");
-            
-                $self.unbind('click.rm');
-                
-            });
-            
-            this.oldFrameId = id;
-            
+            //alert(x);
         });
         
-        $self.trigger('loadFrame');
+        //$self.trigger('loadFrame');
         
         $self.bind('click', function(e){
+        	
             $self.trigger('loadFrame');
             
             e.preventDefault();
