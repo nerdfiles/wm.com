@@ -24,8 +24,12 @@ Cufon.set('fontFamily', 'wm_book');
 Cufon.replace('h1')('h2');
 
 // Carousel 
-Cufon.replace('.header h3');
-Cufon.replace('#carousel p');
+Cufon.replace('.header h3', {
+    fontFamily: 'wm_book'
+});
+Cufon.replace('#carousel p', {
+    fontFamily: 'wm_book'
+});
 
 // Promo Table
 Cufon.replace('.promo-table .display-footer .line-1'); // at this level?
@@ -35,7 +39,8 @@ Cufon.refresh();
 // Foundry
 Cufon.set('fontFamily', 'Foundry Sterling');
 Cufon.replace('#carousel h2', {
-    letterSpacing: '2px'
+    letterSpacing: '2px',
+    fontFamily: 'Foundry Sterling'
 });
 Cufon.refresh();
 </script>
