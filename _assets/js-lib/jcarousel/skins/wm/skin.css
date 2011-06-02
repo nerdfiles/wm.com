@@ -186,7 +186,9 @@ top:auto;
 overflow:hidden;
 }
 
-#carousel li img {
+#carousel li img,
+#carousel li cufontext,
+#carousel li cufoncanvas {
     background: transparent;
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */   
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */      
