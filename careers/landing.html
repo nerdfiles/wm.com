@@ -21,7 +21,13 @@
 <script type="text/javascript">
 // GLOBAL CUFON!!!
 Cufon.set('fontFamily', 'wm_book');
-Cufon.replace('h1')('h2');
+Cufon.replace('h1', {
+    fontFamily: 'wm_book'
+});
+Cufon.replace('h2', {
+    fontFamily: 'wm_book'
+});
+Cufon.refresh();
 
 // Carousel 
 Cufon.replace('.header h3', {
@@ -30,12 +36,20 @@ Cufon.replace('.header h3', {
 Cufon.replace('#carousel p', {
     fontFamily: 'wm_book'
 });
+Cufon.refresh();
 
 // Promo Table
-Cufon.replace('.promo-table .display-footer .line-1'); // at this level?
-Cufon.replace('.promo-table .display-footer .line-2');
-Cufon.replace('.promo-table .summary');
+Cufon.replace('.promo-table .display-footer .line-1', {
+    fontFamily: 'wm_book'
+}); // at this level?
+Cufon.replace('.promo-table .display-footer .line-2', {
+    fontFamily: 'wm_book'
+});
+Cufon.replace('.promo-table .summary', {
+    fontFamily: 'wm_book'
+});
 Cufon.refresh();
+
 // Foundry
 Cufon.set('fontFamily', 'Foundry Sterling');
 Cufon.replace('#carousel h2', {
