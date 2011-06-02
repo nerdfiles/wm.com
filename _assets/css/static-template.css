@@ -1021,7 +1021,8 @@ a.btn_cta span {
 /**
  * Module Careers Items
  */
- 
+
+#content .module-careers-item h2 { margin-bottom: 10px; } 
 .module-careers-item .figcaption { font-size: 1em; }
 .module-careers-item .figcaption a { display: inline; }
 .module-careers-item a { font-size: 1em; font-weight: bold; margin: 0 0 .5em 0; display: block; }
