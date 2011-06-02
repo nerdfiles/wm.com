@@ -185,6 +185,12 @@ left:-9999px;
 top:auto;
 overflow:hidden;
 }
+
+#carousel li img {
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */   
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */      
+    zoom: 1; }
 html.js-enabled #carousel li,
 html.js #carousel li { }
 
