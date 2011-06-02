@@ -1317,10 +1317,12 @@ table.account-section th.invoice{
 input.radio,
 input.checkbox { border: none !important; }
 
-#content #form_employeeLogin dt,
-#content #form_employeeLogin dd { margin-left: 10px; margin-right: 10px; }
-#content #form_employeeLogin dt.alpha { margin-left: 0; }
-#content #form_employeeLogin dd.omega { margin-right: 0; }
+#form_employeeLogin dt,
+#form_employeeLogin dd { margin-left: 10px; margin-right: 10px; }
+#form_employeeLogin dt.alpha { margin-left: 0; }
+#form_employeeLogin dd.omega { margin-right: 0; }
+#form_employeeLogin fieldset.push_2,
+#form_employeeLogin fieldset.prefix_2 { }
     
 #home_hero_container { padding-top: 10px; }
 
