@@ -233,8 +233,62 @@ $(function() {
 var carouselPick = null,
     carouselLength,
     carouselCount = 0,
-    uCarouselCount = carouselCount,
-    carouselControl = false;
+    carouselControl = true,
+    boo = true,
+    $mapElem;
+    
+function sparkCarousel(event, state, carouselCount, elem) {
+    var $mapAnchors = $('#carousel-map a');
+    var carousel = jQuery('#carousel-list').data('jcarousel');
+    var event = (carouselCount < $mapAnchors.length) ? (state) : event; // Done! Waiting for interaction.
+    var carouselCountO = carouselCount;
+    var $mapElem = elem;
+    var carouselCount = (event.type === 'click') ? // the steady stream
+        "1," + (carouselPick++) : // flows
+        "2," + (carouselCount++); // ('no more.') ;
+    
+    if (event != 'next')
+        carouselCount = carouselCountO;
+    /*
+     * 
+        var carouselCount = (carouselCount <= $mapAnchors.length) ? 
+        // itemVisibleInCallback.onBeforeAnimation
+        (carouselCount++) :
+        // clicky finger
+        0;
+     */
+    //console.log('animating ' + carouselCount);
+    //console.log(event);
+    //console.log(state);
+    //console.log(carouselCount);
+    
+    // jcarousel's
+    if (state === 'init') {
+        carouselCount = 0;
+        $mapAnchors.eq(carouselCount).addClass('active');
+    }
+    
+    if (event !== 'click' && event === 'next') {
+        $mapAnchors.removeClass('active');
+        carouselCount = carouselCountO;
+        if ( carouselCount < $mapAnchors.length )
+            $mapAnchors.eq(carouselCount-1).delay(300).addClass('active');
+        else
+            $mapAnchors.eq(0).delay(300).addClass('active');
+        
+        //alert('c');
+    }
+    
+    if (event === 'click') {
+        $mapAnchors.removeClass('active');
+        $mapElem.addClass('active');
+        //alert(carouselCount);
+        //$mapAnchors.eq(carouselCount-1).addClass('active');
+        //carousel.scroll(carouselCount-1);
+    }
+
+
+}
     
 function initCarousel(carousel, state) {
 
@@ -259,74 +313,101 @@ function initCarousel(carousel, state) {
         
     }
     
+    //var $mapAnchor = $('#carousel-map a');
+    //$mapAnchor.eq(carouselCount).addClass('active');
+
     carousel.play();
     /*
     $('#carousel-play').hide(); 
     */
    
     $('#carousel-controls').css({
-        bottom: "20px",
-        right: "20px" 
-    });
-   
-    jQuery('#carousel-map a').bind('mouseover', function() {
-        $(this).addClass('hover');
+        bottom: "15px",
+        left: "600px"
     });
     
-    jQuery('#carousel-map a').bind('mouseout', function() {
-        $(this).removeClass('hover');
-    });
-    
-    jQuery('#carousel-map a').bind('click', function(e) {
-    
-        var c = jQuery.jcarousel.intval(jQuery(this).text()),
-            uCarouselCount = c,
-            $a = $('#carousel-map a');
-            
-        console.log(jQuery('#carousel-list').jcarousel());
+    jQuery('#carousel-controls a').bind('mouseover.h', function() {
+        
         var carousel = jQuery('#carousel-list').data('jcarousel');
         
-        carousel.stopAuto();
+        if (carousel.animating !== false) {
+            $(this).css({
+                opacity: .8
+            });
+        }
         
-        if (carouselControl === false) {
+    });
+    
+    jQuery('#carousel-controls a').bind('mouseout.h', function() {
         
-            var carouselPick = c,
-                carouselLength = ($a.length);
+        var carousel = jQuery('#carousel-list').data('jcarousel');
+        
+        if (carousel.animating !== false) {
+            $(this).css({
+                opacity: .25
+            });
+        }
+        
+    });
+    
+    jQuery('#carousel-map a').bind('click', function(event) {
+    
+        var c = jQuery.jcarousel.intval(jQuery(this).text()),
+            carouselPick = c,
+            $mapAnchors = $('#carousel-map a');
+            carousel = jQuery('#carousel-list').data('jcarousel'),
+            carouselCount = (carouselCount < $mapAnchors.length) ? carouselCount : carouselCount;
+        
+        //console.log($(this).index())
+        //console.log(carousel);
+        //console.log(carousel.state);
+        //console.log( carousel.animating );
+        
+        //if (carouselControl === true) {
             
+            /*
             $a.animate({
                 opacity: .1
             }, 1000);
-                
-            carouselCount = carouselPick-1;
-                
-            if ( carouselLength === carouselCount )
-                carouselCount = 0;
-            
-            $a.removeClass('active');
-            $a.eq(carouselCount).addClass('active');
+            */
             
             //carouselPick = null;
             
-            carouselControl = true;
+            //carouselControl = true;
             
             // Leave this alone; it's smart enough to know which node to
             // actually scroll to.
-            
+            //$mapAnchors.eq(c-1).delay(2000).addClass('active');
             //if ( !$.browser.ie ) {
             $('#carousel li').parent().animate({
                 opacity: .5
             }, 1600, function() {
+                //if (event.type === 'click') {
+                    
+                    
+                    
+                    
+        
+                //alert(carouselCount);
+                //$mapAnchors.eq(carouselCount-1).addClass('active');
+                //console.log($mapAnchors.eq(c-1));
+                
                 carousel.scroll(c);
+                
+                $mapAnchors.removeClass('active');
+                $mapAnchors.eq(c-1).addClass('active');
+                //alert(c-1);
+                sparkCarousel(event, 'animate', carouselPick, $mapElem);
+                
+                //}
+                
             });
             //}
         
-        } else {
-            //var carouselPick = c;
-        }
+        //}
         
-        //carousel.scrollTail(c);
         //return false;
-        e.preventDefault();
+        event.preventDefault();
     });
     
     
@@ -334,8 +415,18 @@ function initCarousel(carousel, state) {
         
         var $self = $(this);
         
-        $('#carousel-pause').hide();
-        $('#carousel-play').show();
+        $('#carousel-pause').css({
+            position: 'absolute',
+            left: '-9999px'
+        });
+        
+        $('#carousel-play').css({
+            position: 'relative',
+            left: '0px'
+        });
+        
+        $('#carousel-pause').addClass('hide');
+        $('#carousel-play').removeClass('hide');
         
         carousel.pause();
         //carousel.pauseAuto();
@@ -347,8 +438,18 @@ function initCarousel(carousel, state) {
         
         var $self = $(this);
         
-        $('#carousel-play').hide();
-        $('#carousel-pause').show();
+        $('#carousel-pause').css({
+            position: 'relative',
+            left: '0px'
+        });
+        
+        $('#carousel-play').css({
+            position: 'absolute',
+            left: '-9999px'
+        });
+        
+        $('#carousel-play').addClass('hide');
+        $('#carousel-pause').removeClass('hide');
         
         carousel.play();
         
@@ -478,21 +579,99 @@ function setActive(carousel, state, index, s) {
             }, secs );
         }
     }
-    
-    if ( carouselCount < $('#carousel-map a').length ) {
-        
-        carouselCount = carouselCount + 1;
-        
-    } else {
-    
-        carouselCount = 1;
-    
-    }
 
 }
   
 jQuery(document).ready(function() {
 
+    jQuery("#carousel-list").jcarousel({
+        scroll: 1,
+        auto: 3,
+        wrap: 'circular',
+        easing: 'easeInOutQuint',
+        animation: 5000,
+        initCallback: initCarousel,
+        buttonNextHTML: null,
+        buttonPrevHTML: null,
+        itemLoadCallback: {
+            onBeforeAnimation: function(carousel, state, callbackName) {
+                
+                var opacitySetting = ($.browser.msie) ? 'show' : 1,
+                    $lis = $('#carousel li'),
+                    $mapAnchor = $('#carousel-map a');
+                
+                carouselControl = false;
+                
+                //alert(state);
+                
+                if ( state === 'init' ) {
+                
+	                if ( !$.browser.msie ) {
+	
+	                    $lis.parent()
+	                        .delay(200)
+	                        .animate({
+	                            opacity: opacitySetting
+	                        }, 1500);
+	
+	                } else {
+	                	$lis.parent().show();
+	                }
+                
+                } else {
+                    $('#carousel-controls a').animate({
+                        opacity: .25
+                    }, 1000);
+                    
+                }
+
+            },
+            onAfterAnimation: function(carousel, state, callbackName) {
+                
+                var $mapAnchor = $('#carousel-map a'),
+                    $ctrls = $('#carousel-controls a'),
+                    opacitySetting = ($.browser.msie) ? 'show' : .8;
+                    
+                carouselControl = true;
+                
+                $ctrls.animate({
+                    opacity: opacitySetting
+                }, 2000);
+            }
+        },
+        itemFirstInCallback: {
+            onBeforeAnimation: setActive
+        },
+        itemLastOutCallback: {
+            onAfterAnimation: function(carousel) {
+                
+                var $lis = $('#carousel li');
+                
+                //carousel.pause();
+
+                //if ( !$.browser.ie ) {
+                $lis.parent()
+                    .animate({
+                        opacity: 1
+                    }, 700, function() {
+                        //carousel.play();
+                    });
+                //}
+                
+            }
+        },
+        itemVisibleInCallback: {
+            onBeforeAnimation: function(carousel, li, index, state) {
+                
+                carouselCount++;
+                
+                sparkCarousel('animate', state, index);
+                
+            }  
+        },
+        fade: false
+    });
+    
     $('.wm-area area').each(function(e) {
     
         var $self = $(this),
@@ -581,86 +760,6 @@ jQuery(document).ready(function() {
             e.preventDefault();
         });
     
-    });
-
-    jQuery("#carousel-list").jcarousel({
-        scroll: 1,
-        auto: 7,
-        wrap: 'circular',
-        easing: 'easeInOutSine',
-        animation: 2500,
-        initCallback: initCarousel,
-        buttonNextHTML: null,
-        buttonPrevHTML: null,
-        itemLoadCallback: {
-            onBeforeAnimation: function(carousel, state, callbackName) {
-                
-                var opacitySetting = ($.browser.msie) ? 'show' : 1,
-                    $lis = $('#carousel li');
-                
-                carouselControl = false;
-                
-                $('#carousel-pause').hide();
-                
-                //alert(state);
-                
-                if ( state === 'init' ) {
-                
-	                if ( !$.browser.msie ) {
-	
-	                    $lis.parent()
-	                        .delay(200)
-	                        .animate({
-	                            opacity: opacitySetting
-	                        }, 1500);
-	
-	                } else {
-	                	$lis.parent().show();
-	                }
-                
-                }
-
-            },
-            onAfterAnimation: function(carousel, state, callbackName) {
-                
-                var $a = $('#carousel-map a'),
-                    $ctrls = $('#carousel-controls a'),
-                    opacitySetting = ($.browser.msie) ? 'show' : 1;
-                    
-                carouselControl = false;
-                  
-                if (state === 'init') {    
-                    $a.removeClass('active');
-                    $a.eq(carouselCount-1).addClass('active');
-                }
-                
-                $ctrls.animate({
-                    opacity: opacitySetting
-                }, 2000);
-            }
-        },
-        itemFirstInCallback: {
-            onBeforeAnimation: setActive
-        },
-        itemLastOutCallback: {
-            onAfterAnimation: function(carousel) {
-                
-                var $lis = $('#carousel li');
-                
-                //carousel.pause();
-
-                //if ( !$.browser.ie ) {
-                $lis.parent()
-                    .animate({
-                        opacity: 1
-                    }, 700, function() {
-                        //carousel.play();
-                    });
-                //}
-                
-            }
-        },
-        fade: false
     });
     
     $('.module-branding-carousel ul').each(function() {
