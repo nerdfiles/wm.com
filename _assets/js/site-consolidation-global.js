@@ -259,15 +259,16 @@ function initCarousel(carousel, state) {
         
     }
     
-    $('#carousel-play').hide();
-    
     carousel.play();
-    
-    $('#carousel-controls').hide().css({
+    /*
+    $('#carousel-play').hide(); 
+    */
+   
+    $('#carousel-controls').css({
         bottom: "20px",
         right: "20px" 
-    }).delay(1500).fadeIn('slow');
-    
+    });
+   
     jQuery('#carousel-map a').bind('mouseover', function() {
         $(this).addClass('hover');
     });
@@ -281,6 +282,11 @@ function initCarousel(carousel, state) {
         var c = jQuery.jcarousel.intval(jQuery(this).text()),
             uCarouselCount = c,
             $a = $('#carousel-map a');
+            
+        console.log(jQuery('#carousel-list').jcarousel());
+        var carousel = jQuery('#carousel-list').data('jcarousel');
+        
+        carousel.stopAuto();
         
         if (carouselControl === false) {
         
@@ -473,10 +479,6 @@ function setActive(carousel, state, index, s) {
         }
     }
     
-    $('#carousel-controls a').animate({
-        opacity: .5
-    }, 700);
-    
     if ( carouselCount < $('#carousel-map a').length ) {
         
         carouselCount = carouselCount + 1;
@@ -592,24 +594,25 @@ jQuery(document).ready(function() {
         buttonPrevHTML: null,
         itemLoadCallback: {
             onBeforeAnimation: function(carousel, state, callbackName) {
-            
-                // onpageload intro fade
                 
-                var $lis = $('#carousel li');
+                var opacitySetting = ($.browser.msie) ? 'show' : 1,
+                    $lis = $('#carousel li');
                 
-                carouselControl = true;
+                carouselControl = false;
+                
+                $('#carousel-pause').hide();
+                
+                //alert(state);
                 
                 if ( state === 'init' ) {
                 
-	                if ( !$.browser.ie ) {
+	                if ( !$.browser.msie ) {
 	
-	                $lis.parent()
-	                    
-	                    .delay(200)
-	                    
-	                    .animate({
-	                        opacity: 1
-	                    }, 1500);
+	                    $lis.parent()
+	                        .delay(200)
+	                        .animate({
+	                            opacity: opacitySetting
+	                        }, 1500);
 	
 	                } else {
 	                	$lis.parent().show();
@@ -621,15 +624,18 @@ jQuery(document).ready(function() {
             onAfterAnimation: function(carousel, state, callbackName) {
                 
                 var $a = $('#carousel-map a'),
-                    $ctrls = $('#carousel-controls a');
-                
-                carouselControl = false;
+                    $ctrls = $('#carousel-controls a'),
+                    opacitySetting = ($.browser.msie) ? 'show' : 1;
                     
-                $a.removeClass('active');
-                $a.eq(carouselCount-1).addClass('active');
+                carouselControl = false;
+                  
+                if (state === 'init') {    
+                    $a.removeClass('active');
+                    $a.eq(carouselCount-1).addClass('active');
+                }
                 
                 $ctrls.animate({
-                    opacity: 1
+                    opacity: opacitySetting
                 }, 2000);
             }
         },

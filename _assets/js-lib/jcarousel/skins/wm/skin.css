@@ -180,10 +180,10 @@ ul#carousel-list li { padding-left: 0; background: none; }
 #carousel h2 { margin-top: 0; }
 #carousel ul { opacity: 0; }
 #carousel li {
-position:absolute;
-left:-9999px;
-top:auto;
-overflow:hidden;
+    position:absolute;
+    left:-9999px;
+    top:auto;
+    overflow:hidden;
 }
 
 #carousel li img,
@@ -200,8 +200,8 @@ html.js #carousel li { }
  */
 
 #carousel-controls {  position: absolute; right: -9999px; bottom: -9999px; }
-#carousel-controls a { opacity: .6; cursor: pointer; }
-#carousel-controls a:hover { opacity: 1; }
+#carousel-controls a { cursor: pointer; }
+#carousel-controls a:hover { opacity: .6; }
  
 #carousel-prev,
 #carousel-next { width: 43px; height: 14px; background: url(carousel-control-sprite.png) 0 -1px no-repeat; text-indent: -9999px; text-align: left; display: inline-block; *zoom: 1; *display: inline; }
