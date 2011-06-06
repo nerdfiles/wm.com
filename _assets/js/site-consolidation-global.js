@@ -706,12 +706,15 @@ jQuery(document).ready(function() {
                 
             $('.wm-city-map').trigger('cleartips');
                 
-            $tip.css({
-                left: 0
-            })
-            .animate({
-                opacity: 1
-            }, 700).addClass('active-tip');
+            $tip
+                .animate({
+                    left: 0,
+                    opacity: 0
+                }, 10)
+                .animate({
+                    opacity: 1
+                }, 700)
+                .addClass('active-tip');
             
             e.preventDefault();
         
