@@ -672,16 +672,21 @@ jQuery(document).ready(function() {
         fade: false
     });
     
+    /**
+     * WM City Map 
+     */
+     
     $('.wm-city-map').bind('cleartips', function(e) {
     
         var $self = $(this);
         
-        $self.find('.wm-city-map-tip').each(function() {
-        $(this).animate({
-            opacity: 0
-        }, 500);
-        
+        $self.find('.wm-city-map-tip').queue(function() {
+            $(this).animate({
+                opacity: 0
+            }, 500).removeClass('active');
+            $(this).dequeue();
         });
+        
         
     });
     
@@ -699,6 +704,7 @@ jQuery(document).ready(function() {
             var $self = $(this),
                 $tip = $self.next();
                 
+            $tip.addClass('active');
             $('.wm-city-map').trigger('cleartips');
                 
             $tip.css({
