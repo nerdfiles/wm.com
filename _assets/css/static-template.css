@@ -1376,3 +1376,47 @@ input.checkbox { border: none !important; }
 	background: url("../img-ui/label-error-icon.gif") no-repeat !important; 
 	padding-left: 20px;
 	margin-top: 5px; }
+	
+/**
+ * WM City Map: City of Chicago
+ */
+ 
+.wm-city-map { 
+    height: 600px;
+    width: 400px;
+    margin: 0 auto;
+    position: relative; }
+.wm-city-of-chicago { }
+    .wm-city-map img { display: block; }
+    .wm-city-map #city-of-chicago { }
+    .wm-city-map .wm-city-map-content { 
+        position: absolute; 
+        top: 0; 
+        left: 0; }
+    
+    #content .wm-city-map ul { margin: 0; list-style: none; }
+    #content .wm-city-map li { margin: 0; background: none; padding: 0; }
+    
+    .wm-city-map a { text-decoration: none; font-size: 30px; color: #fff; text-shadow: 0 0 2px #333; }
+    .wm-city-map a:hover { }
+    
+    .wm-city-map .item { position: absolute; left: 0; top: 0; }
+    .wm-city-map .item-1 {
+        left: 160px;
+        top: 70px; }
+    .wm-city-map .item-2 {
+        left: 220px;
+        top: 80px; }
+    
+    .wm-city-map .wm-city-map-tip { 
+        position: absolute; 
+        left: -9999px; 
+        width: 200px;
+        background: #fff;
+        border: 1px #ccc solid; }
+        
+        .wm-city-map-tip .tip-inner { }
+        .wm-city-map-tip .title { padding: 10px 10px 0; }
+        .wm-city-map-tip .content { padding: 0 10px; }
+    
+

@@ -672,6 +672,47 @@ jQuery(document).ready(function() {
         fade: false
     });
     
+    $('.wm-city-map').bind('cleartips', function(e) {
+    
+        var $self = $(this);
+        
+        $self.find('.wm-city-map-tip').each(function() {
+        $(this).animate({
+            opacity: 0
+        }, 500);
+        
+        });
+        
+    });
+    
+    $('.wm-city-map img').bind('click', function() {
+    
+        $('.wm-city-map').trigger('cleartips');
+    
+    });
+    
+    $('.wm-city-map .item > a').each(function() { 
+        var $a = $(this);
+        
+        $a.bind('click', function(e) {
+            
+            var $self = $(this),
+                $tip = $self.next();
+                
+            $('.wm-city-map').trigger('cleartips');
+                
+            $tip.css({
+                left: 0
+            })
+            .animate({
+                opacity: 1
+            }, 700);
+            
+            e.preventDefault();
+        
+        });
+    });
+    
     $('.module-branding-carousel ul').each(function() {
     
         var $self = $(this),
