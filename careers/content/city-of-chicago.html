@@ -12,24 +12,52 @@
 
 <p>Waste Management is pleased to continue providing environmental services in the City of Manhattan Beach. New carts will be delivered in May, and new program offerings will be available in June. More information is coming soon.</p>
 
-<div class="wm-area">
+<div class="wm-city-map wm-city-of-chicago">
 
-<img src ="http://crossingstreet08.files.wordpress.com/2008/09/chicago-neighborhoods1.png" width="556" height="578" alt="Planets" title="Planets" usemap="#wmarea" />
+    <img id="city-of-chicago" src ="../_assets/img-ui/site-consolidation/wm-city-of-chicago.png" width="400" height="600" alt="City of Chicago" title="City of Chicago" />
+    
+    <div class="wm-city-map-content">
+        <ul>
+            <li class="item item-1">
+                <a href="#">&bull;</a>
+                <div class="wm-city-map-tip">
+                    <div class=""></div>
+                </div>
+            </li>
+            <li class="item item-2">
+                <a href="#">&bull;</a>
+                <div class="wm-city-map-tip">
+                    <div class=""></div>
+                </div>
+            </li>
+        </ul>
+    </div>
 
-<map name="wmarea">
-    <area id="frame-link-1" shape="rect" coords="0,0,82,126" href="#frame1" alt="frame1" title="frame1" />
-    <area id="frame-link-2" shape="rect" coords="0,136,200,336" href="#frame2" alt="frame2" title="frame2" />
-</map>
-
-</div><!-- .wm-area -->
+</div><!-- .wm-city-map -->
 
 <style type="text/css">
-#frame-link-1 { 
-    width: 82px;
-    height: 126px; }
-#frame-link-2 { 
-    width: 200px;
-    height: 200px; }
+
+/**
+ * WM City Map: City of Chicago
+ */
+ 
+.wm-city-map { position: relative; }
+.wm-city-of-chicago { }
+    .wm-city-map img { display: block; margin: 0 auto; }
+    .wm-city-map #city-of-chicago { }
+    .wm-city-map .wm-city-map-content { 
+        position: absolute; 
+        top: 0; 
+        left: 0; }
+    #content .wm-city-map ul { margin: 0; list-style: none; }
+    #content .wm-city-map li { margin: 0; background: none; padding: 0; }
+    .wm-city-map a { text-decoration: none; font-size: 24px; color: #000; }
+    .wm-city-map a:hover { }
+    .wm-city-map .item { position: absolute; left: 0; top: 0; }
+    .wm-city-map .item-1 { left: 100px; top: 100px; }
+    .wm-city-map .item-2 { left: 120px; top: 120px; }
+    .wm-city-map .wm-city-map-tip { position: absolute; left: -9999px; }
+
 </style>
 
 <div class="two-column-container clearfix" style="display: none;">
