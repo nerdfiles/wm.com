@@ -1397,7 +1397,12 @@ input.checkbox { border: none !important; }
     #content .wm-city-map ul { margin: 0; list-style: none; }
     #content .wm-city-map li { margin: 0; background: none; padding: 0; }
     
-    .wm-city-map a { text-decoration: none; font-size: 30px; color: #fff; text-shadow: 0 0 2px #333; }
+    .wm-city-map a { 
+        padding: 5px 8px;
+        display: inline-block;
+        *zoom: 1;
+        *display: inline;
+        text-decoration: none; font-size: 30px; color: #fff; text-shadow: 0 0 2px #333; }
     .wm-city-map a:hover { }
     
     .wm-city-map .item { position: absolute; left: 0; top: 0; }

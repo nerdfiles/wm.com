@@ -680,17 +680,13 @@ jQuery(document).ready(function() {
     
         var $self = $(this);
         
-        $self.find('.wm-city-map-tip.active-tip').queue(function() {
-            $(this).animate({
-                opacity: 0
-            }, 500).removeClass('active');
-            $(this).dequeue();
-        });
-        
+        $self.find('.wm-city-map-tip').css({left:"-9999px"}).hide();
         
     });
     
-    $('.wm-city-map img').bind('click', function() {
+    $('.wm-city-map').trigger('cleartips');
+    
+    $('.wm-city-map img').bind('mouseover', function() {
     
         $('.wm-city-map').trigger('cleartips');
     
@@ -699,26 +695,16 @@ jQuery(document).ready(function() {
     $('.wm-city-map .item > a').each(function() { 
         var $a = $(this);
         
-        $a.bind('click', function(e) {
+        $a.bind('mouseover', function(e) {
             
             var $self = $(this),
                 $tip = $self.next();
-                
-            $('.wm-city-map').trigger('cleartips');
-                
-            $tip
-                .animate({
-                    left: 0,
-                    opacity: 0
-                }, 10)
-                .animate({
-                    opacity: 1
-                }, 400)
-                .addClass('active-tip');
             
-            e.preventDefault();
+            $('.wm-city-map').trigger('cleartips');
+            $tip.addClass('active-tip').css({left:"0"}).fadeIn('slow');
         
         });
+        
     });
     
     $('.module-branding-carousel ul').each(function() {
