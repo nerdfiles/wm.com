@@ -680,7 +680,7 @@ jQuery(document).ready(function() {
     
         var $self = $(this);
         
-        $self.find('.wm-city-map-tip').queue(function() {
+        $self.find('.wm-city-map-tip.active-tip').queue(function() {
             $(this).animate({
                 opacity: 0
             }, 500).removeClass('active');
@@ -704,7 +704,6 @@ jQuery(document).ready(function() {
             var $self = $(this),
                 $tip = $self.next();
                 
-            $tip.addClass('active');
             $('.wm-city-map').trigger('cleartips');
                 
             $tip.css({
@@ -712,7 +711,7 @@ jQuery(document).ready(function() {
             })
             .animate({
                 opacity: 1
-            }, 700);
+            }, 700).addClass('active-tip');
             
             e.preventDefault();
         
