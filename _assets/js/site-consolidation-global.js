@@ -713,7 +713,7 @@ jQuery(document).ready(function() {
                 }, 10)
                 .animate({
                     opacity: 1
-                }, 700)
+                }, 400)
                 .addClass('active-tip');
             
             e.preventDefault();
