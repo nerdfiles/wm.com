@@ -14,22 +14,49 @@
 
 <div class="wm-area">
 
-<img src ="http://crossingstreet08.files.wordpress.com/2008/09/chicago-neighborhoods1.png" width="556" height="578" alt="Planets" title="Planets" usemap="#wmarea" />
-
-<map name="wmarea">
-    <area id="frame-link-1" shape="rect" coords="0,0,82,126" href="#frame1" alt="frame1" title="frame1" />
-    <area id="frame-link-2" shape="rect" coords="0,136,200,336" href="#frame2" alt="frame2" title="frame2" />
-</map>
+	<img src ="../_assets/img-ui/site-consolidation/map_city_chicago.png" width="400" height="600" alt="wmarea" title="wmarea" usemap="#wmarea" />
+	
+	<map name="wmarea">
+		<!--
+			@coords		x1,y1,x2,y2
+			
+			Bear in mind that x1,y1 are the origins for each shape type: rect, circle, polygon;
+			however, x2,y2 is additive. Always know the farthest x or y for the shape relative to the
+			new one you wish to create.
+		-->
+	    <area id="frame-link-1" shape="rect" coords="0,0,82,100" href="#frame-content-1" alt="frame1" title="frame1" />
+	    <area id="frame-link-2" shape="rect" coords="0,136,200,336" href="#frame-content-2" alt="frame2" title="frame2" />
+	    <area id="frame-link-3" shape="rect" coords="82,0,164,100" href="#frame-content-3" alt="frame3" title="frame3" />
+	</map>
+	
+	<div id="frame-content-1" class="frame-content">Frame content 1</div>
+	<div id="frame-content-2" class="frame-content">Frame content 2</div>
+	<div id="frame-content-3" class="frame-content">Frame content 3</div>
 
 </div><!-- .wm-area -->
 
 <style type="text/css">
-#frame-link-1 { 
+.wm-area { position: relative; width: 400px; height: 600px; }
+.frame-content { position: absolute; bottom: 0; left: -9999px; z-index: 9001; background: orange; width: 100px; height: 100px; }
+.wm-area area { }
+#frame-link-1 {
     width: 82px;
-    height: 126px; }
+    height: 100px; }
+#frame-content-1 {
+	
+}
 #frame-link-2 { 
     width: 200px;
     height: 200px; }
+#frame-content-2 {
+   	
+}
+#frame-link-3 { 
+    width: 82px;
+    height: 100px; }
+#frame-content-3 {
+   	
+}
 </style>
 
 <div class="two-column-container clearfix" style="display: none;">
