@@ -9,6 +9,15 @@
  * R1 Overrides
  */
  
+#main_navigation {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 3000;
+    font-size: 12px;
+    font-family: arial, sans-serif;
+    height: 71px;
+    line-height: 1.2; }
+ 
 #mainnav_modes,
 #topnav { line-height: 14px; }
 #main_content label.error { display: inline-block; padding: 0; margin: 0; }
@@ -94,7 +103,7 @@ margin: 0 0 15px;
     */
     
     #content ul { font-size:12px; color:#222222; margin:0 0 15px 0; }
-    #content ul li { margin:0 0 8px 3px; padding:0 0 0 8px; background:url('/_assets/images/icons/icon_bullet_defaultsub.gif') top left no-repeat; }
+    #content ul li { margin:0 0 8px 3px; padding:0 0 0 8px; background:url('../images/icons/icon_bullet_defaultsub.gif') top left no-repeat; }
     #content img { display:block; }
 
     /* TODO: Removed
@@ -256,7 +265,7 @@ input {
 #content ul { margin-left: .5em; }
 #content ul li {
     padding: 0 0 0 1em;
-    background: url(http://www.wm.com/_assets/images/icons/icon_bullet_defaultsub.gif) no-repeat .3em 0; }
+    background: url(http://www.wm.com../images/icons/icon_bullet_defaultsub.gif) no-repeat .3em 0; }
 #content ol { list-style: decimal; margin-left: 2em; }
 #content ol li { }
 #content dl { margin: .5em 0 .5em; }
@@ -328,7 +337,7 @@ input {
 #right_rail ul li {
     padding: 0 0 0 1em;
     margin: 0 0 8px 3px;
-    background: url(http://www.wm.com/_assets/images/icons/icon_bullet_defaultsub.gif) no-repeat .3em 0; }
+    background: url(http://www.wm.com../images/icons/icon_bullet_defaultsub.gif) no-repeat .3em 0; }
 
 .module { margin-bottom: 1em; }
 .module h3 { padding: 5px 5px 7px; font-size: 16px; }
@@ -573,13 +582,13 @@ ul.years span.sep { color: #ccc; }
     display: none; }
 .faq-toggle-list dd div { }
 .toggle-next {
-        background: url(http://www.wm.com/_assets/images/icons/icon_faqs_plusminus.gif) 0 3px no-repeat;
+        background: url(http://www.wm.com../images/icons/icon_faqs_plusminus.gif) 0 3px no-repeat;
         padding: 0 0 0 14px; }
 div.faq-header .toggle-all {
         cursor: pointer; 
         color:#006A3C; 
         text-decoration:underline;
-        background: url(http://www.wm.com/_assets/images/icons/icon_faqs_plusminus.gif) 0 1px no-repeat;
+        background: url(http://www.wm.com../images/icons/icon_faqs_plusminus.gif) 0 1px no-repeat;
         padding: 0 0 0 14px; }
 div.faq-header .toggle-all-active { background-position: 0 -90px; }
 .toggle-next-active { background-position: 0 -88px; }
@@ -671,10 +680,10 @@ textarea { line-height: 1.25em; }
     opacity: 1; 
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
-    background-image: url(/_assets/img-ui/btn_cta_right_hover.gif);
+    background-image: url(../img-ui/btn_cta_right_hover.gif);
     }
 #carousel a.btn_cta:hover span {    
-    background-image: url(/_assets/img-ui/btn_cta_left_hover.gif);
+    background-image: url(../img-ui/btn_cta_left_hover.gif);
     display: block;
     background-repeat: no-repeat;
 }
@@ -732,14 +741,14 @@ a.btn_cta span {
     font-size: 12px; }
 
 .btn { 
-    background:url('http://www.wm.com/_assets/images/buttons/btn_cta_right.gif') right top no-repeat;
+    background:url('http://www.wm.com../images/buttons/btn_cta_right.gif') right top no-repeat;
     display: inline-block;
     *zoom: 1;
     *display: inline; 
     padding: 0; 
     cursor: pointer; }
 .btn input.submit { 
-    background: url('http://www.wm.com/_assets/images/buttons/btn_cta_left.gif') left top no-repeat; 
+    background: url('http://www.wm.com../images/buttons/btn_cta_left.gif') left top no-repeat; 
     display: block; 
     cursor: pointer; 
     text-shadow: 0 -1px 0 #022b18 !important;
@@ -778,9 +787,9 @@ a.btn_cta span {
 .social-networking-services .lin { /*background-image: url(http://dummyimage.com/20x20/c30/fff);*/ }
 
 .social-networking-services-icons { position: relative; top: -0.25em; }
-.social-networking-services-icons .fb { background: url(/_assets/img-ui/careers/careers-social-media-icons-sprite-medium.png) -10px -11px no-repeat; width: 40px; height: 40px; }
-.social-networking-services-icons .tw { background: url(/_assets/img-ui/careers/careers-social-media-icons-sprite-medium.png) -58px -11px no-repeat; width: 40px; height: 40px;  }
-.social-networking-services-icons .lin { background: url(/_assets/img-ui/careers/careers-social-media-icons-sprite-medium.png) -105px -11px no-repeat; width: 40px; height: 40px; }
+.social-networking-services-icons .fb { background: url(../img-ui/careers/careers-social-media-icons-sprite-medium.png) -10px -11px no-repeat; width: 40px; height: 40px; }
+.social-networking-services-icons .tw { background: url(../img-ui/careers/careers-social-media-icons-sprite-medium.png) -58px -11px no-repeat; width: 40px; height: 40px;  }
+.social-networking-services-icons .lin { background: url(../img-ui/careers/careers-social-media-icons-sprite-medium.png) -105px -11px no-repeat; width: 40px; height: 40px; }
 .social-networking-services-icons { text-align: center; padding-top: 0 !important; }
 .social-networking-services-icons li { 
     float: none !important; 
@@ -807,7 +816,7 @@ a.btn_cta span {
  */
  
 #upcoming-events { 
-    background: url(/_assets/img-ui/careers/upcoming-events-sprite.png) top left no-repeat;
+    background: url(../img-ui/careers/upcoming-events-sprite.png) top left no-repeat;
     height: 44px;
     color: #fff; }
     
@@ -838,7 +847,7 @@ a.btn_cta span {
     *display: inline; }
 .section-link a {
     width: 145px;
-    background: url(/_assets/img-ui/careers/upcoming-events-sprite.png) 0 -44px no-repeat;
+    background: url(../img-ui/careers/upcoming-events-sprite.png) 0 -44px no-repeat;
     display: inline-block;
     *zoom: 1;
     *display: inline;
@@ -882,7 +891,7 @@ a.btn_cta span {
     padding: 0 0 2.5em 0;
     margin: 1.5em 0 1em 0;
     text-shadow: 1px 1px 1px #f3f2ec; 
-    background: url(/_assets/img-ui/careers/careers_blur_divider.png) bottom center no-repeat; }
+    background: url(../img-ui/careers/careers_blur_divider.png) bottom center no-repeat; }
 #offers h2 { margin: 7px 0 0px; color: #00693c; }
 #offers p { margin: .5em 0; }
 #offers ul li.offer {
@@ -891,10 +900,10 @@ a.btn_cta span {
     width: 243px; 
     float: left; 
     position: relative;
-    background: url(/_assets/img-ui/careers/ui-panel-1-right.png) top right no-repeat; }
+    background: url(../img-ui/careers/ui-panel-1-right.png) top right no-repeat; }
 #offers .last-child { margin-right: 0 !important; }
 #offers ul .offer-inner { 
-    background: url(/_assets/img-ui/careers/ui-panel-1-left.png) top left no-repeat;
+    background: url(../img-ui/careers/ui-panel-1-left.png) top left no-repeat;
     min-height: 146px;
     height: auto !important;
     height: 146px; }
@@ -929,14 +938,14 @@ a.btn_cta span {
 #promos ul li.promo { 
     float: left;
     width: 372px;
-    background: url(/_assets/images/ui-panel-2-right.png) top right no-repeat;
+    background: url(../images/ui-panel-2-right.png) top right no-repeat;
     margin: 0 15px 0 0; 
     padding: 0;  } 
 #promos .promo-inner { 
     min-height: 119px;
     height: auto !important;
     height: 119px;
-    background: url(/_assets/images/ui-panel-2-left.png) top left no-repeat; }
+    background: url(../images/ui-panel-2-left.png) top left no-repeat; }
 #promos .last-child { margin-right: 0 !important; }
 #promos .promo-img { float: left; margin: 0 0 0 0; padding: 20px 15px 20px 20px; }
 #promos .promo-copy { float: left; width: 220px; padding: 10px 0; }
@@ -1013,9 +1022,9 @@ a.btn_cta span {
     opacity: .8; 
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	filter: alpha(opacity=80); }
-#right_content .module-social-networking .fb { background: url(/_assets/img-ui/careers/careers-social-media-icons-sprite-small.png) -10px -10px no-repeat !important; height: 20px !important; }
-#right_content .module-social-networking .tw { background: url(/_assets/img-ui/careers/careers-social-media-icons-sprite-small.png) -10px -48px no-repeat !important; height: 20px !important; }
-#right_content .module-social-networking .lin { background: url(/_assets/img-ui/careers/careers-social-media-icons-sprite-small.png) -10px -85px no-repeat !important; height: 20px !important; }
+#right_content .module-social-networking .fb { background: url(../img-ui/careers/careers-social-media-icons-sprite-small.png) -10px -10px no-repeat !important; height: 20px !important; }
+#right_content .module-social-networking .tw { background: url(../img-ui/careers/careers-social-media-icons-sprite-small.png) -10px -48px no-repeat !important; height: 20px !important; }
+#right_content .module-social-networking .lin { background: url(../img-ui/careers/careers-social-media-icons-sprite-small.png) -10px -85px no-repeat !important; height: 20px !important; }
 
 
 /**
@@ -1170,7 +1179,7 @@ hr { clear: both; }
 #right_content .module-branding-carousel { 
     position: relative; 
     margin-bottom: 0; 
-    background: url(/_assets/img-ui/careers/ui-carousel-bg-1.jpg) no-repeat; }
+    background: url(../img-ui/careers/ui-carousel-bg-1.jpg) no-repeat; }
 .module-branding-carousel .module-inner { border: none; }
 .module-branding-carousel ul { margin: 0 !important; padding: 0 !important; }
 .module-branding-carousel li { 
@@ -1369,3 +1378,52 @@ input.checkbox { border: none !important; }
 	background: url("../img-ui/label-error-icon.gif") no-repeat !important; 
 	padding-left: 20px;
 	margin-top: 5px; }
+	
+/**
+ * WM City Map: City of Chicago
+ */
+ 
+.wm-city-map { 
+    height: 600px;
+    width: 400px;
+    margin: 0 auto;
+    position: relative; }
+.wm-city-of-chicago { }
+    .wm-city-map img { display: block; }
+    .wm-city-map #city-of-chicago { }
+    .wm-city-map .wm-city-map-content { 
+        position: absolute; 
+        top: 0; 
+        left: 0; }
+    
+    #content .wm-city-map ul { margin: 0; list-style: none; }
+    #content .wm-city-map li { margin: 0; background: none; padding: 0; }
+    
+    .wm-city-map a { 
+        padding: 5px 8px;
+        display: inline-block;
+        *zoom: 1;
+        *display: inline;
+        text-decoration: none; font-size: 30px; color: #fff; text-shadow: 0 0 2px #333; }
+    .wm-city-map a:hover { }
+    
+    .wm-city-map .item { position: absolute; left: 0; top: 0; }
+    .wm-city-map .item-1 {
+        left: 160px;
+        top: 70px; }
+    .wm-city-map .item-2 {
+        left: 220px;
+        top: 80px; }
+    
+    .wm-city-map .wm-city-map-tip { 
+        position: absolute; 
+        left: -9999px; 
+        width: 200px;
+        background: #fff;
+        border: 1px #ccc solid; }
+        
+        .wm-city-map-tip .tip-inner { }
+        .wm-city-map-tip .title { padding: 10px 10px 0; }
+        .wm-city-map-tip .content { padding: 0 10px; }
+    
+

@@ -18,14 +18,44 @@
 <script type="text/javascript" src="http://www.wm.com/_assets/js/cufon.js"></script> 		
 <script type="text/javascript" src="http://www.wm.com/_assets/js/wm_book_400.font.js"></script>	
 <script type="text/javascript">
-Cufon.replace('h1');
-Cufon.replace('h2');
+// Global Cufon
+Cufon.set('fontFamily', 'wm_book');
+Cufon.replace('h1', {
+    fontFamily: 'wm_book'
+});
+Cufon.replace('h2', {
+    fontFamily: 'wm_book'
+});
+Cufon.refresh();
 
-Cufon.replace('.header h3');
+// Carousel 
+Cufon.replace('.header h3', {
+    fontFamily: 'wm_book'
+});
+Cufon.replace('#carousel p', {
+    fontFamily: 'wm_book'
+});
+Cufon.refresh();
 
-Cufon.replace('.promo-table .display-footer .line-1'); // at this level?
-Cufon.replace('.promo-table .display-footer .line-2');
-Cufon.replace('.promo-table .summary');
+// Promo Table
+Cufon.replace('.promo-table .display-footer .line-1', {
+    fontFamily: 'wm_book'
+}); // at this level?
+Cufon.replace('.promo-table .display-footer .line-2', {
+    fontFamily: 'wm_book'
+});
+Cufon.replace('.promo-table .summary', {
+    fontFamily: 'wm_book'
+});
+Cufon.refresh();
+
+// Foundry
+Cufon.set('fontFamily', 'Foundry Sterling');
+Cufon.replace('#carousel h2', {
+    letterSpacing: '2px',
+    fontFamily: 'Foundry Sterling'
+});
+Cufon.refresh();
 </script>
 <!-- VML -->
 
@@ -33,6 +63,8 @@ Cufon.replace('.promo-table .summary');
         <link rel="stylesheet" type="text/css" href="../_assets/js-lib/jcarousel/skins/wm/skin.css" />
         <link rel="stylesheet" type="text/css" href="../_assets/css/static-template.css" />
 		<link rel="stylesheet" type="text/css" href="../_assets/js-lib/jquery.tabbed/jquery.tabbed.css" />
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css" type="text/css" media="all" /> 
+
         <!--
             link rel="stylesheet" type="text/css" href="../_assets/js/shadowbox/shadowbox.css"
         -->
@@ -105,13 +137,11 @@ Cufon.replace('.promo-table .summary');
 <!-- Footer Ends -->
 
 <script type="text/javascript" src="http://www.wm.com/_assets/js/plugins.js"></script>
-<!--script type="text/javascript" src="../_assets/js/plugins.js"></script-->
-<!--script type="text/javascript" src="http://www.wm.com/_assets/js/global.js"></script-->  
-<script type="text/javascript" src="../_assets/js/r1-global.js"></script>
-<script type="text/javascript"> <!-- try {Cufon.now();} catch (e) {} --> </script>
+<script type="text/javascript" src="http://www.wm.com/_assets/js/global.js"></script>  
 <!-- VML -->
 
 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../_assets/js-lib/modernizr-1.6.min.js"></script>
 <script type="text/javascript" src="../_assets/js-lib/jquery.metadata.js"></script>
 <script type="text/javascript" src="../_assets/js-lib/jquery.tabbed/jquery.tabbed-0.1.js"></script>

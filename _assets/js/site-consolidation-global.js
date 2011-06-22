@@ -163,8 +163,8 @@ $(function() {
         e.preventDefault();
         //return false;
     });
-	
-	/**
+    
+    /**
  * jQuery FAQ Toggle Next
  *
  * jQuery FAQ Init
@@ -182,15 +182,15 @@ $(function() {
  */
  
    //container-selection-form 
-	$("#container-selection-form #container-selection-first-name").attr("validate", "required: true, maxlength: 50");
-	$("#container-selection-form #container-selection-last-name").attr("validate", "required: true, maxlength: 50");
-	$("#container-selection-form #container-selection-address-1").attr("validate", "required: true, maxlength: 100");
-	$("#container-selection-form #container-selection-unit").attr("validate", "maxlength: 10, number: true ");
-	$("#container-selection-form #container-selection-address-2").attr("validate", "maxlength: 50");
-	$("#container-selection-form #container-selection-city").attr("validate", "required: true, maxlength: 50");
-	$("#container-selection-form #container-selection-state").attr("validate", "required: true, maxlength: 25");
-	$("#container-selection-form #container-selection-zip").attr("validate", "required: true, postalcode:true");
-	$("#container-selection-form #container-selection-email").attr("validate", "required: true, maxlength: 50, email:true");
+    $("#container-selection-form #container-selection-first-name").attr("validate", "required: true, maxlength: 50");
+    $("#container-selection-form #container-selection-last-name").attr("validate", "required: true, maxlength: 50");
+    $("#container-selection-form #container-selection-address-1").attr("validate", "required: true, maxlength: 100");
+    $("#container-selection-form #container-selection-unit").attr("validate", "maxlength: 10, number: true ");
+    $("#container-selection-form #container-selection-address-2").attr("validate", "maxlength: 50");
+    $("#container-selection-form #container-selection-city").attr("validate", "required: true, maxlength: 50");
+    $("#container-selection-form #container-selection-state").attr("validate", "required: true, maxlength: 25");
+    $("#container-selection-form #container-selection-zip").attr("validate", "required: true, postalcode:true");
+    $("#container-selection-form #container-selection-email").attr("validate", "required: true, maxlength: 50, email:true");
 
     $("#container-selection-form").validate();
     
@@ -230,65 +230,7 @@ $(function() {
     });
 })(jQuery);
 */
-var carouselPick = null,
-    carouselLength,
-    carouselCount = 0,
-    carouselControl = true,
-    boo = true,
-    $mapElem;
-    
-function sparkCarousel(event, state, carouselCount, elem) {
-    var $mapAnchors = $('#carousel-map a');
-    var carousel = jQuery('#carousel-list').data('jcarousel');
-    var event = (carouselCount < $mapAnchors.length) ? (state) : event; // Done! Waiting for interaction.
-    var carouselCountO = carouselCount;
-    var $mapElem = elem;
-    var carouselCount = (event.type === 'click') ? // the steady stream
-        "1," + (carouselPick++) : // flows
-        "2," + (carouselCount++); // ('no more.') ;
-    
-    if (event != 'next')
-        carouselCount = carouselCountO;
-    /*
-     * 
-        var carouselCount = (carouselCount <= $mapAnchors.length) ? 
-        // itemVisibleInCallback.onBeforeAnimation
-        (carouselCount++) :
-        // clicky finger
-        0;
-     */
-    //console.log('animating ' + carouselCount);
-    //console.log(event);
-    //console.log(state);
-    //console.log(carouselCount);
-    
-    // jcarousel's
-    if (state === 'init') {
-        carouselCount = 0;
-        $mapAnchors.eq(carouselCount).addClass('active');
-    }
-    
-    if (event !== 'click' && event === 'next') {
-        $mapAnchors.removeClass('active');
-        carouselCount = carouselCountO;
-        if ( carouselCount < $mapAnchors.length )
-            $mapAnchors.eq(carouselCount-1).delay(300).addClass('active');
-        else
-            $mapAnchors.eq(0).delay(300).addClass('active');
-        
-        //alert('c');
-    }
-    
-    if (event === 'click') {
-        $mapAnchors.removeClass('active');
-        $mapElem.addClass('active');
-        //alert(carouselCount);
-        //$mapAnchors.eq(carouselCount-1).addClass('active');
-        //carousel.scroll(carouselCount-1);
-    }
 
-
-}
     
 function initCarousel(carousel, state) {
 
@@ -313,105 +255,41 @@ function initCarousel(carousel, state) {
         
     }
     
-    //var $mapAnchor = $('#carousel-map a');
-    //$mapAnchor.eq(carouselCount).addClass('active');
-
     carousel.play();
-    /*
-    $('#carousel-play').hide(); 
-    */
-   
+    
     $('#carousel-controls').css({
         bottom: "15px",
         left: "600px"
+    }).bind('hover', function(e) {
+        carousel.stopAuto();
+    }, function(e) {
+        carousel.startAuto();
     });
     
-    jQuery('#carousel-controls a').bind('mouseover.h', function() {
-        
-        var carousel = jQuery('#carousel-list').data('jcarousel');
-        
-        if (carousel.animating !== false) {
-            $(this).css({
-                opacity: .8
-            });
-        }
-        
-    });
-    
-    jQuery('#carousel-controls a').bind('mouseout.h', function() {
-        
-        var carousel = jQuery('#carousel-list').data('jcarousel');
-        
-        if (carousel.animating !== false) {
-            $(this).css({
-                opacity: .25
-            });
-        }
-        
-    });
+    $("#carousel-list").data("index", 0);
+    $('#carousel-map a').removeClass('active');
+    $('#carousel-map a').eq(0).addClass('active');
     
     jQuery('#carousel-map a').bind('click', function(event) {
-    
-        var c = jQuery.jcarousel.intval(jQuery(this).text()),
-            carouselPick = c,
-            $mapAnchors = $('#carousel-map a');
-            carousel = jQuery('#carousel-list').data('jcarousel'),
-            carouselCount = (carouselCount < $mapAnchors.length) ? carouselCount : carouselCount;
         
-        //console.log($(this).index())
-        //console.log(carousel);
-        //console.log(carousel.state);
-        //console.log( carousel.animating );
+        if ( carousel.animating !== true ) {
         
-        //if (carouselControl === true) {
+            var c = jQuery.jcarousel.intval(jQuery(this).text());
+        
+            $('#carousel-list').data('index', (c-1));
+        
+            $('#carousel-map a').delay(1000).removeClass('active');
+            $('#carousel-map a').eq(c-1).delay(1000).addClass('active');
             
-            /*
-            $a.animate({
-                opacity: .1
-            }, 1000);
-            */
+            carousel.scroll(c);
             
-            //carouselPick = null;
+        }
             
-            //carouselControl = true;
-            
-            // Leave this alone; it's smart enough to know which node to
-            // actually scroll to.
-            //$mapAnchors.eq(c-1).delay(2000).addClass('active');
-            //if ( !$.browser.ie ) {
-            $('#carousel li').parent().animate({
-                opacity: .5
-            }, 1600, function() {
-                //if (event.type === 'click') {
-                    
-                    
-                    
-                    
-        
-                //alert(carouselCount);
-                //$mapAnchors.eq(carouselCount-1).addClass('active');
-                //console.log($mapAnchors.eq(c-1));
-                
-                carousel.scroll(c);
-                
-                $mapAnchors.removeClass('active');
-                $mapAnchors.eq(c-1).addClass('active');
-                //alert(c-1);
-                sparkCarousel(event, 'animate', carouselPick, $mapElem);
-                
-                //}
-                
-            });
-            //}
-        
-        //}
-        
-        //return false;
         event.preventDefault();
     });
     
     
-    jQuery('#carousel-pause').bind('click', function() {
+    jQuery('#carousel-pause').bind('click', function(e) {
         
         var $self = $(this);
         
@@ -429,12 +307,11 @@ function initCarousel(carousel, state) {
         $('#carousel-play').removeClass('hide');
         
         carousel.pause();
-        //carousel.pauseAuto();
         
-        return false;
+        e.preventDefault();
     });
     
-    jQuery('#carousel-play').bind('click', function() {
+    jQuery('#carousel-play').bind('click', function(e) {
         
         var $self = $(this);
         
@@ -453,40 +330,52 @@ function initCarousel(carousel, state) {
         
         carousel.play();
         
-        return false;
+        var counter = parseInt($("#carousel-list").data("index")),
+            $map = $('#carousel-map a'),
+            l = $map.length;
+        
+        if ( counter == l ) {
+            carousel.scroll(1);
+            //$('#carousel-map a').delay(500).removeClass('active');
+            //$('#carousel-map a').delay(500).eq(0).addClass('active');
+        }
+        
+        e.preventDefault();
     });
-    
-    /*
-    jQuery('#carousel-next').bind('click', function() {
-        carousel.next();
-        return false;
-    });
- 
-    jQuery('#carousel-prev').bind('click', function() {
-        carousel.prev();
-        return false;
-    });
-    */
-    
-    // disable if next or prev
-    
-    carousel.buttonNext.bind('click', function() {
-        carousel.startAuto();
-    });
- 
-    carousel.buttonPrev.bind('click', function() {
-        carousel.startAuto();
-    });
-    
+        
     // pause on hover
     
     carousel.clip.hover(function() {
-    
+
+        //carousel.stopAuto();
         carousel.stopAuto();
-        
+                    
     }, function() {
     
-        carousel.startAuto();
+        //carousel.startAuto();
+        
+        var counter = parseInt($('#carousel-list').data('index')),
+            $map = $('#carousel-map a'),
+            l = $map.length;
+        
+        if ( counter != l ) {
+            carousel.startAuto();
+        }
+        
+        if ( counter == 1 && carousel.paused == false) {
+        $('#carousel-pause').css({
+            position: 'relative',
+            left: '0px'
+        });
+        
+        $('#carousel-play').css({
+            position: 'absolute',
+            left: '-9999px'
+        });
+        
+        $('#carousel-play').addClass('hide');
+        $('#carousel-pause').removeClass('hide');
+        }
         
     });
     
@@ -495,59 +384,7 @@ function initCarousel(carousel, state) {
 function setActive(carousel, state, index, s) {
 
     var fade = carousel.options.fade,
-        $state = $(state),
-        $ul = $state.parent(),
-        $li = $ul.find('li'),
-        $copyContainer = $state.find('.carousel-item-copy'),
-        $elems = $state.find('h2 span'),
-        header = $("<h2></h2>"),
-        $p = $state.find('p'),
-        div = $("<div></div>");
-    
-    // ...
-    
-    $ul.css({
-        height: $li.height()+"px"
-    });
-    
-    $li.css({
-        position: "relative",
-        left: "0px"
-    });
-    
-    // ...
-    
-    // remove old content
-    
-    $copyContainer.find('> div').remove();    
-    $p.remove();
-
-    $p.each(function() {
-        var $self = $(this),
-            $copy = "<p>"+$self.clone().text()+"</p>";
-        
-        div.prepend($copy);
-    });
-    
-    $p.remove();
-    
-    $copyContainer.prepend(div);
-
-    $state.find('h2').remove();
-    
-    $elems.each(function() {
-        var $self = $(this),
-            $copy = "<span>"+$self.clone().text()+"</span>";
-        
-        header.prepend($copy);
-    });
-    
-    $state.find('h2').remove();
-    
-    $copyContainer.prepend(header);
-    
-    Cufon.refresh();
-
+        $state = $(state);
     
     /**
      * for custom timing in seconds 
@@ -584,145 +421,110 @@ function setActive(carousel, state, index, s) {
   
 jQuery(document).ready(function() {
 
-    jQuery("#carousel-list").jcarousel({
+    $("#carousel-list").jcarousel({
         scroll: 1,
         auto: 3,
-        wrap: 'circular',
-        easing: 'easeInOutQuint',
-        animation: 5000,
+        wrap: 'both',
+        easing: 'easeOutQuint',
+        animation: 1000,
         initCallback: initCarousel,
-        buttonNextHTML: null,
-        buttonPrevHTML: null,
-        itemLoadCallback: {
-            onBeforeAnimation: function(carousel, state, callbackName) {
-                
-                var opacitySetting = ($.browser.msie) ? 'show' : 1,
-                    $lis = $('#carousel li'),
-                    $mapAnchor = $('#carousel-map a');
-                
-                carouselControl = false;
-                
-                //alert(state);
-                
-                if ( state === 'init' ) {
-                
-	                if ( !$.browser.msie ) {
-	
-	                    $lis.parent()
-	                        .delay(200)
-	                        .animate({
-	                            opacity: opacitySetting
-	                        }, 1500);
-	
-	                } else {
-	                	$lis.parent().show();
-	                }
-                
-                } else {
-                    $('#carousel-controls a').animate({
-                        opacity: .25
-                    }, 1000);
-                    
-                }
-
-            },
-            onAfterAnimation: function(carousel, state, callbackName) {
-                
-                var $mapAnchor = $('#carousel-map a'),
-                    $ctrls = $('#carousel-controls a'),
-                    opacitySetting = ($.browser.msie) ? 'show' : .8;
-                    
-                carouselControl = true;
-                
-                $ctrls.animate({
-                    opacity: opacitySetting
-                }, 2000);
-            }
-        },
         itemFirstInCallback: {
             onBeforeAnimation: setActive
         },
-        itemLastOutCallback: {
-            onAfterAnimation: function(carousel) {
+        itemLoadCallback: {
+            onBeforeAnimation: function(carousel, state, callbackName) {
+                var $map = $('#carousel-map a'),
+                    l = $map.length;
+                    
+                if ( state === 'init' ) {
                 
-                var $lis = $('#carousel li');
+                    $map.removeClass('active');
+                    $map.eq(0).addClass('active');
                 
-                //carousel.pause();
-
-                //if ( !$.browser.ie ) {
-                $lis.parent()
-                    .animate({
-                        opacity: 1
-                    }, 700, function() {
-                        //carousel.play();
+                }
+            },
+            onAfterAnimation: function(carousel, state, callbackName) {
+                
+                var counter = parseInt($("#carousel-list").data("index")),
+                    $map = $('#carousel-map a'),
+                    l = $map.length,
+                    counter = (counter <= l) ? counter+1 : 1; 
+                  
+                if ( counter > l ) {
+                
+                    $('#carousel-pause').css({
+                        position: 'absolute',
+                        left: '-9999px'
                     });
-                //}
+                    
+                    $('#carousel-play').css({
+                        position: 'relative',
+                        left: '0px'
+                    });
+                    
+                    $('#carousel-pause').delay(300).addClass('hide');
+                    $('#carousel-play').delay(300).removeClass('hide');
+                    
+                    $map.removeClass('active');
+                    $map.eq(l-1).addClass('active');
+                    
+                    //carousel.pause();
+                    carousel.stopAuto();
+                    
+                } else {
+                    
+                }
+    
+                //console.log(counter);
+    
+                $map.removeClass('active');
+                $map.eq(counter-1).addClass('active');
+                
+                $("#carousel-list").data("index", counter);
+                
+                if ( (counter-1) == l ) {
+                    $map.removeClass('active');
+                    $map.eq(0).addClass('active');
+                    //$('#carousel-play').trigger('click');
+                    $("#carousel-list").data("index", 1);
+                }
                 
             }
         },
-        itemVisibleInCallback: {
-            onBeforeAnimation: function(carousel, li, index, state) {
-                
-                carouselCount++;
-                
-                sparkCarousel('animate', state, index);
-                
-            }  
-        },
+        buttonNextHTML: null,
+        buttonPrevHTML: null,
         fade: false
     });
-    
-    $('.wm-area area').each(function(e) {
-    
-        var $self = $(this),
-            coords = $self.attr('coords').split(","),
-            units = "px",
-            x = coords[0]+units,
-            y = coords[1]+units,
-            w = $self.width(),
-            h = $self.height(),
-            $cont = $self.parent().parent(),
-            $img = $self.parent().parent().find('img');
-            
-        /*
-        $img.css({
-            position: "absolute",
-            "z-index": "8999"
-        });
+
+    $('.wm-city-map').bind('cleartips', function(e) {
         
-        $cont.css({
-            position: "relative",
-            height: $img.height()+"px"
-        });
-        */
-       
-        $self.bind('loadFrame', function(e) {
+        var $self = $(this);
+        
+        $self.find('.wm-city-map-tip').css({left:"-9999px"}).hide();
+        
+    });
+    
+    $('.wm-city-map').trigger('cleartips');
+    
+    $('.wm-city-map img').bind('mouseover', function() {
+    
+        $('.wm-city-map').trigger('cleartips');
+    
+    });
+    
+    $('.wm-city-map .item > a').each(function() { 
+        var $a = $(this);
+        
+        $a.bind('mouseover', function(e) {
+            
             var $self = $(this),
-            	$frame = $($self.attr('href'));
+                $tip = $self.next();
             
-            $frame.hide().css({
-            	left: x,
-            	top: y
-            }).delay(10).fadeIn();
-            
-            $frame.bind('click', function() {
-            	var $self = $(this);
-            	
-            	$self.fadeOut();
-            });
-            
-            //alert(x);
+            $('.wm-city-map').trigger('cleartips');
+            $tip.addClass('active-tip').css({left:"0"}).fadeIn('slow');
+        
         });
         
-        //$self.trigger('loadFrame');
-        
-        $self.bind('click', function(e){
-        	
-            $self.trigger('loadFrame');
-            
-            e.preventDefault();
-        });
-    
     });
     
     $('.module-branding-carousel ul').each(function() {
